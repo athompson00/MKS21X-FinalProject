@@ -18,12 +18,14 @@ public class Creature{
   private int damage;
   private int xcor;
   private int ycor;
+  private String name;
   //Basic Creature constructor intakes health and damage and creates the creature on the terminal
-  public Creature(int h, int d, int x, int y){
+  public Creature(int h, int d, int x, int y, String n){
     health = h;
     damage = d;
     xcor = x;
     ycor = y;
+    name = n;
   }
 
 //Basic movement functions for all creatures
