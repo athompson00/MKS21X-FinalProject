@@ -45,5 +45,22 @@ public class Creature{
     ycor -= 1;
   }
 
+  //Get methods for variables
+  public int getHealth(){
+    return health;
+  }
+  public int getDamage(){
+    return damage;
+  }
+  public int getX(){
+    return xcor;
+  }
+  public int getY(){
+    return ycor;
+  }
+  public String getName(){
+    return name;
+  }
+
 
 }
