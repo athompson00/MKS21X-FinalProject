@@ -53,6 +53,12 @@ public class Creature{
   public int getDamage(){
     return damage;
   }
+  public void setDamage(int newdam){
+    this.damage = newdam;
+  }
+  public void setHealth(int newhel){
+    this.health = newhel;
+  }
   public int getX(){
     return xcor;
   }
