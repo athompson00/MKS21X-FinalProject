@@ -1,5 +1,3 @@
-
-
 //API : http://mabe02.github.io/lanterna/apidocs/2.1/
 import com.googlecode.lanterna.terminal.Terminal.SGR;
 import com.googlecode.lanterna.TerminalFacade;
@@ -15,136 +13,60 @@ import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 
-
-abstract class Creature{
+public class Creature{
   private int health;
   private int damage;
-  private int x;
-  private int y;
-  private String Name;
-
-  public Creature(int hp, int dm, int xcor, int ycor, String namo){
-    health = hp;
-    damage = dm;
-    x = xcor;
-    y = ycor;
-    Name = namo;
+  private int xcor;
+  private int ycor;
+  private String name;
+  //Basic Creature constructor intakes health and damage and creates the creature on the terminal
+  public Creature(int h, int d, int x, int y, String n){
+    health = h;
+    damage = d;
+    xcor = x;
+    ycor = y;
+    name = n;
   }
 
-}
+//Basic movement functions for all creatures
+  public void moveLeft(){
+    xcor -= 1;
+  }
 
-public class TerminalDemo {
+  public void moveRight(){
+    xcor += 1;
+  }
 
-	public static void putString(int r, int c,Terminal t, String s){
-		t.moveCursor(r,c);
-		for(int i = 0; i < s.length();i++){
-			t.putCharacter(s.charAt(i));
-		}
-	}
-	public static void main(String[] args) {
+  public void moveUp(){
+    ycor += 1;
+  }
 
+  public void moveDown(){
+    ycor -= 1;
+  }
 
-		int x = 10;
-		int y = 10;
-
-		Terminal terminal = TerminalFacade.createTextTerminal();
-		terminal.enterPrivateMode();
-
-		TerminalSize size = terminal.getTerminalSize();
-		terminal.setCursorVisible(false);
-
-		boolean running = true;
-
-		long tStart = System.currentTimeMillis();
-		long lastSecond = 0;
-
-		while(running){
-
-			terminal.moveCursor(x,y);
-			terminal.applyBackgroundColor(Terminal.Color.WHITE);
-			terminal.applyForegroundColor(Terminal.Color.BLACK);
-			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
-			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
-			terminal.putCharacter('\u00a4');
-			//terminal.putCharacter(' ');
-			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
-			terminal.applySGR(Terminal.SGR.RESET_ALL);
-
-
-			terminal.moveCursor(size.getColumns()-5,5);
-			terminal.applyBackgroundColor(Terminal.Color.RED);
-			terminal.applyForegroundColor(Terminal.Color.YELLOW);
-			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
-			terminal.putCharacter('\u262d');
-			terminal.putCharacter(' ');
-			terminal.moveCursor(size.getColumns()-5,6);
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
-			terminal.putCharacter(' ');
-			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
-			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
-
-			Key key = terminal.readInput();
-
-			if (key != null)
-			{
-
-				if (key.getKind() == Key.Kind.Escape) {
-
-					terminal.exitPrivateMode();
-					running = false;
-				}
-
-				if (key.getKind() == Key.Kind.ArrowLeft) {
-					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					x--;
-				}
-
-				if (key.getKind() == Key.Kind.ArrowRight) {
-					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					x++;
-				}
-
-				if (key.getKind() == Key.Kind.ArrowUp) {
-					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					y--;
-				}
-
-				if (key.getKind() == Key.Kind.ArrowDown) {
-					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					y++;
-				}
-				//space moves it diagonally
-				if (key.getCharacter() == ' ') {
-					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					y++;
-					x++;
-				}
-				putString(1,4,terminal,"["+key.getCharacter() +"]");
-				putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
-			}
-
-			//DO EVEN WHEN NO KEY PRESSED:
-			long tEnd = System.currentTimeMillis();
-			long millis = tEnd - tStart;
-			putString(1,2,terminal,"Milliseconds since start of program: "+millis);
-			if(millis/1000 > lastSecond){
-				lastSecond = millis / 1000;
-				//one second has passed.
-				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
-
-			}
+  //Get methods for variables
+  public int getHealth(){
+    return health;
+  }
+  public int getDamage(){
+    return damage;
+  }
+  public void setDamage(int newdam){
+    this.damage = newdam;
+  }
+  public void setHealth(int newhel){
+    this.health = newhel;
+  }
+  public int getX(){
+    return xcor;
+  }
+  public int getY(){
+    return ycor;
+  }
+  public String getName(){
+    return name;
+  }
 
 
-		}
-	}
 }
