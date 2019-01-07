@@ -19,6 +19,7 @@ public class Creature{
   private int xcor;
   private int ycor;
   private String name;
+  private String graphic;
   //Basic Creature constructor intakes health and damage and creates the creature on the terminal
   public Creature(int h, int d, int x, int y, String n){
     health = h;
@@ -61,6 +62,13 @@ public class Creature{
   public String getName(){
     return name;
   }
+// change methods for private variables
+  public void changeDamage(d){
+    damage = d;
+  }
 
+  public void changeHealth(h){
+    health = h;
+  }
 
 }
