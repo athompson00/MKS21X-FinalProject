@@ -1,13 +1,10 @@
 public class Greebler extends Creature{
-  private int greebhealth;
-  private int greebdamage;
-  private String greebname;
   private double dodgechance;
-  public Greebler(){
-    greebhealth = 100;
-    greebdamage = 10;
-    greebname = "Greebler";
+  public Greebler(int x, int y){
+    super(100, 10, x, y, "Greebler", '\u262d');
     dodgechance = 0.05;
+  }
+  public void attack(){
   }
 
 }
