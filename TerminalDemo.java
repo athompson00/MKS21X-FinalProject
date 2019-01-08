@@ -17,7 +17,6 @@ import com.googlecode.lanterna.input.KeyMappingProfile;
 
 
 public class TerminalDemo {
-
 	public static void putString(int r, int c,Terminal t, String s){
 		t.moveCursor(r,c);
 		for(int i = 0; i < s.length();i++){
@@ -26,9 +25,11 @@ public class TerminalDemo {
 	}
 	public static void main(String[] args) {
 
-
 		int x = 10;
 		int y = 10;
+
+		Greebler greeblerone = new Greebler(15, 15);
+		Player one = new Player(1000, 10, x, y, "wallie", '\u00a6', 4);
 
 		Terminal terminal = TerminalFacade.createTextTerminal();
 		terminal.enterPrivateMode();
@@ -49,6 +50,7 @@ public class TerminalDemo {
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
 			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
 			terminal.putCharacter('\u00a4');
+			terminal.moveCursor(greeblerone.getX(), greeblerone.getY());
 			//terminal.putCharacter(' ');
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
@@ -68,8 +70,9 @@ public class TerminalDemo {
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
-			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			terminal.applyBackgroundColor(Terminal.Color.BLUE);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
+
 
 			Key key = terminal.readInput();
 
@@ -80,40 +83,54 @@ public class TerminalDemo {
 
 					terminal.exitPrivateMode();
 					running = false;
+					System.out.println(one.getX());
+					System.out.println(one.getY());
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x--;
+					one.moveLeft();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					x++;
+					one.moveRight();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y--;
+					one.moveUp();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
 					terminal.moveCursor(x,y);
 					terminal.putCharacter(' ');
 					y++;
+					one.moveDown();
 				}
 				//space moves it diagonally
 				if (key.getCharacter() == ' ') {
 					terminal.moveCursor(x,y);
-					terminal.putCharacter(' ');
-					y++;
-					x++;
+
 				}
+
 				putString(1,4,terminal,"["+key.getCharacter() +"]");
 				putString(1,1,terminal,key+"        ");//to clear leftover letters pad withspaces
+			}
+
+
+			if(one.getX() == 15 &&
+			one.getY() == 15){
+				terminal.exitPrivateMode();
+				running = false;
+				System.out.println(one.getX());
+				System.out.println(one.getY());
 			}
 
 			//DO EVEN WHEN NO KEY PRESSED:
@@ -126,7 +143,12 @@ public class TerminalDemo {
 				putString(1,3,terminal,"Seconds since start of program: "+lastSecond);
 
 			}
-
+			if(millis > 100000){
+				terminal.exitPrivateMode();
+				running = false;
+				System.out.println(one.getX());
+				System.out.println(one.getY());
+			}
 
 		}
 	}
