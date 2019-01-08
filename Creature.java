@@ -1,16 +1,14 @@
 public class Creature{
   private int health;
   private int damage;
-  private int xcor;
-  private int ycor;
+  private Point location;
   private String name;
   private char graphic;
   //Basic Creature constructor intakes health and damage and creates the creature on the terminal
   public Creature(int h, int d, int x, int y, String n, char graph){
     health = h;
     damage = d;
-    xcor = x;
-    ycor = y;
+    location = new Point(x, y);
     name = n;
     graphic = graph;
   }
