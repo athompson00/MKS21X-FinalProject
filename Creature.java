@@ -62,6 +62,9 @@ public class Creature{
   public void changeHealth(int h){
     health = h;
   }
+  public char getGraphic(){
+    return graphic;
+  }
 
 
 }
