@@ -20,23 +20,23 @@ public class Demo{
   //the terminal
   public static void fillPerimeter(Terminal t, Wall[] perimeter){
     int wallnum = 0;
-    for(int i = 0; i < t.size.getRows(); i++){
+    for(int i = 0; i < t.getTerminalSize().getRows(); i++){
       Wall wall = new Wall(0, i, "up");
       wallnum++;
       perimeter[wallnum] = wall;
     }
-    for(int j = 0; j < t.size.getRows(); j++){
-      Wall wall = new Wall(t.size.getCols, j, "up");
+    for(int j = 0; j < t.getTerminalSize().getRows(); j++){
+      Wall wall = new Wall(t.getTerminalSize().getCols, j, "up");
       wallnum++;
       perimeter[wallnum] = wall;
     }
-    for(int k = 0; k < t.size.getCols(); k++){
+    for(int k = 0; k < t.getTerminalSize().getColumns(); k++){
       Wall wall = new Wall(k, 0, "side");
       wallnum++;
       perimeter[wallnum] = wall;
     }
-    for(int l = 0; l < t.size.getCols(); l++){
-      Wall wall = new Wall(l, t.size.getRows(), "side");
+    for(int l = 0; l < t.getTerminalSize().getColumns(); l++){
+      Wall wall = new Wall(l, t.getTerminalSize().getRows(), "side");
       wallnum++;
       perimeter[wallnum] = wall;
     }
@@ -70,9 +70,9 @@ public class Demo{
     terminal.setCursorVisible(false);
     boolean running = true;
 
-    fillPerimeter();
-    fillScreen();
-
+    int x = 10;
+    int y = 10;
+    
     while(running){
 
 			terminal.moveCursor(x,y);
@@ -103,6 +103,9 @@ public class Demo{
 			terminal.applyBackgroundColor(Terminal.Color.BLUE);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
+
+      fillPerimeter();
+      fillScreen();
 
 			Key key = terminal.readInput();
 
