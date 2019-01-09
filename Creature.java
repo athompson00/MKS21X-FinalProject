@@ -1,8 +1,8 @@
 public class Creature{
   private int health;
   private int damage;
-  private int x;
-  private int y;
+  private int xcor;
+  private int ycor;
   private String name;
   private char graphic;
   private String direction;
@@ -10,8 +10,8 @@ public class Creature{
   public Creature(int h, int d, int x, int y, String n, char graph){
     health = h;
     damage = d;
-    this.x = x;
-    this.y = y
+    this.xcor = x;
+    this.ycor = y
     name = n;
     graphic = graph;
     direction = "right";
