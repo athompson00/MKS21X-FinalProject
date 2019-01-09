@@ -26,7 +26,7 @@ public class Demo{
       perimeter[wallnum] = wall;
     }
     for(int j = 0; j < t.getTerminalSize().getRows(); j++){
-      Wall wall = new Wall(t.getTerminalSize().getCols, j, "up");
+      Wall wall = new Wall(t.getTerminalSize().getColumns(), j, "up");
       wallnum++;
       perimeter[wallnum] = wall;
     }
@@ -72,7 +72,7 @@ public class Demo{
 
     int x = 10;
     int y = 10;
-    
+
     while(running){
 
 			terminal.moveCursor(x,y);
