@@ -55,19 +55,11 @@ public class Demo{
 			t.putCharacter(s.charAt(i));
 		}
 	}
-<<<<<<< HEAD
-  //checks position in front of creature for a creature, wall, or baby and returns a String with the type of thing in front of it
-  public String checkInFront(Creature x){
-    int a = x.getX;
-    int b = x.getY;
-    
-=======
   //checks position in front of creature for a
   //creature, wall, or baby and returns a String with the
   //type of thing in front of it
   public String checkInFront(){
     return "";
->>>>>>> f2f8cf7922eff7b14b0df5b8981a8a3112cb04cf
   }
   public static void main(String[] args){
     Terminal terminal = TerminalFacade.createTextTerminal();
