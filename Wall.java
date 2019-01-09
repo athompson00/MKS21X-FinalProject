@@ -12,6 +12,15 @@ public class Wall{
       barrier = '-';
     }
   }
+  public int getwallX(){
+    return x;
+  }
+  public int getwallY(){
+    return y;
+  }
+  public char getBarrier(){
+    return barrier;
+  }
 
 
 }
