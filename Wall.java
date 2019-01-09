@@ -1,15 +1,15 @@
 public class Wall{
   private int x;
   private int y;
-  private String barrier;
-  public Wall(int xcor, int ycor, String direction){
+  private char barrier;
+  public Wall(int xcor, int ycor, String orientation){
     x = xcor;
     y = ycor;
-    if(direction.equals("up")){
-      barrier = "|";
+    if(orientation.equals("up")){
+      barrier = '|';
     }
     else{
-      barrier = "-";
+      barrier = '-';
     }
   }
 
