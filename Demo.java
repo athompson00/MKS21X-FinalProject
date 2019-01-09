@@ -15,31 +15,37 @@ import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 
 public class Demo{
-  private Wall[] perimeter = new Wall[200];
+  private Wall[] perimeter = new Wall[196];
   //fills perimeter with walls with positions that surround
   //the terminal
-  public void fillPerimeter(){
-    String wallname = "wall" + wallnum;
+  public static void fillPerimeter(Terminal t, Wall[] perimeter){
     int wallnum = 0;
-    for(int i = 0; i < size.getRows(); i++){
-      Wall wallname = new Wall(0, i, "up");
+    for(int i = 0; i < t.size.getRows(); i++){
+      Wall wall = new Wall(0, i, "up");
       wallnum++;
-      perimeter[wallnum] = wallname;
+      perimeter[wallnum] = wall;
     }
-    for(int j = 0; j < size.getRows(); j++){
-      Wall wallname = new Wall(size.getCols, j, "up");
+    for(int j = 0; j < t.size.getRows(); j++){
+      Wall wall = new Wall(t.size.getCols, j, "up");
       wallnum++;
-      perimeter[wallnum] = wallname;
+      perimeter[wallnum] = wall;
     }
-    for(int k = 0; k < size.getCols(); k++){
-      Wall wallname = new Wall(k, 0, "side");
+    for(int k = 0; k < t.size.getCols(); k++){
+      Wall wall = new Wall(k, 0, "side");
       wallnum++;
-      perimeter[wallnum] = wallname;
+      perimeter[wallnum] = wall;
     }
-    for(int l = 0; l < size.getCols(); l++){
-      Wall wallname = new Wall(l, size.getRows(), "side");
+    for(int l = 0; l < t.size.getCols(); l++){
+      Wall wall = new Wall(l, t.size.getRows(), "side");
       wallnum++;
-      perimeter[wallnum] = wallname;
+      perimeter[wallnum] = wall;
+    }
+  }
+
+  public static void fillScreen(Terminal t, Wall[] perimeter ){
+    for(int i = 0; i < perimeter.length; i++){
+      t.moveCursor(perimeter[i].getwallX(), perimeter[i].getwallY());
+      t.putCharacter(perimeter[i].getBarrier());
     }
   }
 
@@ -64,6 +70,8 @@ public class Demo{
     terminal.setCursorVisible(false);
     boolean running = true;
 
+    fillPerimeter();
+    fillScreen();
 
     while(running){
 
@@ -73,7 +81,6 @@ public class Demo{
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
 			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
 			terminal.putCharacter('\u00a4');
-			terminal.moveCursor(greeblerone.getX(), greeblerone.getY());
 			//terminal.putCharacter(' ');
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
