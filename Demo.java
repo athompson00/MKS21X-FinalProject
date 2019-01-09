@@ -16,6 +16,7 @@ import com.googlecode.lanterna.input.KeyMappingProfile;
 
 public class Demo{
   private Wall[] perimeter = new Wall[196];
+  private Greebler[] greeblers = new Greebler[5];
   //fills perimeter with walls with positions that surround
   //the terminal
   public static void fillPerimeter(Terminal t, Wall[] perimeter){
@@ -59,6 +60,16 @@ public class Demo{
   //creature, wall, or baby and returns a String with the
   //type of thing in front of it
   public String checkInFront(){
+    for (int i = 0; i < perimeter.length; i++){
+      if (perimeter[i].getX() == this.getX() && perimeter[i].getY() == this.getY()){
+        return "Wall";
+      }
+    }
+    for (int i = 0; i < greeblers.length; i++){
+      if (greeblers[i].getX() == this.getX() && greeblers[i].getY() == this.getY()){
+        return "Greebler";
+      }
+    }
     return "";
   }
   public static void main(String[] args){
