@@ -66,15 +66,22 @@ public class Creature{
 // change methods for private variables
   public void changeDamage(int d){
     damage = d;
-    
   }
 
+  public void setX(int x){
+    xcor = x;
+  }
+  public void setY(int y){
+    ycor = y;
+  }
   public void changeHealth(int h){
     health = h;
   }
   public char getGraphic(){
     return graphic;
   }
-
+  public void setDirection(String s){
+    direction = s;
+  }
 
 }

@@ -64,22 +64,22 @@ public class Demo{
   public String checkInFront(Creature n){
     for (int i = 0; i < perimeter.length; i++){
       //Checks which direction the greebler is looking and then if there is a wall in fron of the creature
-      if (n.getDirection().equals("up")){
+      if (n.getDirection().equals("Up")){
         if (perimeter[i].getwallX() == n.getX() && perimeter[i].getwallY() == n.getY() + 1){
           return "Wall";
         }
       }
-      if (n.getDirection().equals("down")){
+      if (n.getDirection().equals("Down")){
         if (perimeter[i].getwallX() == n.getX() && perimeter[i].getwallY() == n.getY() - 1){
           return "Wall";
         }
       }
-      if (n.getDirection().equals("right")){
+      if (n.getDirection().equals("Right")){
         if (perimeter[i].getwallX() == n.getX() + 1 && perimeter[i].getwallY() == n.getY()){
           return "Wall";
         }
       }
-      if (n.getDirection().equals("left")){
+      if (n.getDirection().equals("Left")){
         if (perimeter[i].getwallX() == n.getX() - 1 && perimeter[i].getwallY() == n.getY()){
           return "Wall";
         }
@@ -88,22 +88,22 @@ public class Demo{
 
     //Checks if there is a greebler in the direction of the creature
     for (int i = 0; i < greeblers.length; i++){
-      if (n.getDirection().equals("up")){
+      if (n.getDirection().equals("Up")){
         if (greeblers[i].getX() == n.getX() && greeblers[i].getY() == n.getY() + 1){
           return "Greebler";
         }
       }
-      if (n.getDirection().equals("down")){
+      if (n.getDirection().equals("Down")){
         if (greeblers[i].getX() == n.getX() && greeblers[i].getY() == n.getY() - 1){
           return "Greebler";
         }
       }
-      if (n.getDirection().equals("right")){
+      if (n.getDirection().equals("Right")){
         if (greeblers[i].getX() == n.getX() + 1 && greeblers[i].getY() == n.getY()){
           return "Greebler";
         }
       }
-      if (n.getDirection().equals("left")){
+      if (n.getDirection().equals("Left")){
         if (greeblers[i].getX() == n.getX() - 1 && greeblers[i].getY() == n.getY()){
           return "Greebler";
         }
@@ -112,22 +112,22 @@ public class Demo{
 
     //checks if there is a baby in front of anything
     for (int i = 0; i < babies.length; i++){
-      if (n.getDirection().equals("up")){
+      if (n.getDirection().equals("Up")){
         if (babies[i].getX() == n.getX() && babies[i].getY() == n.getY() + 1){
           return "Baby";
         }
       }
-      if (n.getDirection().equals("down")){
+      if (n.getDirection().equals("Down")){
         if (babies[i].getX() == n.getX() && babies[i].getY() == n.getY() - 1){
           return "Baby";
         }
       }
-      if (n.getDirection().equals("right")){
+      if (n.getDirection().equals("Right")){
         if (babies[i].getX() == n.getX() + 1 && babies[i].getY() == n.getY()){
           return "Baby";
         }
       }
-      if (n.getDirection().equals("left")){
+      if (n.getDirection().equals("Left")){
         if (babies[i].getX() == n.getX() - 1 && babies[i].getY() == n.getY()){
           return "Baby";
         }
@@ -135,22 +135,22 @@ public class Demo{
     }
 
     //checks for player in front of creature
-    if (n.getDirection().equals("up")){
+    if (n.getDirection().equals("Up")){
       if (one.getX() == n.getX() && one.getY() == n.getY() + 1){
         return "Baby";
       }
     }
-    if (n.getDirection().equals("down")){
+    if (n.getDirection().equals("Down")){
       if (one.getX() == n.getX() && one.getY() == n.getY() - 1){
         return "Baby";
       }
     }
-    if (n.getDirection().equals("right")){
+    if (n.getDirection().equals("Right")){
       if (one.getX() == n.getX() + 1 && one.getY() == n.getY()){
         return "Baby";
       }
     }
-    if (n.getDirection().equals("left")){
+    if (n.getDirection().equals("Left")){
       if (one.getX() == n.getX() - 1 && one.getY() == n.getY()){
         return "Baby";
       }
@@ -221,35 +221,43 @@ public class Demo{
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
-					terminal.moveCursor(x,y);
+					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
-					x--;
-					one.moveLeft();
+          one.setDirection("Left");
+          if (checkInFront(one).equals("")){
+				        one.moveLeft();
+            }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
-					terminal.moveCursor(x,y);
+					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
-					x++;
-					one.moveRight();
+          one.setDirection("Right");
+          if (checkInFront(one).equals("")){
+					   one.moveRight();
+          }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
-					terminal.moveCursor(x,y);
+					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
-					y--;
-					one.moveUp();
+          one.setDirection("Up");
+          if (checkInFront(one).equals("")){
+					   one.moveUp();
+          }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
-					terminal.moveCursor(x,y);
+					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
-					y++;
-					one.moveDown();
+          one.setDirection("Down");
+					if (checkInFront(one).equals("")){
+					  one.moveDown();
+          }
 				}
 				//space moves it diagonally
 				if (key.getCharacter() == ' ') {
-					terminal.moveCursor(x,y);
+					terminal.moveCursor(one.getX(),one.getY());
 
 				}
       }
