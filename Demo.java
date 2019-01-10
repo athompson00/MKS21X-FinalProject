@@ -17,6 +17,7 @@ import com.googlecode.lanterna.input.KeyMappingProfile;
 public class Demo{
   private static Wall[] perimeter = new Wall[1000];
   private Greebler[] greeblers = new Greebler[5];
+  private Baby[] babies = new Baby[10];
   //fills perimeter with walls with positions that surround
   //the terminal
   private static int wallnum = 0;
@@ -110,7 +111,50 @@ public class Demo{
     }
 
     //checks if there is a baby in front of anything
-    
+    for (int i = 0; i < babies.length; i++){
+      if (n.getDirection().equals("up")){
+        if (babies[i].getX() == n.getX() && babies[i].getY() == n.getY() + 1){
+          return "Baby";
+        }
+      }
+      if (n.getDirection().equals("down")){
+        if (babies[i].getX() == n.getX() && babies[i].getY() == n.getY() - 1){
+          return "Baby";
+        }
+      }
+      if (n.getDirection().equals("right")){
+        if (babies[i].getX() == n.getX() + 1 && babies[i].getY() == n.getY()){
+          return "Baby";
+        }
+      }
+      if (n.getDirection().equals("left")){
+        if (babies[i].getX() == n.getX() - 1 && babies[i].getY() == n.getY()){
+          return "Baby";
+        }
+      }
+    }
+
+    //checks for player in front of creature
+    if (n.getDirection().equals("up")){
+      if (one.getX() == n.getX() && one.getY() == n.getY() + 1){
+        return "Baby";
+      }
+    }
+    if (n.getDirection().equals("down")){
+      if (one.getX() == n.getX() && one.getY() == n.getY() - 1){
+        return "Baby";
+      }
+    }
+    if (n.getDirection().equals("right")){
+      if (one.getX() == n.getX() + 1 && one.getY() == n.getY()){
+        return "Baby";
+      }
+    }
+    if (n.getDirection().equals("left")){
+      if (one.getX() == n.getX() - 1 && one.getY() == n.getY()){
+        return "Baby";
+      }
+    }
 
     return "";
   }
