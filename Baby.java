@@ -7,4 +7,13 @@ public class Baby{
     y = ycor;
     isPickedUp = false;
   }
+  public int getX(){
+    return x;
+  }
+  public int getY(){
+    return y;
+  }
+  public boolean isPickedUp(){
+    return isPickedUp;
+  }
 }
