@@ -66,6 +66,7 @@ public class Creature{
 // change methods for private variables
   public void changeDamage(int d){
     damage = d;
+    
   }
 
   public void changeHealth(int h){
