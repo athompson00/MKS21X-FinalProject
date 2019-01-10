@@ -15,36 +15,37 @@ import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 
 public class Demo{
-  private Wall[] perimeter = new Wall[196];
+  private static Wall[] perimeter = new Wall[1000];
   private Greebler[] greeblers = new Greebler[5];
   //fills perimeter with walls with positions that surround
   //the terminal
+  private static int wallnum = 0;
+
   public static void fillPerimeter(Terminal t, Wall[] perimeter){
-    int wallnum = 0;
     for(int i = 0; i < t.getTerminalSize().getRows(); i++){
       Wall wall = new Wall(0, i, "up");
-      wallnum++;
       perimeter[wallnum] = wall;
+      wallnum++;
     }
     for(int j = 0; j < t.getTerminalSize().getRows(); j++){
       Wall wall = new Wall(t.getTerminalSize().getColumns(), j, "up");
-      wallnum++;
       perimeter[wallnum] = wall;
+      wallnum++;
     }
     for(int k = 0; k < t.getTerminalSize().getColumns(); k++){
       Wall wall = new Wall(k, 0, "side");
-      wallnum++;
       perimeter[wallnum] = wall;
+      wallnum++;
     }
     for(int l = 0; l < t.getTerminalSize().getColumns(); l++){
       Wall wall = new Wall(l, t.getTerminalSize().getRows(), "side");
-      wallnum++;
       perimeter[wallnum] = wall;
+      wallnum++;
     }
   }
 
   public static void fillScreen(Terminal t, Wall[] perimeter ){
-    for(int i = 0; i < perimeter.length; i++){
+    for(int i = 0; i < wallnum; i++){
       t.moveCursor(perimeter[i].getwallX(), perimeter[i].getwallY());
       t.putCharacter(perimeter[i].getBarrier());
     }
@@ -83,6 +84,9 @@ public class Demo{
 
     int x = 10;
     int y = 10;
+    System.out.println(perimeter[0].getwallX());
+    System.out.println(perimeter[0].getwallY());
+    Player one = new Player(1000, 10, x, y, "wallie", '\u00a6', 4);
 
     while(running){
 
@@ -115,8 +119,8 @@ public class Demo{
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
 
-      fillPerimeter();
-      fillScreen();
+      fillPerimeter(terminal, perimeter);
+      fillScreen(terminal, perimeter);
 
 			Key key = terminal.readInput();
 
