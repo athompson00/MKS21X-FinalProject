@@ -1,10 +1,17 @@
 import Java.util.Random;
 public class Greebler extends Creature{
+<<<<<<< HEAD
   private int dodgeChance;
   //simple constructor
   public Greebler(int h, int d, int x, int y, String n, double c){
     super(int h, int d, int x, int y, String n);
     dodgeChance = c;
+=======
+  private double dodgechance;
+  public Greebler(int x, int y){
+    super(100, 10, x, y, "Greebler", '\u20AA');
+    dodgechance = 0.05;
+>>>>>>> d123d8ed8c51ee942bb73f5ecd1a253aa9095a08
   }
   //used to modify damage variable
   public void changeDamage(newDamage){

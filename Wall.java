@@ -1,17 +1,32 @@
 public class Wall{
   private int x;
   private int y;
-  private String barrier;
-  public Wall(int xcor, int ycor, String direction){
+  private int length;
+  private char barrier;
+  public Wall(int xcor, int ycor, String orientation){
     x = xcor;
     y = ycor;
-    if(direction.equals("up")){
-      barrier = "|";
+    if(orientation.equals("up")){
+      barrier = '|';
     }
     else{
-      barrier = "-";
+      barrier = '-';
     }
   }
+  public int getwallX(){
+    return x;
+  }
+  public int getwallY(){
+    return y;
+  }
+  public char getBarrier(){
+    return barrier;
+  }
+  public int getLength(){
+    return length;
+  }
 
-
+  public String toString(){
+    
+  }
 }
