@@ -11,7 +11,7 @@ public class Creature{
     health = h;
     damage = d;
     this.xcor = x;
-    this.ycor = y
+    this.ycor = y;
     name = n;
     graphic = graph;
     direction = "right";
