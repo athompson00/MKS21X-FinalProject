@@ -59,14 +59,14 @@ public class Demo{
   //checks position in front of creature for a
   //creature, wall, or baby and returns a String with the
   //type of thing in front of it
-  public String checkInFront(){
+  public String checkInFront(Creature n){
     for (int i = 0; i < perimeter.length; i++){
-      if (perimeter[i].getX() == this.getX() && perimeter[i].getY() == this.getY()){
+      if (perimeter[i].getwallX() == n.getX() && perimeter[i].getwallY() == n.getY()){
         return "Wall";
       }
     }
     for (int i = 0; i < greeblers.length; i++){
-      if (greeblers[i].getX() == this.getX() && greeblers[i].getY() == this.getY()){
+      if (greeblers[i].getX() == n.getX() && greeblers[i].getY() == n.getY()){
         return "Greebler";
       }
     }

@@ -1,17 +1,17 @@
-import Java.util.Random;
+//import Java.util.Random;
 public class Greebler extends Creature{
-  private double dodgechance;
+  private double dodgeChance;
   public Greebler(int x, int y){
     super(100, 10, x, y, "Greebler", '\u20AA');
-    dodgechance = 0.05;
+    dodgeChance = 0.05;
   }
   //used to modify damage variable
-  public void changeDamage(newDamage){
-    damage = newDamage;
+  public void changeDamage(int newDamage){
+    this.setDamage(newDamage);
   }
   //returns true if dodge is successful and false if not
   public boolean Dodge(){
-    int n = java.util.Random.nextInt(100);
+    int n = 0;// = java.util.Random.nextInt(100);
     if (dodgeChance > n){
       return true;
     } else {
@@ -21,7 +21,7 @@ public class Greebler extends Creature{
   //If greebler is attacked, this determines whether or not they take damage
   public void attacked(int d){
     if (!this.Dodge()){
-      health = health - d;
+      this.setHealth(this.getHealth() - d);
     }
   }
 
