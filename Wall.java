@@ -26,7 +26,4 @@ public class Wall{
     return length;
   }
 
-  public String toString(){
-    
-  }
 }
