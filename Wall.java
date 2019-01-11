@@ -1,7 +1,6 @@
 public class Wall{
   private int x;
   private int y;
-  private int length;
   private char barrier;
   public Wall(int xcor, int ycor, String orientation){
     x = xcor;
@@ -22,8 +21,8 @@ public class Wall{
   public char getBarrier(){
     return barrier;
   }
-  public int getLength(){
-    return length;
+  public String toString(){
+    return "(" + this.getwallX() +","+ this.getwallY() + ")";
   }
 
 }
