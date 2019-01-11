@@ -15,38 +15,48 @@ import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 
 public class Demo{
-  private static Wall[] perimeter = new Wall[1000];
-  private Greebler[] greeblers = new Greebler[5];
-  private Baby[] babies = new Baby[10];
-  //fills perimeter with walls with positions that surround
-  //the terminal
-  private static int wallnum = 0;
+  static Wall[] perimeter = new Wall[16];
+  static Greebler[] greeblers = new Greebler[5];
+  static Baby[] babies = new Baby[10];
+  static Player one = new Player(1000, 10, 10, 10, "wallie", '\u00a6', 4);
 
-  public static void fillPerimeter(Terminal t, Wall[] perimeter){
-    for(int i = 0; i < t.getTerminalSize().getRows(); i++){
-      Wall wall = new Wall(0, i, "up");
-      perimeter[wallnum] = wall;
-      wallnum++;
-    }
-    for(int j = 0; j < t.getTerminalSize().getRows(); j++){
-      Wall wall = new Wall(t.getTerminalSize().getColumns(), j, "up");
-      perimeter[wallnum] = wall;
-      wallnum++;
-    }
-    for(int k = 0; k < t.getTerminalSize().getColumns(); k++){
-      Wall wall = new Wall(k, 0, "side");
-      perimeter[wallnum] = wall;
-      wallnum++;
-    }
-    for(int l = 0; l < t.getTerminalSize().getColumns(); l++){
-      Wall wall = new Wall(l, t.getTerminalSize().getRows(), "side");
-      perimeter[wallnum] = wall;
-      wallnum++;
-    }
-  }
+  //perimeter
+  Wall side0 = new Wall(0,0, "side");
+  Wall side1 = new Wall(0,1, "side");
+  Wall side2 = new Wall(0,2, "side");
+  Wall side3 = new Wall(0,3, "side");
+  Wall side4 = new Wall(0,4, "side");
+  Wall side5 = new Wall(0,5, "side");
+  Wall side6 = new Wall(0,6, "side");
+  Wall side7 = new Wall(0,7, "side");
+  Wall side8 = new Wall(0,8, "side");
+  Wall side9 = new Wall(0,9, "side");
+  Wall side10 = new Wall(0,10, "side");
+  Wall side11 = new Wall(0,11, "side");
+  Wall side12 = new Wall(0,12, "side");
+  Wall side13 = new Wall(0,13, "side");
+  Wall side14 = new Wall(0,14, "side");
+  Wall side15 = new Wall(0,15, "side");
+
+  /perimeter[0] = side0;
+  perimeter[1] = side1;
+  perimeter[2] = side2;
+  perimeter[3] = side3;
+  perimeter[4] = side4;
+  perimeter[5] = side5;
+  perimeter[6] = side6;
+  perimeter[7] = side7;
+  perimeter[8] = side8;
+  perimeter[9] = side9;
+  perimeter[10] = side10;
+  perimeter[11] = side11;
+  perimeter[12] = side12;
+  perimeter[13] = side13;
+  perimeter[14] = side14;
+  perimeter[15] = side15;*/
 
   public static void fillScreen(Terminal t, Wall[] perimeter ){
-    for(int i = 0; i < wallnum; i++){
+    for(int i = 0; i < perimeter.length; i++){
       t.moveCursor(perimeter[i].getwallX(), perimeter[i].getwallY());
       t.putCharacter(perimeter[i].getBarrier());
     }
@@ -61,6 +71,7 @@ public class Demo{
   //checks position in front of creature for a
   //creature, wall, or baby and returns a String with the
   //type of thing in front of it
+  //commented out and moved to creature class
   public String checkInFront(Creature n){
     for (int i = 0; i < perimeter.length; i++){
       //Checks which direction the greebler is looking and then if there is a wall in fron of the creature
@@ -158,6 +169,12 @@ public class Demo{
 
     return "";
   }
+
+
+
+
+
+
   public static void main(String[] args){
     Terminal terminal = TerminalFacade.createTextTerminal();
     terminal.enterPrivateMode();
@@ -171,7 +188,6 @@ public class Demo{
     int y = 10;
     System.out.println(perimeter[0].getwallX());
     System.out.println(perimeter[0].getwallY());
-    Player one = new Player(1000, 10, x, y, "wallie", '\u00a6', 4);
 
     while(running){
 
@@ -203,8 +219,6 @@ public class Demo{
 			terminal.applyBackgroundColor(Terminal.Color.BLUE);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
-
-      fillPerimeter(terminal, perimeter);
       fillScreen(terminal, perimeter);
 
 			Key key = terminal.readInput();
@@ -224,7 +238,7 @@ public class Demo{
 					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
           one.setDirection("Left");
-          if (checkInFront(one).equals("")){
+          if (one.checkInFront().equals("")){
 				        one.moveLeft();
             }
 				}
@@ -233,7 +247,7 @@ public class Demo{
 					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
           one.setDirection("Right");
-          if (checkInFront(one).equals("")){
+          if (one.checkInFront().equals("")){
 					   one.moveRight();
           }
 				}
@@ -242,7 +256,7 @@ public class Demo{
 					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
           one.setDirection("Up");
-          if (checkInFront(one).equals("")){
+          if (one.checkInFront().equals("")){
 					   one.moveUp();
           }
 				}
@@ -251,7 +265,7 @@ public class Demo{
 					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
           one.setDirection("Down");
-					if (checkInFront(one).equals("")){
+					if (one.checkInFront().equals("")){
 					  one.moveDown();
           }
 				}
