@@ -5,3 +5,4 @@ DevLog:
 -1/7/19 Added more change-variable methods and began experimenting with lanterna
 -1/8/19 Started interconnecting classes and displaying creatures on terminal.
 -1/9/19 fixing bugs to allow players and Greeblers to properly display on terminal.
+-1/10/19 Tried to instantiate a grid of walls on the screen - failed to do so. Checkinfront function created. Baby class written.
