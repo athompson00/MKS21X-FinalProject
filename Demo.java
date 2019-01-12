@@ -295,7 +295,7 @@ public static void pickUpBaby(Player n, Terminal t){
 					if (checkInFront(one).equals("")){
 					  one.moveDown();
           }
-          if (checkInFront(one).equals("Baby")){
+          if (checkInFront(one).equals("baby")){
             one.moveDown();
             pickUpBaby(one, terminal);
           }
