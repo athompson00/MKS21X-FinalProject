@@ -22,6 +22,7 @@ public class Demo{
   static ArrayList<Baby> babies = new ArrayList<Baby>();
   static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 4);
 
+
   //perimeter
   static Wall side0 = new Wall(0,0, "");
   static Wall side1 = new Wall(1,0, "");
@@ -271,7 +272,22 @@ public class Demo{
 
 
 
-
+//PickUpBaby(player n, baby1) Allows player to pickup the babies
+public static void pickUpBaby(Player n, Terminal t){
+  int a = - 1;
+  for (int i = 0; i < babies.size(); i++){
+    if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY()){
+      a = i;
+    }
+  }
+  if (a != -1){
+    babies.get(a).pickUp();
+    n.pickUpBaby();
+    babies.get(a).changeGraphic('\u0000');
+    t.moveCursor(babies.get(a).getX(), babies.get(a).getY());
+    t.putCharacter(babies.get(a).getGraphic());
+  }
+}
 
   public static void main(String[] args){
     Terminal terminal = TerminalFacade.createTextTerminal();
@@ -366,6 +382,10 @@ public class Demo{
 					if (checkInFront(one).equals("")){
 					  one.moveDown();
             y--;
+          }
+          if (checkInFront(one).equals("baby")){
+            one.moveDown();
+            pickUpBaby(one, terminal);
           }
 				}
 				//attacking

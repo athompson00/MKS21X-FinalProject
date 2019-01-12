@@ -18,7 +18,16 @@ public class Baby{
   public boolean isPickedUp(){
     return isPickedUp;
   }
+
   public char getGraphic(){
     return graphic;
+  }
+
+  public void changeGraphic(char n){
+    graphic = n;
+  }
+  //Pickup method enables baby to be picked up
+  public void pickUp(){
+    isPickedUp = true;
   }
 }
