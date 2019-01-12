@@ -375,7 +375,7 @@ public static void pickUpBaby(Player n, Terminal t){
   public static void main(String[] args){
     Terminal terminal = TerminalFacade.createTextTerminal();
     terminal.enterPrivateMode();
-    TerminalSize size =  new TerminalSize(100,200);//terminal.getTerminalSize();
+    TerminalSize size =  new TerminalSize(100,300);//terminal.getTerminalSize();
   //  size.setRows(100);
   //  size.setColumns(200);
     terminal.setCursorVisible(false);
