@@ -443,6 +443,10 @@ public static void pickUpBaby(Player n, Terminal t){
 				        one.moveLeft();
                 x--;
             }
+            if (checkInFront(one).equals("baby")){
+              one.moveLeft();
+              pickUpBaby(one, terminal);
+            }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
@@ -453,6 +457,10 @@ public static void pickUpBaby(Player n, Terminal t){
 					   one.moveRight();
              x++;
           }
+          if (checkInFront(one).equals("baby")){
+            one.moveRight();
+            pickUpBaby(one, terminal);
+          }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
@@ -462,6 +470,10 @@ public static void pickUpBaby(Player n, Terminal t){
           if (checkInFront(one).equals("")){
 					   one.moveUp();
              y--;
+          }
+          if (checkInFront(one).equals("baby")){
+            one.moveUp();
+            pickUpBaby(one, terminal);
           }
 				}
 
