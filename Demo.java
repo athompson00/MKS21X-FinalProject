@@ -406,7 +406,9 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
-      putString(1, 1, terminal, checkInFront(one));
+      putString(1, 2, terminal, checkInFront(one));
+      putString(1, 3, terminal, "greebler 1 health: " + greeb1.getHealth());
+      putString(1, 2, terminal, "greebler 2 health: " + greeb2.getHealth());
 
 			Key key = terminal.readInput();
 
