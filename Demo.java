@@ -376,8 +376,8 @@ public static void pickUpBaby(Player n, Terminal t){
     Terminal terminal = TerminalFacade.createTextTerminal();
     terminal.enterPrivateMode();
     TerminalSize size = terminal.getTerminalSize();
-    size.setRows(50);
-    size.setColumns(150);
+    size.setRows(100);
+    size.setColumns(200);
     terminal.setCursorVisible(false);
     boolean running = true;
 
