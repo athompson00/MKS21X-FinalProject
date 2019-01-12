@@ -13,52 +13,66 @@ import com.googlecode.lanterna.input.InputDecoder;
 import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
+import java.util.ArrayList;
 
 public class Demo{
-  static Wall[] perimeter = new Wall[16];
-  static Greebler[] greeblers = new Greebler[5];
-  static Baby[] babies = new Baby[10];
+  static ArrayList<Wall> grid = new ArrayList<Wall>();
+  static ArrayList<Greebler> greeblers = new ArrayList<Greebler>();
+  static ArrayList<Baby> babies = new ArrayList<Baby>();
   static Player one = new Player(1000, 10, 10, 10, "wallie", '\u00a6', 4);
 
   //perimeter
-  Wall side0 = new Wall(0,0, "side");
-  Wall side1 = new Wall(0,1, "side");
-  Wall side2 = new Wall(0,2, "side");
-  Wall side3 = new Wall(0,3, "side");
-  Wall side4 = new Wall(0,4, "side");
-  Wall side5 = new Wall(0,5, "side");
-  Wall side6 = new Wall(0,6, "side");
-  Wall side7 = new Wall(0,7, "side");
-  Wall side8 = new Wall(0,8, "side");
-  Wall side9 = new Wall(0,9, "side");
-  Wall side10 = new Wall(0,10, "side");
-  Wall side11 = new Wall(0,11, "side");
-  Wall side12 = new Wall(0,12, "side");
-  Wall side13 = new Wall(0,13, "side");
-  Wall side14 = new Wall(0,14, "side");
-  Wall side15 = new Wall(0,15, "side");
+  static Wall side0 = new Wall(0,0, "");
+  static Wall side1 = new Wall(1,0, "");
+  static Wall side2 = new Wall(2,0, "");
+  static Wall side3 = new Wall(3,0, "");
+  static Wall side4 = new Wall(4,0, "");
+  static Wall side5 = new Wall(5,0, "");
+  static Wall side6 = new Wall(6,0, "");
+  static Wall side7 = new Wall(7,0, "");
+  static Wall side8 = new Wall(8,0, "");
+  static Wall side9 = new Wall(9,0, "");
+  static Wall side10 = new Wall(10,0, "");
+  static Wall side11 = new Wall(11,0, "");
+  static Wall side12 = new Wall(12,0, "");
+  static Wall side13 = new Wall(13,0, "");
+  static Wall side14 = new Wall(14,0, "");
+  static Wall side15 = new Wall(15,0, "");
+  static Greebler greeb1 = new Greebler(20, 15);
+  static Greebler greeb2 = new Greebler(30,20);
+  static Baby baby1 = new Baby(40, 10);
 
-  /perimeter[0] = side0;
-  perimeter[1] = side1;
-  perimeter[2] = side2;
-  perimeter[3] = side3;
-  perimeter[4] = side4;
-  perimeter[5] = side5;
-  perimeter[6] = side6;
-  perimeter[7] = side7;
-  perimeter[8] = side8;
-  perimeter[9] = side9;
-  perimeter[10] = side10;
-  perimeter[11] = side11;
-  perimeter[12] = side12;
-  perimeter[13] = side13;
-  perimeter[14] = side14;
-  perimeter[15] = side15;*/
-
-  public static void fillScreen(Terminal t, Wall[] perimeter ){
-    for(int i = 0; i < perimeter.length; i++){
-      t.moveCursor(perimeter[i].getwallX(), perimeter[i].getwallY());
-      t.putCharacter(perimeter[i].getBarrier());
+  public static void fillScreen(Terminal t, ArrayList<Wall> perimeter ){
+    grid.add(side0);
+    grid.add(side1);
+    grid.add(side2);
+    grid.add(side3);
+    grid.add(side4);
+    grid.add(side5);
+    grid.add(side6);
+    grid.add(side7);
+    grid.add(side8);
+    grid.add(side9);
+    grid.add(side10);
+    grid.add(side11);
+    grid.add(side12);
+    grid.add(side13);
+    grid.add(side14);
+    grid.add(side15);
+    greeblers.add(greeb1);
+    greeblers.add(greeb2);
+    babies.add(baby1);
+    for(int i = 0; i < grid.size(); i++){
+      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
+      t.putCharacter(grid.get(i).getBarrier());
+    }
+    for(int j = 0; j < greeblers.size(); j++){
+      t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
+      t.putCharacter(greeblers.get(j).getGraphic());
+    }
+    for(int k = 0; k < babies.size(); k++){
+      t.moveCursor(babies.get(k).getX(), babies.get(k).getY());
+      t.putCharacter(babies.get(k).getGraphic());
     }
   }
 
@@ -72,74 +86,74 @@ public class Demo{
   //creature, wall, or baby and returns a String with the
   //type of thing in front of it
   //commented out and moved to creature class
-  public String checkInFront(Creature n){
-    for (int i = 0; i < perimeter.length; i++){
+  public static String checkInFront(Creature n){
+    for (int i = 0; i < grid.size(); i++){
       //Checks which direction the greebler is looking and then if there is a wall in fron of the creature
       if (n.getDirection().equals("Up")){
-        if (perimeter[i].getwallX() == n.getX() && perimeter[i].getwallY() == n.getY() + 1){
+        if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() + 1){
           return "Wall";
         }
       }
       if (n.getDirection().equals("Down")){
-        if (perimeter[i].getwallX() == n.getX() && perimeter[i].getwallY() == n.getY() - 1){
+        if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() - 1){
           return "Wall";
         }
       }
       if (n.getDirection().equals("Right")){
-        if (perimeter[i].getwallX() == n.getX() + 1 && perimeter[i].getwallY() == n.getY()){
+        if (grid.get(i).getwallX() == n.getX() + 1 && grid.get(i).getwallY() == n.getY()){
           return "Wall";
         }
       }
       if (n.getDirection().equals("Left")){
-        if (perimeter[i].getwallX() == n.getX() - 1 && perimeter[i].getwallY() == n.getY()){
+        if (grid.get(i).getwallX() == n.getX() - 1 && grid.get(i).getwallY() == n.getY()){
           return "Wall";
         }
       }
     }
 
     //Checks if there is a greebler in the direction of the creature
-    for (int i = 0; i < greeblers.length; i++){
+    for (int i = 0; i < greeblers.size(); i++){
       if (n.getDirection().equals("Up")){
-        if (greeblers[i].getX() == n.getX() && greeblers[i].getY() == n.getY() + 1){
+        if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() == n.getY() + 1){
           return "Greebler";
         }
       }
       if (n.getDirection().equals("Down")){
-        if (greeblers[i].getX() == n.getX() && greeblers[i].getY() == n.getY() - 1){
+        if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() == n.getY() - 1){
           return "Greebler";
         }
       }
       if (n.getDirection().equals("Right")){
-        if (greeblers[i].getX() == n.getX() + 1 && greeblers[i].getY() == n.getY()){
+        if (greeblers.get(i).getX() == n.getX() + 1 && greeblers.get(i).getY() == n.getY()){
           return "Greebler";
         }
       }
       if (n.getDirection().equals("Left")){
-        if (greeblers[i].getX() == n.getX() - 1 && greeblers[i].getY() == n.getY()){
+        if (greeblers.get(i).getX() == n.getX() - 1 && greeblers.get(i).getY() == n.getY()){
           return "Greebler";
         }
       }
     }
 
     //checks if there is a baby in front of anything
-    for (int i = 0; i < babies.length; i++){
+    for (int i = 0; i < babies.size(); i++){
       if (n.getDirection().equals("Up")){
-        if (babies[i].getX() == n.getX() && babies[i].getY() == n.getY() + 1){
+        if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1){
           return "Baby";
         }
       }
       if (n.getDirection().equals("Down")){
-        if (babies[i].getX() == n.getX() && babies[i].getY() == n.getY() - 1){
+        if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1){
           return "Baby";
         }
       }
       if (n.getDirection().equals("Right")){
-        if (babies[i].getX() == n.getX() + 1 && babies[i].getY() == n.getY()){
+        if (babies.get(i).getX() == n.getX() + 1 && babies.get(i).getY() == n.getY()){
           return "Baby";
         }
       }
       if (n.getDirection().equals("Left")){
-        if (babies[i].getX() == n.getX() - 1 && babies[i].getY() == n.getY()){
+        if (babies.get(i).getX() == n.getX() - 1 && babies.get(i).getY() == n.getY()){
           return "Baby";
         }
       }
@@ -186,8 +200,6 @@ public class Demo{
 
     int x = 10;
     int y = 10;
-    System.out.println(perimeter[0].getwallX());
-    System.out.println(perimeter[0].getwallY());
 
     while(running){
 
@@ -216,10 +228,9 @@ public class Demo{
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
-			terminal.applyBackgroundColor(Terminal.Color.BLUE);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
-      fillScreen(terminal, perimeter);
+      fillScreen(terminal, grid);
 
 			Key key = terminal.readInput();
 
@@ -238,7 +249,7 @@ public class Demo{
 					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
           one.setDirection("Left");
-          if (one.checkInFront().equals("")){
+          if (checkInFront(one).equals("")){
 				        one.moveLeft();
             }
 				}
@@ -247,7 +258,7 @@ public class Demo{
 					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
           one.setDirection("Right");
-          if (one.checkInFront().equals("")){
+          if (checkInFront(one).equals("")){
 					   one.moveRight();
           }
 				}
@@ -256,7 +267,7 @@ public class Demo{
 					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
           one.setDirection("Up");
-          if (one.checkInFront().equals("")){
+          if (checkInFront(one).equals("")){
 					   one.moveUp();
           }
 				}
@@ -265,7 +276,7 @@ public class Demo{
 					terminal.moveCursor(one.getX(),one.getY());
 					terminal.putCharacter(' ');
           one.setDirection("Down");
-					if (one.checkInFront().equals("")){
+					if (checkInFront(one).equals("")){
 					  one.moveDown();
           }
 				}
