@@ -193,8 +193,8 @@ public class Demo{
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
         greeblers.get(d).changeGraphic('\u0000');
-        greeblers.get(d).setX(50);
-        greeblers.get(d).setY(50);
+        greeblers.get(d).setX(99);
+        greeblers.get(d).setY(99);
       }
     }
     if(checkInFront(c).equals("player")){
@@ -206,13 +206,16 @@ public class Demo{
     c.setDirection("down");
     if(checkInFront(c).equals("greebler")){
       for(int k = 0; k < greeblers.size(); k++){
-        if(greeblers.get(k).getX() == c.getX() && c.getY() == greeblers.get(k).getY() - 1){
+        if(greeblers.get(k).getX() == c.getX() && c.getY() == greeblers.get(k).getY() + 1){
           d = k;
         }
       }
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
+        greeblers.get(d).changeGraphic('\u0000');
+        greeblers.get(d).setX(99);
+        greeblers.get(d).setY(99);
       }
     }
     if(checkInFront(c).equals("player")){
@@ -223,13 +226,16 @@ public class Demo{
     c.setDirection("up");
     if(checkInFront(c).equals("greebler")){
       for(int l = 0; l < greeblers.size(); l++){
-        if(greeblers.get(l).getX() == c.getX() && c.getY() == greeblers.get(l).getY() + 1){
+        if(greeblers.get(l).getX() == c.getX() && c.getY() == greeblers.get(l).getY() - 1){
           d = l;
         }
       }
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
+        greeblers.get(d).changeGraphic('\u0000');
+        greeblers.get(d).setX(99);
+        greeblers.get(d).setY(99);
       }
     }
     if(checkInFront(c).equals("player")){

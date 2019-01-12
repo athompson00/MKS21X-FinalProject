@@ -30,12 +30,12 @@ public class Creature{
   }
 
   public void moveUp(){
-    ycor += 1;
+    ycor -= 1;
     direction = "up";
   }
 
   public void moveDown(){
-    ycor -= 1;
+    ycor += 1;
     direction = "down";
   }
 
