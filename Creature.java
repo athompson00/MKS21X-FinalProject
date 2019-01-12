@@ -93,4 +93,8 @@ public class Creature{
     return graphic;
   }
 
+  public void changeGraphic(char n){
+    graphic = n;
+  }
+
 }

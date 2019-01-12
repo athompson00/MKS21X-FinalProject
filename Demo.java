@@ -40,6 +40,40 @@ public class Demo{
   static Wall side13 = new Wall(13,0, "");
   static Wall side14 = new Wall(14,0, "");
   static Wall side15 = new Wall(15,0, "");
+  static Wall side16 = new Wall(16,0, "");
+  static Wall side17 = new Wall(17,0, "");
+  static Wall side18 = new Wall(18,0, "");
+  static Wall side19 = new Wall(19,0, "");
+  static Wall side20 = new Wall(20,0, "");
+  static Wall side21 = new Wall(21,0, "");
+  static Wall side22 = new Wall(22,0, "");
+  static Wall side23 = new Wall(23,0, "");
+  static Wall side24 = new Wall(24,0, "");
+  static Wall side25 = new Wall(25,0, "");
+  static Wall side26 = new Wall(26,0, "");
+  static Wall side27 = new Wall(27,0, "");
+  static Wall side28 = new Wall(28,0, "");
+  static Wall side29 = new Wall(29,0, "");
+  static Wall side30 = new Wall(30,0, "");
+  static Wall side31 = new Wall(31,0, "");
+  static Wall side32 = new Wall(32,0, "");
+  static Wall side33 = new Wall(33,0, "");
+  static Wall side34 = new Wall(34,0, "");
+  static Wall side35 = new Wall(35,0, "");
+  static Wall side36 = new Wall(36,0, "");
+  static Wall side37 = new Wall(37,0, "");
+  static Wall side38 = new Wall(38,0, "");
+  static Wall side39 = new Wall(39,0, "");
+  static Wall side40 = new Wall(40,0, "");
+  static Wall side41 = new Wall(41,0, "");
+  static Wall side42 = new Wall(42,0, "");
+  static Wall side43 = new Wall(43,0, "");
+  static Wall side44 = new Wall(44,0, "");
+  static Wall side45 = new Wall(45,0, "");
+  static Wall side46 = new Wall(46,0, "");
+  static Wall side47 = new Wall(47,0, "");
+  static Wall side48 = new Wall(48,0, "");
+  static Wall side49 = new Wall(49,0, "");
   static Greebler greeb1 = new Greebler(20, 15);
   static Greebler greeb2 = new Greebler(30,20);
   static Baby baby1 = new Baby(40, 10);
@@ -61,6 +95,41 @@ public class Demo{
     grid.add(side13);
     grid.add(side14);
     grid.add(side15);
+    grid.add(side16);
+    grid.add(side17);
+    grid.add(side18);
+    grid.add(side19);
+    grid.add(side20);
+    grid.add(side21);
+    grid.add(side22);
+    grid.add(side23);
+    grid.add(side24);
+    grid.add(side25);
+    grid.add(side26);
+    grid.add(side27);
+    grid.add(side28);
+    grid.add(side29);
+    grid.add(side30);
+    grid.add(side31);
+    grid.add(side32);
+    grid.add(side33);
+    grid.add(side34);
+    grid.add(side35);
+    grid.add(side36);
+    grid.add(side37);
+    grid.add(side38);
+    grid.add(side39);
+    grid.add(side40);
+    grid.add(side41);
+    grid.add(side42);
+    grid.add(side43);
+    grid.add(side44);
+    grid.add(side45);
+    grid.add(side46);
+    grid.add(side47);
+    grid.add(side48);
+    grid.add(side49);
+
     greeblers.add(greeb1);
     greeblers.add(greeb2);
     for(int l = 0; l < killed.size(); l++){
@@ -120,6 +189,9 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
+        greeblers.get(d).changeGraphic('\u0000');
+        greeblers.get(d).setX(50);
+        greeblers.get(d).setY(50);
       }
     }
     if(checkInFront(c).equals("player")){
