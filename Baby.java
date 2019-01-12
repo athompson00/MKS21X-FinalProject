@@ -15,6 +15,12 @@ public class Baby{
   public int getY(){
     return y;
   }
+  public void setX(int xcor){
+    x = xcor;
+  }
+  public void setY(int ycor){
+    y = ycor;
+  }
   public boolean isPickedUp(){
     return isPickedUp;
   }
