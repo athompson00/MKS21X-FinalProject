@@ -461,7 +461,7 @@ public static void pickUpBaby(Player n, Terminal t){
           one.setDirection("up");
           if (checkInFront(one).equals("")){
 					   one.moveUp();
-             y++;
+             y--;
           }
 				}
 
@@ -471,7 +471,7 @@ public static void pickUpBaby(Player n, Terminal t){
           one.setDirection("down");
 					if (checkInFront(one).equals("")){
 					  one.moveDown();
-            y--;
+            y++;
           }
           if (checkInFront(one).equals("baby")){
             one.moveDown();
