@@ -172,6 +172,9 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        greeblers.get(d).changeGraphic('\u0000');
+        greeblers.get(d).setX(99);
+        greeblers.get(d).setY(99);
       }
     }
     if(checkInFront(c).equals("player")){
