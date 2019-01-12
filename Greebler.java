@@ -18,16 +18,4 @@ public class Greebler extends Creature{
       return false;
     }
   }
-  //If greebler is attacked, this determines whether or not they take damage
-  public void attacked(int d){
-    if (!this.Dodge()){
-      this.setHealth(this.getHealth() - d);
-    }
-  }
-
-  //attack player
-  public void attack(){
-
-  }
-
 }
