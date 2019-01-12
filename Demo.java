@@ -419,7 +419,7 @@ public static void pickUpBaby(Player n, Terminal t){
       putString(1, 3, terminal, "greebler 1 health: " + greeb1.getHealth());
       putString(1, 4, terminal, "greebler 2 health: " + greeb2.getHealth());
       putString(1, 5, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
-      putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
+      putString(1, 6, terminal, "Babies Picked Up: " + one.getBabiesCollected());
 
 			Key key = terminal.readInput();
 
