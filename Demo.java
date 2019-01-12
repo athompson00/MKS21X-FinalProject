@@ -165,7 +165,7 @@ public class Demo{
     c.setDirection("right");
     if(checkInFront(c).equals("greebler")){
       for(int i = 0; i < greeblers.size(); i++){
-        if(greeblers.get(i).getX() + 1 == c.getX() && c.getY() == greeblers.get(i).getY()){
+        if(greeblers.get(i).getX() - 1 == c.getX() && c.getY() == greeblers.get(i).getY()){
           d = i;
         }
       }
@@ -185,7 +185,7 @@ public class Demo{
     c.setDirection("left");
     if(checkInFront(c).equals("greebler")){
       for(int j = 0; j < greeblers.size(); j++){
-        if(greeblers.get(j).getX() - 1 == c.getX() && c.getY() == greeblers.get(j).getY()){
+        if(greeblers.get(j).getX() + 1 == c.getX() && c.getY() == greeblers.get(j).getY()){
           d = j;
         }
       }
@@ -206,7 +206,7 @@ public class Demo{
     c.setDirection("down");
     if(checkInFront(c).equals("greebler")){
       for(int k = 0; k < greeblers.size(); k++){
-        if(greeblers.get(k).getX() == c.getX() && c.getY() == greeblers.get(k).getY() + 1){
+        if(greeblers.get(k).getX() == c.getX() && c.getY() == greeblers.get(k).getY() - 1){
           d = k;
         }
       }
@@ -226,7 +226,7 @@ public class Demo{
     c.setDirection("up");
     if(checkInFront(c).equals("greebler")){
       for(int l = 0; l < greeblers.size(); l++){
-        if(greeblers.get(l).getX() == c.getX() && c.getY() == greeblers.get(l).getY() - 1){
+        if(greeblers.get(l).getX() == c.getX() && c.getY() == greeblers.get(l).getY() + 1){
           d = l;
         }
       }
