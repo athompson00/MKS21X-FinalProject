@@ -256,12 +256,12 @@ public class Demo{
     for (int i = 0; i < grid.size(); i++){
       //Checks which direction the greebler is looking and then if there is a wall in fron of the creature
       if (n.getDirection().equals("up")){
-        if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() + 1){
+        if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() - 1){
           return "wall";
         }
       }
       if (n.getDirection().equals("down")){
-        if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() - 1){
+        if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() + 1){
           return "wall";
         }
       }
@@ -280,12 +280,12 @@ public class Demo{
     //Checks if there is a greebler in the direction of the creature
     for (int i = 0; i < greeblers.size(); i++){
       if (n.getDirection().equals("up")){
-        if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() == n.getY() + 1){
+        if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() == n.getY() - 1){
           return "greebler";
         }
       }
       if (n.getDirection().equals("down")){
-        if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() == n.getY() - 1){
+        if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() == n.getY() + 1){
           return "greebler";
         }
       }
@@ -304,12 +304,12 @@ public class Demo{
     //checks if there is a baby in front of anything
     for (int i = 0; i < babies.size(); i++){
       if (n.getDirection().equals("up")){
-        if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1){
+        if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1){
           return "baby";
         }
       }
       if (n.getDirection().equals("down")){
-        if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1){
+        if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1){
           return "baby";
         }
       }
@@ -327,12 +327,12 @@ public class Demo{
 
     //checks for player in front of creature
     if (n.getDirection().equals("up")){
-      if (one.getX() == n.getX() && one.getY() == n.getY() + 1){
+      if (one.getX() == n.getX() && one.getY() == n.getY() - 1){
         return "player";
       }
     }
     if (n.getDirection().equals("down")){
-      if (one.getX() == n.getX() && one.getY() == n.getY() - 1){
+      if (one.getX() == n.getX() && one.getY() == n.getY() + 1){
         return "player";
       }
     }
