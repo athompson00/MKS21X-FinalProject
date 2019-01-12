@@ -357,7 +357,7 @@ public class Demo{
 public static void pickUpBaby(Player n, Terminal t){
   int a = - 1;
   for (int i = 0; i < babies.size(); i++){
-    if (babies.get(i).getX() == n.getX() && babies.get(i).getY() + 1 == n.getY()){
+    if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY()){
       a = i;
     }
   }
@@ -420,6 +420,7 @@ public static void pickUpBaby(Player n, Terminal t){
       putString(1, 4, terminal, "greebler 2 health: " + greeb2.getHealth());
       putString(1, 5, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
       putString(1, 6, terminal, "Babies Picked Up: " + one.getBabiesCollected());
+      putString(1, 7, terminal, "inFront: " + checkInFront(one));
 
 			Key key = terminal.readInput();
 
