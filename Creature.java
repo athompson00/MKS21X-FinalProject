@@ -18,6 +18,7 @@ public class Creature{
   }
 
 //Basic movement functions for all creatures
+// change methods for private variables
   public void moveLeft(){
     xcor -= 1;
     direction = "left";
@@ -42,46 +43,54 @@ public class Creature{
   public int getHealth(){
     return health;
   }
+
+  public void subHealth(int newhel){
+    health = health - newhel;
+  }
+
   public int getDamage(){
     return damage;
   }
-  public String getDirection(){
-    return direction;
-  }
+
   public void setDamage(int newdam){
     this.damage = newdam;
   }
-  public void setHealth(int newhel){
-    this.health = newhel;
+
+  public String getDirection(){
+    return direction;
   }
+
+  public void setDirection(String s){
+    direction = s;
+  }
+
   public int getX(){
     return xcor;
   }
+
   public int getY(){
     return ycor;
-  }
-  public String getName(){
-    return name;
-  }
-// change methods for private variables
-  public void changeDamage(int d){
-    damage = d;
   }
 
   public void setX(int x){
     xcor = x;
   }
+
   public void setY(int y){
     ycor = y;
   }
-  public void changeHealth(int h){
-    health = h;
+
+  public String getName(){
+    return name;
   }
+
+
+  public void changeDamage(int d){
+    damage = d;
+  }
+
   public char getGraphic(){
     return graphic;
-  }
-  public void setDirection(String s){
-    direction = s;
   }
 
 }
