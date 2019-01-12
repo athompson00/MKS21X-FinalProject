@@ -372,12 +372,13 @@ public static void pickUpBaby(Player n, Terminal t){
     terminal.setCursorVisible(false);
     boolean running = true;
 
+
     int x = 10;
     int y = 10;
 
     while(running){
 
-			terminal.moveCursor(x,y);
+			terminal.moveCursor(one.getX(),one.getY());
 			terminal.applyBackgroundColor(Terminal.Color.WHITE);
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
@@ -405,6 +406,7 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
+      putString(1, 1, terminal, checkInFront(one));
 
 			Key key = terminal.readInput();
 
