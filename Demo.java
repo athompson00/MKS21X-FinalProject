@@ -357,7 +357,7 @@ public class Demo{
 public static void pickUpBaby(Player n, Terminal t){
   int a = - 1;
   for (int i = 0; i < babies.size(); i++){
-    if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY()){
+    if (babies.get(i).getX() == n.getX() && babies.get(i).getY() + 1 == n.getY()){
       a = i;
     }
   }
