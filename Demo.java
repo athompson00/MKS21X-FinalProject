@@ -839,7 +839,7 @@ public static void pickUpBaby(Player n, Terminal t){
       putString(1, 4, terminal, "greebler 2 health: " + greeb2.getHealth());
       putString(1, 5, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
       putString(1, 6, terminal, "Babies Picked Up: " + one.getBabiesCollected());
-      putString(50, 6, terminal, "around: " + checkAround(one));
+      putString(50, 6, terminal, "around: " + checkAround(one)[0] + ", " + checkAround(one)[1] + ", " + checkAround(one)[2] + ", " + checkAround(one)[3]);
   //    putString(1, 7, terminal, "inFront: " + checkInFront(one));
 
 			Key key = terminal.readInput();
