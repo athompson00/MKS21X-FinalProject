@@ -687,113 +687,73 @@ public class Demo{
   //creature, wall, or baby and returns a String with the
   //type of thing in front of it
   //commented out and moved to creature class
-  public static String checkInFront(Creature n){
+  public static String[] checkAround(Creature n){
+    String[] surroundings = new String[4];
     for (int i = 0; i < grid.size(); i++){
       //Checks which direction the greebler is looking and then if there is a wall in fron of the creature
-      if (n.getDirection().equals("up")){
-        if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() - 1){
-          return "wall";
-        }
+      if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() + 1){
+        surroundings[0] = "wall";
       }
-      if (n.getDirection().equals("down")){
-        if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() + 1){
-          return "wall";
-        }
+      if (grid.get(i).getwallX() == n.getX() && grid.get(i).getwallY() == n.getY() - 1){
+        surroundings[2] = "wall";
       }
-      if (n.getDirection().equals("right")){
-        if (grid.get(i).getwallX() == n.getX() + 1 && grid.get(i).getwallY() == n.getY()){
-          return "wall";
-        }
+      if (grid.get(i).getwallX() == n.getX() + 1 && grid.get(i).getwallY() == n.getY()){
+        surroundings[1] = "wall";
       }
-      if (n.getDirection().equals("left")){
-        if (grid.get(i).getwallX() == n.getX() - 1 && grid.get(i).getwallY() == n.getY()){
-          return "wall";
-        }
+      if (grid.get(i).getwallX() == n.getX() - 1 && grid.get(i).getwallY() == n.getY()){
+        surroundings[3] = "wall";
       }
     }
 
     //Checks if there is a greebler in the direction of the creature
     for (int i = 0; i < greeblers.size(); i++){
-      if (n.getDirection().equals("up")){
-        if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() == n.getY() - 1){
-          return "greebler";
-        }
+      if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() - 1 == n.getY()){
+        surroundings[0] = "greebler";
       }
-      if (n.getDirection().equals("down")){
-        if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() == n.getY() + 1){
-          return "greebler";
-        }
+      if (greeblers.get(i).getX() == n.getX() && greeblers.get(i).getY() + 1 == n.getY()){
+        surroundings[2] = "greebler";
       }
-      if (n.getDirection().equals("right")){
-        if (greeblers.get(i).getX() == n.getX() + 1 && greeblers.get(i).getY() == n.getY()){
-          return "greebler";
-        }
+      if (greeblers.get(i).getX() == n.getX() + 1 && greeblers.get(i).getY() == n.getY()){
+        surroundings[1] = "greebler";
       }
-      if (n.getDirection().equals("left")){
-        if (greeblers.get(i).getX() == n.getX() - 1 && greeblers.get(i).getY() == n.getY()){
-          return "greebler";
-        }
+      if (greeblers.get(i).getX() == n.getX() - 1 && greeblers.get(i).getY() == n.getY()){
+        surroundings[3] = "greebler";
       }
     }
 
     //checks for babies in the immediate surroundings of the player
     for (int i = 0; i < babies.size(); i++){
-      if (n.getDirection().equals("up")){
-        if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1){
-          return "baby";
-        }
+      if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1){
+        surroundings[0] = "baby";
       }
-      if (n.getDirection().equals("down")){
-        if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1){
-          return "baby";
-        }
+      if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1){
+        surroundings[2] = "baby";
       }
-      if (n.getDirection().equals("right")){
-        if (babies.get(i).getX() == n.getX() + 1 && babies.get(i).getY() == n.getY()){
-          return "baby";
-        }
+      if (babies.get(i).getX() == n.getX() + 1 && babies.get(i).getY() == n.getY()){
+        surroundings[1] = "baby";
       }
-      if (n.getDirection().equals("left")){
-        if (babies.get(i).getX() == n.getX() - 1 && babies.get(i).getY() == n.getY()){
-          return "baby";
-        }
-      }
-    }
 
-    //checks for player in front of creature
-    if (n.getDirection().equals("up")){
-      if (one.getX() == n.getX() && one.getY() == n.getY() - 1){
-        return "player";
+      if (babies.get(i).getX() == n.getX() - 1 && babies.get(i).getY() == n.getY()){
+        surroundings[3] = "baby";
       }
+
     }
-    if (n.getDirection().equals("down")){
-      if (one.getX() == n.getX() && one.getY() == n.getY() + 1){
-        return "player";
-      }
-    }
-    if (n.getDirection().equals("right")){
-      if (one.getX() == n.getX() + 1 && one.getY() == n.getY()){
-        return "player";
-      }
-    }
-    if (n.getDirection().equals("left")){
-      if (one.getX() == n.getX() - 1 && one.getY() == n.getY()){
-        return "player";
-      }
-    }
-<<<<<<< HEAD
 
 
     //checks for player in front of any greeblers
+    //checks down
     if(n.getX() == one.getX() && n.getY() + 1 == one.getY()){
       surroundings[0] = "player";
     }
+    //checks up
     if(n.getX() == one.getX() && n.getY() - 1 == one.getY()){
       surroundings[2] = "player";
     }
+    //checks right
     if(n.getX() + 1 == one.getX() && n.getY() == one.getY()){
       surroundings[1] = "player";
     }
+    //checks left
     if(n.getX() - 1 == one.getX() && n.getY() == one.getY()){
       surroundings[3] = "player";
     }
@@ -804,10 +764,7 @@ public class Demo{
     }
 
     return surroundings;
-=======
->>>>>>> MapDev
 
-    return "";
   }
 
 
@@ -904,7 +861,7 @@ public static void pickUpBaby(Player n, Terminal t){
 				    one.moveLeft();
             x--;
             }
-            if (checkInFront(one).equals("baby")){
+            if (checkAround(one)[3].equals("baby")){
               one.moveLeft();
               pickUpBaby(one, terminal);
             }
@@ -917,44 +874,35 @@ public static void pickUpBaby(Player n, Terminal t){
 					  one.moveRight();
             x++;
           }
-          if (checkInFront(one).equals("baby")){
+          if (checkAround(one)[1].equals("baby")){
             one.moveRight();
             pickUpBaby(one, terminal);
           }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
-<<<<<<< HEAD
           if (checkAround(one)[0].equals(" ")){
             terminal.moveCursor(one.getX(),one.getY());
   					terminal.putCharacter(' ');
 					  one.moveUp();
             y++;
-=======
-					terminal.moveCursor(one.getX(),one.getY());
-					terminal.putCharacter(' ');
-          one.setDirection("up");
-          if (checkInFront(one).equals("")){
-					   one.moveUp();
-             y--;
           }
-          if (checkInFront(one).equals("baby")){
-            one.moveUp();
+          if (checkAround(one)[2].equals("baby")){
+            one.moveDown();
             pickUpBaby(one, terminal);
->>>>>>> MapDev
           }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
           one.setDirection("down");
-					if (checkAround(one)[2].equals(" ")){
+					if (checkAround(one)[0].equals(" ")){
             terminal.moveCursor(one.getX(),one.getY());
             terminal.putCharacter(' ');
             one.setDirection("down");
 					  one.moveDown();
             y++;
           }
-          if (checkAround(one)[2].equals("baby")){
+          if (checkAround(one)[0].equals("baby")){
             one.moveDown();
             pickUpBaby(one, terminal);
           }
