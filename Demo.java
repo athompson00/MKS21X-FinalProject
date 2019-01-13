@@ -165,7 +165,7 @@ public class Demo{
     //checks from perspective of player for greeblers surrounding it and attacks
     //any that are in his/her proximity
     c.setDirection("right");
-    if(checkInFront(c).equals("greebler")){
+    if(checkAround(c)[1].equals("greebler")){
       for(int i = 0; i < greeblers.size(); i++){
         if(greeblers.get(i).getX() + 1 == c.getX() && c.getY() == greeblers.get(i).getY()){
           d = i;
@@ -179,13 +179,13 @@ public class Demo{
         greeblers.get(d).setY(99);
       }
     }
-    if(checkInFront(c).equals("player")){
+    if(checkAround(c)[0].equals("player")){
       one.subHealth(c.getDamage());
     }
 
 
     c.setDirection("left");
-    if(checkInFront(c).equals("greebler")){
+    if(checkAround(c)[3].equals("greebler")){
       for(int j = 0; j < greeblers.size(); j++){
         if(greeblers.get(j).getX() - 1 == c.getX() && c.getY() == greeblers.get(j).getY()){
           d = j;
@@ -199,14 +199,14 @@ public class Demo{
         greeblers.get(d).setY(99);
       }
     }
-    if(checkInFront(c).equals("player")){
+    if(checkAround(c)[3].equals("player")){
       one.subHealth(c.getDamage());
     }
 
 
 
     c.setDirection("down");
-    if(checkInFront(c).equals("greebler")){
+    if(checkAround(c)[2].equals("greebler")){
       for(int k = 0; k < greeblers.size(); k++){
         if(greeblers.get(k).getX() == c.getX() && c.getY() == greeblers.get(k).getY() + 1){
           d = k;
@@ -220,13 +220,13 @@ public class Demo{
         greeblers.get(d).setY(99);
       }
     }
-    if(checkInFront(c).equals("player")){
+    if(checkAround(c)[2].equals("player")){
       one.subHealth(c.getDamage());
     }
 
 
     c.setDirection("up");
-    if(checkInFront(c).equals("greebler")){
+    if(checkAround(c)[0].equals("greebler")){
       for(int l = 0; l < greeblers.size(); l++){
         if(greeblers.get(l).getX() == c.getX() && c.getY() == greeblers.get(l).getY() - 1){
           d = l;
@@ -240,7 +240,7 @@ public class Demo{
         greeblers.get(d).setY(99);
       }
     }
-    if(checkInFront(c).equals("player")){
+    if(checkAround(c)[0].equals("player")){
       one.subHealth(c.getDamage());
     }
 
@@ -298,7 +298,7 @@ public class Demo{
       }
     }
 
-    //checks if there is a baby in front of anything
+    //checks for babies in the immediate surroundings of the player
     for (int i = 0; i < babies.size(); i++){
       if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1){
         surroundings[0] = "baby";
@@ -313,6 +313,27 @@ public class Demo{
         surroundings[3] = "baby";
       }
     }
+
+
+    //checks for player in front of any greeblers
+    if(n.getX() == one.getX() && n.getY() + 1 == one.getY()){
+      surroundings[0] = "player";
+    }
+    if(n.getX() == one.getX() && n.getY() - 1 == one.getY()){
+      surroundings[2] = "player";
+    }
+    if(n.getX() + 1 == one.getX() && n.getY() == one.getY()){
+      surroundings[1] = "player";
+    }
+    if(n.getX() - 1 == one.getX() && n.getY() == one.getY()){
+      surroundings[3] = "player";
+    }
+    for(int g = 0; g < surroundings.length; g++){
+      if(surroundings[g] == null){
+        surroundings[g] = " ";
+      }
+    }
+
     return surroundings;
 
   }
@@ -407,44 +428,42 @@ public static void pickUpBaby(Player n, Terminal t){
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
-					terminal.moveCursor(one.getX(),one.getY());
-					terminal.putCharacter(' ');
-          one.setDirection("left");
-          if (checkInFront(one).equals("")){
-				        one.moveLeft();
-                x--;
+          if (checkAround(one)[3].equals(" ")){
+            terminal.moveCursor(one.getX(),one.getY());
+  					terminal.putCharacter(' ');
+				    one.moveLeft();
+            x--;
             }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
-					terminal.moveCursor(one.getX(),one.getY());
-					terminal.putCharacter(' ');
-          one.setDirection("right");
-          if (checkInFront(one).equals("")){
-					   one.moveRight();
-             x++;
+          if (checkAround(one)[1].equals(" ")){
+            terminal.moveCursor(one.getX(),one.getY());
+  					terminal.putCharacter(' ');
+					  one.moveRight();
+            x++;
           }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
-					terminal.moveCursor(one.getX(),one.getY());
-					terminal.putCharacter(' ');
-          one.setDirection("up");
-          if (checkInFront(one).equals("")){
-					   one.moveUp();
-             y++;
+          if (checkAround(one)[0].equals(" ")){
+            terminal.moveCursor(one.getX(),one.getY());
+  					terminal.putCharacter(' ');
+					  one.moveUp();
+            y++;
           }
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
-					terminal.moveCursor(one.getX(),one.getY());
-					terminal.putCharacter(' ');
           one.setDirection("down");
-					if (checkInFront(one).equals("")){
+					if (checkAround(one)[2].equals(" ")){
+            terminal.moveCursor(one.getX(),one.getY());
+            terminal.putCharacter(' ');
+            one.setDirection("down");
 					  one.moveDown();
             y--;
           }
-          if (checkInFront(one).equals("baby")){
+          if (checkAround(one)[2].equals("baby")){
             one.moveDown();
             pickUpBaby(one, terminal);
           }
