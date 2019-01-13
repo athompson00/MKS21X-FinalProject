@@ -264,32 +264,7 @@ public class Demo{
   static Wall side229 = new Wall(78,21, "up");
   static Wall side230 = new Wall(78,22, "up");
   static Wall side231 = new Wall(78,23, "up");
-  static Wall side232 = new Wall(78,24, "up");
-  static Wall side233 = new Wall(78,25, "up");
-  static Wall side234 = new Wall(78,26, "up");
-  static Wall side235 = new Wall(78,27, "up");
-  static Wall side236 = new Wall(78,28, "up");
-  static Wall side237 = new Wall(78,29, "up");
-  static Wall side238 = new Wall(78,30, "up");
-  static Wall side239 = new Wall(78,31, "up");
-  static Wall side240 = new Wall(78,32, "up");
-  static Wall side241 = new Wall(78,33, "up");
-  static Wall side242 = new Wall(78,34, "up");
-  static Wall side243 = new Wall(78,35, "up");
-  static Wall side244 = new Wall(78,36, "up");
-  static Wall side245 = new Wall(78,37, "up");
-  static Wall side246 = new Wall(78,38, "up");
-  static Wall side247 = new Wall(78,39, "up");
-  static Wall side248 = new Wall(78,40, "up");
-  static Wall side249 = new Wall(78,41, "up");
-  static Wall side250 = new Wall(78,42, "up");
-  static Wall side251 = new Wall(78,43, "up");
-  static Wall side252 = new Wall(78,44, "up");
-  static Wall side253 = new Wall(78,45, "up");
-  static Wall side254 = new Wall(78,46, "up");
-  static Wall side255 = new Wall(78,47, "up");
-  static Wall side256 = new Wall(78,48, "up");
-  static Wall side257 = new Wall(78,49, "up");
+
 
   static Greebler greeb1 = new Greebler(20, 15);
   static Greebler greeb2 = new Greebler(30,20);
@@ -534,32 +509,7 @@ public class Demo{
     grid.add(side229);
     grid.add(side230);
     grid.add(side231);
-    grid.add(side232);
-    grid.add(side233);
-    grid.add(side234);
-    grid.add(side235);
-    grid.add(side236);
-    grid.add(side237);
-    grid.add(side238);
-    grid.add(side239);
-    grid.add(side240);
-    grid.add(side241);
-    grid.add(side242);
-    grid.add(side243);
-    grid.add(side244);
-    grid.add(side245);
-    grid.add(side246);
-    grid.add(side247);
-    grid.add(side248);
-    grid.add(side249);
-    grid.add(side250);
-    grid.add(side251);
-    grid.add(side252);
-    grid.add(side253);
-    grid.add(side254);
-    grid.add(side255);
-    grid.add(side256);
-    grid.add(side257);
+    
 
     greeblers.add(greeb1);
     greeblers.add(greeb2);
