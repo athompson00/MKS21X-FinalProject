@@ -882,7 +882,7 @@ public static void pickUpBaby(Player n, Terminal t){
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
-          if (checkAround(one)[0].equals(" ")){
+          if (checkAround(one)[2].equals(" ")){
             terminal.moveCursor(one.getX(),one.getY());
   					terminal.putCharacter(' ');
 					  one.moveUp();
