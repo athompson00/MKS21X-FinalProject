@@ -588,7 +588,7 @@ public class Demo{
 
 
     c.setDirection("down");
-    if(checkAround(c)[2].equals("greebler")){
+    if(checkAround(c)[0].equals("greebler")){
       for(int k = 0; k < greeblers.size(); k++){
         if(greeblers.get(k).getX() == c.getX() && c.getY() == greeblers.get(k).getY() - 1){
           d = k;
@@ -602,13 +602,13 @@ public class Demo{
         greeblers.get(d).setY(99);
       }
     }
-    if(checkAround(c)[2].equals("player")){
+    if(checkAround(c)[0].equals("player")){
       one.subHealth(c.getDamage());
     }
 
 
     c.setDirection("up");
-    if(checkAround(c)[0].equals("greebler")){
+    if(checkAround(c)[2].equals("greebler")){
       for(int l = 0; l < greeblers.size(); l++){
         if(greeblers.get(l).getX() == c.getX() && c.getY() == greeblers.get(l).getY() + 1){
           d = l;
@@ -622,7 +622,7 @@ public class Demo{
         greeblers.get(d).setY(99);
       }
     }
-    if(checkAround(c)[0].equals("player")){
+    if(checkAround(c)[2].equals("player")){
       one.subHealth(c.getDamage());
     }
 
