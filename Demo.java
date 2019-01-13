@@ -241,29 +241,29 @@ public class Demo{
   static Wall side208 = new Wall(79,23, "up");
 
   //right side
-  static Wall side209 = new Wall(78,1, "up");
-  static Wall side210 = new Wall(78,2, "up");
-  static Wall side211 = new Wall(78,3, "up");
-  static Wall side212 = new Wall(78,4, "up");
-  static Wall side213 = new Wall(78,5, "up");
-  static Wall side214 = new Wall(78,6, "up");
-  static Wall side215 = new Wall(78,7, "up");
-  static Wall side216 = new Wall(78,8, "up");
-  static Wall side217 = new Wall(78,9, "up");
-  static Wall side218 = new Wall(78,10, "up");
-  static Wall side219 = new Wall(78,11, "up");
-  static Wall side220 = new Wall(78,12, "up");
-  static Wall side221 = new Wall(78,13, "up");
-  static Wall side222 = new Wall(78,14, "up");
-  static Wall side223 = new Wall(78,15, "up");
-  static Wall side224 = new Wall(78,16, "up");
-  static Wall side225 = new Wall(78,17, "up");
-  static Wall side226 = new Wall(78,18, "up");
-  static Wall side227 = new Wall(78,19, "up");
-  static Wall side228 = new Wall(78,20, "up");
-  static Wall side229 = new Wall(78,21, "up");
-  static Wall side230 = new Wall(78,22, "up");
-  static Wall side231 = new Wall(78,23, "up");
+  static Wall side209 = new Wall(79,1, "up");
+  static Wall side210 = new Wall(79,2, "up");
+  static Wall side211 = new Wall(79,3, "up");
+  static Wall side212 = new Wall(79,4, "up");
+  static Wall side213 = new Wall(79,5, "up");
+  static Wall side214 = new Wall(79,6, "up");
+  static Wall side215 = new Wall(79,7, "up");
+  static Wall side216 = new Wall(79,8, "up");
+  static Wall side217 = new Wall(79,9, "up");
+  static Wall side218 = new Wall(79,10, "up");
+  static Wall side219 = new Wall(79,11, "up");
+  static Wall side220 = new Wall(79,12, "up");
+  static Wall side221 = new Wall(79,13, "up");
+  static Wall side222 = new Wall(79,14, "up");
+  static Wall side223 = new Wall(79,15, "up");
+  static Wall side224 = new Wall(79,16, "up");
+  static Wall side225 = new Wall(79,17, "up");
+  static Wall side226 = new Wall(79,18, "up");
+  static Wall side227 = new Wall(79,19, "up");
+  static Wall side228 = new Wall(79,20, "up");
+  static Wall side229 = new Wall(79,21, "up");
+  static Wall side230 = new Wall(79,22, "up");
+  static Wall side231 = new Wall(79,23, "up");
 
 
   static Greebler greeb1 = new Greebler(20, 15);
@@ -509,7 +509,7 @@ public class Demo{
     grid.add(side229);
     grid.add(side230);
     grid.add(side231);
-    
+
 
     greeblers.add(greeb1);
     greeblers.add(greeb2);
