@@ -197,6 +197,17 @@ public class Map{
     map.add(wall40);
     map.add(wall41);
     map.add(wall42);
+    map.add(wall43);
+    map.add(wall44);
+    map.add(wall45);
+    map.add(wall46);
+    map.add(wall47);
+    //new wall
+    map.add(wall48);
+    map.add(wall49);
+    map.add(wall50);
+    map.add(wall51);
+  //  map.add(wall42);
   }
 
   public void fillInMap2(){
