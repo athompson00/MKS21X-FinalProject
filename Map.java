@@ -157,6 +157,17 @@ public class Map{
     wall54 = new Wall(10, 18, "up");
     wall55 = new Wall(10, 19, "up");
     wall56 = new Wall(10, 20, "up");
+    wall57 = new Wall(10, 21, "up");
+    wall58 = new Wall(10, 22, "up");
+    //new wall
+    wall59 = new Wall(25, 13, "up");
+    wall60 = new Wall(25, 14, "up");
+    wall61 = new Wall(25, 15, "up");
+    wall62 = new Wall(25, 16, "up");
+    wall63 = new Wall(25, 17, "up");
+    wall64 = new Wall(25, 18, "up");
+    wall65 = new Wall(25, 19, "up");
+    wall66 = new Wall(25, 20, "up");
 
 
     map.add(wall1);
