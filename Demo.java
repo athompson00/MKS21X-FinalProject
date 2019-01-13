@@ -214,7 +214,6 @@ public class Demo{
   static Wall side181 = new Wall(52,20, "");
   static Wall side182 = new Wall(53,20, "");
   static Wall side183 = new Wall(54,20, "");
-  static Wall side183 = new Wall(54,20, "");
   static Wall side184 = new Wall(55,20, "");
   static Wall side185 = new Wall(56,20, "");
   static Wall side186 = new Wall(57,20, "");
