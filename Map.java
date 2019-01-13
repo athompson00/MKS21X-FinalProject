@@ -145,12 +145,20 @@ public class Map{
     wall44 = new Wall(6, 19, "up");
     wall45 = new Wall(6, 20, "up");
     wall46 = new Wall(6, 21, "up");
-    wall47 = new Wall(6, 22, "up");
     //new wall
-    wall48 = new Wall(7, 22, "");
-    wall49 = new Wall(8, 22, "");
-    wall50 = new Wall(9, 22, "");
-    wall51 = new Wall(10, 22, "");
+    wall47 = new Wall(7, 21, "");
+    wall48 = new Wall(8, 21, "");
+    wall49 = new Wall(9, 21, "");
+    wall50 = new Wall(10, 21, "");
+    //new wall
+    wall51 = new Wall(10, 13, "up");
+    wall52 = new Wall(10, 14, "up");
+    wall53 = new Wall(10, 15, "up");
+    wall54 = new Wall(10, 16, "up");
+    wall55 = new Wall(10, 17, "up");
+    wall56 = new Wall(10, 18, "up");
+    wall57 = new Wall(10, 19, "up");
+    wall58 = new Wall(10, 20, "up");
 
 
     map.add(wall1);
@@ -206,8 +214,18 @@ public class Map{
     map.add(wall48);
     map.add(wall49);
     map.add(wall50);
+    //new wall
     map.add(wall51);
-  //  map.add(wall42);
+    map.add(wall52);
+    map.add(wall53);
+    map.add(wall54);
+    map.add(wall55);
+    map.add(wall56);
+    map.add(wall57);
+  //  map.add(wall58);
+  //  map.add(wall59);
+  //  map.add(wall60);
+
   }
 
   public void fillInMap2(){
