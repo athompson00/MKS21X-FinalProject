@@ -136,6 +136,96 @@ public class Map{
   static Wall wall133;
   static Wall wall134;
   static Wall wall135;
+  static Wall wall136;
+  static Wall wall137;
+  static Wall wall138;
+  static Wall wall139;
+  static Wall wall140;
+  static Wall wall141;
+  static Wall wall142;
+  static Wall wall143;
+  static Wall wall144;
+  static Wall wall145;
+  static Wall wall146;
+  static Wall wall147;
+  static Wall wall148;
+  static Wall wall149;
+  static Wall wall150;
+  static Wall wall151;
+  static Wall wall152;
+  static Wall wall153;
+  static Wall wall154;
+  static Wall wall155;
+  static Wall wall156;
+  static Wall wall157;
+  static Wall wall158;
+  static Wall wall159;
+  static Wall wall160;
+  static Wall wall161;
+  static Wall wall162;
+  static Wall wall163;
+  static Wall wall164;
+  static Wall wall165;
+  static Wall wall166;
+  static Wall wall167;
+  static Wall wall168;
+  static Wall wall169;
+  static Wall wall170;
+  static Wall wall171;
+  static Wall wall172;
+  static Wall wall173;
+  static Wall wall174;
+  static Wall wall175;
+  static Wall wall176;
+  static Wall wall177;
+  static Wall wall178;
+  static Wall wall179;
+  static Wall wall180;
+  static Wall wall181;
+  static Wall wall182;
+  static Wall wall183;
+  static Wall wall184;
+  static Wall wall185;
+  static Wall wall186;
+  static Wall wall187;
+  static Wall wall188;
+  static Wall wall189;
+  static Wall wall190;
+  static Wall wall191;
+  static Wall wall192;
+  static Wall wall193;
+  static Wall wall194;
+  static Wall wall195;
+  static Wall wall196;
+  static Wall wall197;
+  static Wall wall198;
+  static Wall wall199;
+  static Wall wall200;
+  static Wall wall201;
+  static Wall wall202;
+  static Wall wall203;
+  static Wall wall204;
+  static Wall wall205;
+  static Wall wall206;
+  static Wall wall207;
+  static Wall wall208;
+  static Wall wall209;
+  static Wall wall210;
+  static Wall wall211;
+  static Wall wall212;
+  static Wall wall213;
+  static Wall wall214;
+  static Wall wall215;
+  static Wall wall216;
+  static Wall wall217;
+  static Wall wall218;
+  static Wall wall219;
+  static Wall wall220;
+  static Wall wall221;
+  static Wall wall222;
+  static Wall wall223;
+  static Wall wall224;
+  static Wall wall225;
 
   public Map(int number){
     if (number == 1){
@@ -300,6 +390,104 @@ public class Map{
     wall133 = new Wall(50, 15, "");
     wall134 = new Wall(51, 15, "");
     wall135 = new Wall(52, 15, "");
+    //new wall
+    wall136 = new Wall(53, 15, "up");
+    wall137 = new Wall(53, 16, "up");
+    wall138 = new Wall(53, 17, "up");
+    wall139 = new Wall(53, 18, "up");
+    wall140 = new Wall(53, 19, "up");
+    wall141 = new Wall(53, 20, "up");
+    wall142 = new Wall(53, 21, "up");
+    wall143 = new Wall(53, 22, "up");
+    //new walls
+    wall144 = new Wall(54, 1, "up");
+    wall145 = new Wall(54, 2, "up");
+    wall146 = new Wall(54, 3, "up");
+    wall147 = new Wall(54, 4, "up");
+    wall148 = new Wall(54, 5, "up");
+    wall149 = new Wall(54, 6, "up");
+    wall150 = new Wall(54, 7, "up");
+    wall151 = new Wall(54, 8, "up");
+    //new wall
+    wall152 = new Wall(55, 8, "");
+    wall153 = new Wall(56, 8, "");
+    wall154 = new Wall(57, 8, "");
+    wall155 = new Wall(58, 8, "");
+    wall156 = new Wall(59, 8, "up");
+    //new walls
+    wall157 = new Wall(59, 9, "up");
+    wall158 = new Wall(59, 10, "up");
+    wall159 = new Wall(59, 11, "up");
+    wall160 = new Wall(59, 12, "up");
+    wall161 = new Wall(59, 13, "up");
+    wall162 = new Wall(59, 14, "up");
+    wall163 = new Wall(59, 15, "up");
+    //new wall
+    wall164 = new Wall(58, 15, "");
+    wall165 = new Wall(57, 15, "up");
+    //new wall
+    wall166 = new Wall(57, 16, "up");
+    wall167 = new Wall(57, 17, "up");
+    wall168 = new Wall(57, 18, "up");
+    wall169 = new Wall(57, 19, "up");
+    wall170 = new Wall(57, 20, "up");
+    //new wall
+    wall171 = new Wall(58, 20, "");
+    wall172 = new Wall(59, 20, "");
+    wall173 = new Wall(60, 20, "");
+    wall174 = new Wall(61, 20, "");
+    wall175 = new Wall(62, 20, "up");
+    //new wall
+    wall210 = new Wall(78, 20, "");
+    wall176 = new Wall(77, 20, "");
+    wall177 = new Wall(76, 20, "");
+    wall178 = new Wall(75, 20, "");
+    wall179 = new Wall(74, 20, "");
+    wall180 = new Wall(73, 20, "");
+    wall181 = new Wall(72, 20, "");
+    wall182 = new Wall(71, 20, "");
+    wall183 = new Wall(70, 20, "");
+    wall184 = new Wall(69, 20, "");
+    wall185 = new Wall(68, 20, "");
+    wall211 = new Wall(67, 20, "up");
+    //new wall
+    wall186 = new Wall(67, 19, "up");
+    wall187 = new Wall(67, 18, "up");
+    wall188 = new Wall(67, 17, "up");
+    wall189 = new Wall(67, 16, "up");
+    wall190 = new Wall(67, 15, "up");
+    wall191 = new Wall(67, 14, "up");
+    wall192 = new Wall(67, 13, "up");
+    wall193 = new Wall(67, 12, "up");
+    wall194 = new Wall(67, 11, "up");
+    wall195 = new Wall(67, 10, "up");
+    wall196 = new Wall(67, 9, "up");
+    wall197 = new Wall(67, 8, "up");
+    //new wall
+    wall198 = new Wall(62, 19, "up");
+    wall199 = new Wall(62, 18, "up");
+    wall200 = new Wall(62, 17, "up");
+    wall201 = new Wall(62, 16, "up");
+    wall202 = new Wall(62, 15, "up");
+    wall203 = new Wall(62, 14, "up");
+    wall204 = new Wall(62, 13, "up");
+    wall205 = new Wall(62, 12, "up");
+    wall206 = new Wall(62, 11, "up");
+    wall207 = new Wall(62, 10, "up");
+    wall208 = new Wall(62, 9, "up");
+    wall209 = new Wall(62, 8, "up");
+    //new wall
+  //  wall212 = new Wall(67, 8, "");
+    wall213 = new Wall(68, 8, "");
+    wall214 = new Wall(69, 8, "");
+    wall215 = new Wall(70, 8, "");
+    wall216 = new Wall(71, 8, "");
+    wall217 = new Wall(72, 8, "");
+    wall218 = new Wall(73, 8, "");
+    wall219 = new Wall(74, 8, "");
+    wall220 = new Wall(75, 8, "");
+    wall221 = new Wall(76, 8, "up");
+
 
 
     map.add(wall1);
@@ -448,7 +636,6 @@ public class Map{
     map.add(wall134);
     map.add(wall135);
     //newall
-    /*
     map.add(wall136);
     map.add(wall137);
     map.add(wall138);
@@ -457,9 +644,92 @@ public class Map{
     map.add(wall141);
     map.add(wall142);
     map.add(wall143);
+    //new wall
     map.add(wall144);
     map.add(wall145);
-    */
+    map.add(wall146);
+    map.add(wall147);
+    map.add(wall148);
+    map.add(wall149);
+    map.add(wall150);
+    map.add(wall151);
+    //new wall
+    map.add(wall152);
+    map.add(wall153);
+    map.add(wall154);
+    map.add(wall155);
+    map.add(wall156);
+    map.add(wall157);
+    map.add(wall158);
+    map.add(wall159);
+    map.add(wall160);
+    map.add(wall161);
+    map.add(wall162);
+    map.add(wall163);
+    //new wall
+    map.add(wall164);
+    map.add(wall165);
+    //new wall
+    map.add(wall166);
+    map.add(wall167);
+    map.add(wall168);
+    map.add(wall169);
+    map.add(wall170);
+    map.add(wall171);
+    map.add(wall172);
+    map.add(wall173);
+    map.add(wall174);
+    map.add(wall175);
+    //new wall
+    map.add(wall176);
+    map.add(wall177);
+    map.add(wall178);
+    map.add(wall179);
+    map.add(wall180);
+    map.add(wall181);
+    map.add(wall182);
+    map.add(wall183);
+    map.add(wall184);
+    map.add(wall185);
+    map.add(wall210);
+    map.add(wall211);
+    //new wall
+    map.add(wall186);
+    map.add(wall187);
+    map.add(wall188);
+    map.add(wall189);
+    map.add(wall190);
+    map.add(wall191);
+    map.add(wall192);
+    map.add(wall193);
+    map.add(wall194);
+    map.add(wall195);
+    map.add(wall196);
+    map.add(wall197);
+    map.add(wall198);
+    //new wall
+    map.add(wall199);
+    map.add(wall200);
+    map.add(wall201);
+    map.add(wall202);
+    map.add(wall203);
+    map.add(wall204);
+    map.add(wall205);
+    map.add(wall206);
+    map.add(wall207);
+    map.add(wall208);
+    map.add(wall209);
+    //new wall
+  //  map.add(wall212);
+    map.add(wall213);
+    map.add(wall214);
+    map.add(wall215);
+    map.add(wall216);
+    map.add(wall217);
+    map.add(wall218);
+    map.add(wall219);
+    map.add(wall220);
+    map.add(wall221);
   }
 
   public void fillInMap2(){
