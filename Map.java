@@ -106,6 +106,36 @@ public class Map{
   static Wall wall103;
   static Wall wall104;
   static Wall wall105;
+  static Wall wall106;
+  static Wall wall107;
+  static Wall wall108;
+  static Wall wall109;
+  static Wall wall110;
+  static Wall wall111;
+  static Wall wall112;
+  static Wall wall113;
+  static Wall wall114;
+  static Wall wall115;
+  static Wall wall116;
+  static Wall wall117;
+  static Wall wall118;
+  static Wall wall119;
+  static Wall wall120;
+  static Wall wall121;
+  static Wall wall122;
+  static Wall wall123;
+  static Wall wall124;
+  static Wall wall125;
+  static Wall wall126;
+  static Wall wall127;
+  static Wall wall128;
+  static Wall wall129;
+  static Wall wall130;
+  static Wall wall131;
+  static Wall wall132;
+  static Wall wall133;
+  static Wall wall134;
+  static Wall wall135;
 
   public Map(int number){
     if (number == 1){
@@ -229,12 +259,47 @@ public class Map{
     wall96 = new Wall(39, 8, "");
     wall97 = new Wall(40, 8, "");
     wall98 = new Wall(41, 8, "");
-    wall99 = new Wall(42, 8, "");
-    wall100 = new Wall(46, 8, "");
+    wall99 = new Wall(42, 8, "up");
+    //passage in between
+    wall100 = new Wall(46, 8, "up");
     wall101 = new Wall(47, 8, "");
     wall102 = new Wall(48, 8, "");
     wall103 = new Wall(49, 8, "");
     wall104 = new Wall(50, 8, "");
+    //new wall
+    wall106 = new Wall(51, 8, "up");
+    wall107 = new Wall(51, 7, "up");
+    wall108 = new Wall(51, 6, "up");
+    wall109 = new Wall(51, 5, "up");
+    wall110 = new Wall(51, 4, "up");
+    wall111 = new Wall(51, 3, "up");
+    //new wall
+    wall112 = new Wall(42, 9, "up");
+    wall113 = new Wall(42, 10, "up");
+    wall114 = new Wall(42, 11, "up");
+    wall115 = new Wall(42, 12, "up");
+    wall116 = new Wall(42, 13, "up");
+    wall117 = new Wall(42, 14, "up");
+    wall118 = new Wall(42, 15, "up");
+    wall119 = new Wall(42, 16, "up");
+    wall120 = new Wall(42, 17, "up");
+    wall121 = new Wall(42, 18, "up");
+    wall122 = new Wall(42, 19, "up");
+    //new Wall
+    wall123 = new Wall(46, 9, "up");
+    wall124 = new Wall(46, 10, "up");
+    wall125 = new Wall(46, 11, "up");
+    wall126 = new Wall(46, 12, "up");
+    wall127 = new Wall(46, 13, "up");
+    wall128 = new Wall(46, 14, "up");
+    wall129 = new Wall(46, 15, "up");
+    //new wall
+    wall130 = new Wall(47, 15, "");
+    wall131 = new Wall(48, 15, "");
+    wall132 = new Wall(49, 15, "");
+    wall133 = new Wall(50, 15, "");
+    wall134 = new Wall(51, 15, "");
+    wall135 = new Wall(52, 15, "");
 
 
     map.add(wall1);
@@ -350,8 +415,51 @@ public class Map{
     map.add(wall102);
     map.add(wall103);
     map.add(wall104);
-
-
+//new walls
+    map.add(wall106);
+    map.add(wall107);
+    map.add(wall108);
+    map.add(wall109);
+    map.add(wall110);
+    map.add(wall111);
+    //new wall
+    map.add(wall112);
+    map.add(wall113);
+    map.add(wall114);
+    map.add(wall115);
+    map.add(wall116);
+    map.add(wall117);
+    map.add(wall118);
+    map.add(wall119);
+    map.add(wall120);
+    map.add(wall121);
+    map.add(wall122);
+    map.add(wall123);
+    map.add(wall124);
+    map.add(wall125);
+    map.add(wall126);
+    map.add(wall127);
+    map.add(wall128);
+    map.add(wall129);
+    map.add(wall130);
+    map.add(wall131);
+    map.add(wall132);
+    map.add(wall133);
+    map.add(wall134);
+    map.add(wall135);
+    //newall
+    /*
+    map.add(wall136);
+    map.add(wall137);
+    map.add(wall138);
+    map.add(wall139);
+    map.add(wall140);
+    map.add(wall141);
+    map.add(wall142);
+    map.add(wall143);
+    map.add(wall144);
+    map.add(wall145);
+    */
   }
 
   public void fillInMap2(){
