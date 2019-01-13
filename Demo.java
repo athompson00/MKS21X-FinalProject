@@ -268,7 +268,10 @@ public class Demo{
 
   static Greebler greeb1 = new Greebler(20, 15);
   static Greebler greeb2 = new Greebler(30,20);
+  static Greebler greeb3 = new Greebler(12, 20);
+  static Greebler greeb4 = new Greebler(15,20);
   static Baby baby1 = new Baby(40, 10);
+  static Baby baby2 = new Baby(8, 20);
 
   public static void fillScreen(Terminal t){
     //top
@@ -513,6 +516,8 @@ public class Demo{
 
     greeblers.add(greeb1);
     greeblers.add(greeb2);
+    greeblers.add(greeb3);
+    greeblers.add(greeb4);
     for (int i = 0; i < map.getMap().size(); i++){
       grid.add(map.getMap().get(i));
     }
@@ -520,6 +525,7 @@ public class Demo{
       greeblers.remove(killed.get(l));
     }
     babies.add(baby1);
+    babies.add(baby2);
     for(int i = 0; i < grid.size(); i++){
       t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
       t.putCharacter(grid.get(i).getBarrier());
