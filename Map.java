@@ -151,14 +151,12 @@ public class Map{
     wall49 = new Wall(9, 21, "");
     wall50 = new Wall(10, 21, "");
     //new wall
-    wall51 = new Wall(10, 13, "up");
-    wall52 = new Wall(10, 14, "up");
-    wall53 = new Wall(10, 15, "up");
-    wall54 = new Wall(10, 16, "up");
-    wall55 = new Wall(10, 17, "up");
-    wall56 = new Wall(10, 18, "up");
-    wall57 = new Wall(10, 19, "up");
-    wall58 = new Wall(10, 20, "up");
+    wall51 = new Wall(10, 15, "up");
+    wall52 = new Wall(10, 16, "up");
+    wall53 = new Wall(10, 17, "up");
+    wall54 = new Wall(10, 18, "up");
+    wall55 = new Wall(10, 19, "up");
+    wall56 = new Wall(10, 20, "up");
 
 
     map.add(wall1);
@@ -221,7 +219,7 @@ public class Map{
     map.add(wall54);
     map.add(wall55);
     map.add(wall56);
-    map.add(wall57);
+  //  map.add(wall57);
   //  map.add(wall58);
   //  map.add(wall59);
   //  map.add(wall60);
