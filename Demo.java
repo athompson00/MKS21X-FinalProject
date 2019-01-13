@@ -514,8 +514,7 @@ public class Demo{
     greeblers.add(greeb1);
     greeblers.add(greeb2);
     for (int i = 0; i < map.getMap().size(); i++){
-      t.moveCursor(map.getMap().get(i).getwallX(), map.getMap().get(i).getwallY());
-      t.putCharacter(map.getMap().get(i).getBarrier());
+      grid.add(map.getMap().get(i));
     }
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
