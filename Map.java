@@ -230,10 +230,17 @@ public class Map{
     map.add(wall54);
     map.add(wall55);
     map.add(wall56);
-  //  map.add(wall57);
-  //  map.add(wall58);
-  //  map.add(wall59);
-  //  map.add(wall60);
+    map.add(wall57);
+    map.add(wall58);
+    map.add(wall59);
+    //new wall
+    map.add(wall60);
+    map.add(wall61);
+    map.add(wall62);
+    map.add(wall63);
+    map.add(wall64);
+    map.add(wall65);
+    map.add(wall66);
 
   }
 
