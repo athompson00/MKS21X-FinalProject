@@ -260,9 +260,9 @@ public class Demo{
   static Baby baby1 = new Baby(40, 10);
   static Baby baby2 = new Baby(8, 20);
   static Baby baby3 = new Baby(12, 21);
-  static Baby baby4 = new Baby(47, 10);
+  static Baby baby4 = new Baby(47, 9);
 
-  public static void fillScreen(Terminal t){
+  public static void fillGrid(){
     //top
     grid.add(side0);
     grid.add(side1);
@@ -489,14 +489,25 @@ public class Demo{
     grid.add(side230);
     grid.add(side231);
 
+    //puts map into wallgrid
+    for (int i = 0; i < map.getMap().size(); i++){
+      grid.add(map.getMap().get(i));
+    }
+
+    //Draws map on screen
+    for(int i = 0; i < grid.size(); i++){
+      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
+      t.putCharacter(grid.get(i).getBarrier());
+    }
+  }
+
+  public static void fillScreen(Terminal t){
+
 
     greeblers.add(greeb1);
     greeblers.add(greeb2);
     greeblers.add(greeb3);
     greeblers.add(greeb4);
-    for (int i = 0; i < map.getMap().size(); i++){
-      grid.add(map.getMap().get(i));
-    }
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
     }
@@ -504,10 +515,6 @@ public class Demo{
     babies.add(baby2);
     babies.add(baby3);
     babies.add(baby4);
-    for(int i = 0; i < grid.size(); i++){
-      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
-      t.putCharacter(grid.get(i).getBarrier());
-    }
     for(int j = 0; j < greeblers.size(); j++){
       t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
       t.putCharacter(greeblers.get(j).getGraphic());
@@ -709,10 +716,8 @@ public static void pickUpBaby(Player n, Terminal t){
     babies.get(a).pickUp();
     n.pickUpBaby();
     babies.get(a).changeGraphic('\u0000');
-    t.moveCursor(babies.get(a).getX(), babies.get(a).getY());
-    t.putCharacter(babies.get(a).getGraphic());
-    babies.get(a).setX(50);
-    babies.get(a).setY(50);
+    babies.get(a).setX(100);
+    babies.get(a).setY(100);
   }
 }
 
@@ -728,11 +733,11 @@ public static void pickUpBaby(Player n, Terminal t){
 
     int x = 10;
     int y = 10;
+    //fillGrid draws Map
+    fillGrid();
 
     while(running){
 
-      terminal.moveCursor(70, 19);
-      terminal.putCharacter('\u03B8');
 			terminal.moveCursor(one.getX(),one.getY());
 			terminal.applyBackgroundColor(Terminal.Color.WHITE);
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
@@ -745,11 +750,11 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applySGR(Terminal.SGR.RESET_ALL);
 
 
-			/*terminal.moveCursor(size.getColumns()-5,5);
+			terminal.moveCursor(size.getColumns()-5,5);
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-      
+      /*
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter('\u262d');
@@ -764,6 +769,8 @@ public static void pickUpBaby(Player n, Terminal t){
 
       fillScreen(terminal);
       putString(1, 1, terminal, "Player health: " + one.getHealth());
+      putString(1, 2, terminal, "greebler 1 health: " + greeb1.getHealth());
+      putString(1, 3, terminal, "greebler 2 health: " + greeb2.getHealth());
       putString(1, 4, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
       putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
   //    putString(50, 6, terminal, "around: " + checkAround(one)[0] + ", " + checkAround(one)[1] + ", " + checkAround(one)[2] + ", " + checkAround(one)[3]);
@@ -850,16 +857,6 @@ public static void pickUpBaby(Player n, Terminal t){
         running = false;
         System.out.println();
         System.out.println("As the Terminator once said \"hasta la vista\"");
-        System.out.println("You lost");
-        System.out.println();
-      }
-      if(one.getBabiesToCollect() == 0 && one.getX() == 70
-      && one.getY() == 19){
-        terminal.exitPrivateMode();
-        running = false;
-        System.out.println();
-        System.out.println("A job well done");
-        System.out.println("You won");
         System.out.println();
       }
     }
