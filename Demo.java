@@ -766,7 +766,7 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
-      
+
       putString(1, 1, terminal, "Player health: " + one.getHealth());
       putString(1, 4, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
       putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
@@ -782,8 +782,9 @@ public static void pickUpBaby(Player n, Terminal t){
 
 					terminal.exitPrivateMode();
 					running = false;
-					System.out.println(one.getX());
-					System.out.println(one.getY());
+					System.out.println();
+          System.out.println("You coward! You chose your life over the life of infants");
+
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
@@ -862,7 +863,7 @@ public static void pickUpBaby(Player n, Terminal t){
         terminal.exitPrivateMode();
         running = false;
         System.out.println();
-        System.out.println("A job well done");
+        System.out.println("A job well done we now knight you as the pacifist");
         System.out.println("You won");
         System.out.println();
       }
