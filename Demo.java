@@ -863,7 +863,7 @@ public static void pickUpBaby(Player n, Terminal t){
         terminal.exitPrivateMode();
         running = false;
         System.out.println();
-        System.out.println("A job well done we now knight you as the pacifist");
+        System.out.println("A job well done. We now knight you as the pacifist");
         System.out.println("You won");
         System.out.println();
       }
