@@ -1,4 +1,3 @@
-
 //API : http://mabe02.github.io/lanterna/apidocs/2.1/
 import com.googlecode.lanterna.terminal.Terminal.SGR;
 import com.googlecode.lanterna.TerminalFacade;
@@ -262,7 +261,7 @@ public class Demo{
   static Baby baby3 = new Baby(12, 21);
   static Baby baby4 = new Baby(47, 10);
 
-  public static void fillScreen(Terminal t){
+  public static void fillWalls(Terminal t){
     //top
     grid.add(side0);
     grid.add(side1);
@@ -488,15 +487,20 @@ public class Demo{
     grid.add(side229);
     grid.add(side230);
     grid.add(side231);
+    for (int i = 0; i < map.getMap().size(); i++){
+      grid.add(map.getMap().get(i));
+    }
+    for(int i = 0; i < grid.size(); i++){
+      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
+      t.putCharacter(grid.get(i).getBarrier());
+    }
+  }
 
-
+  public static void fillScreen(Terminal t){
     greeblers.add(greeb1);
     greeblers.add(greeb2);
     greeblers.add(greeb3);
     greeblers.add(greeb4);
-    for (int i = 0; i < map.getMap().size(); i++){
-      grid.add(map.getMap().get(i));
-    }
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
     }
@@ -504,10 +508,6 @@ public class Demo{
     babies.add(baby2);
     babies.add(baby3);
     babies.add(baby4);
-    for(int i = 0; i < grid.size(); i++){
-      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
-      t.putCharacter(grid.get(i).getBarrier());
-    }
     for(int j = 0; j < greeblers.size(); j++){
       t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
       t.putCharacter(greeblers.get(j).getGraphic());
@@ -709,10 +709,8 @@ public static void pickUpBaby(Player n, Terminal t){
     babies.get(a).pickUp();
     n.pickUpBaby();
     babies.get(a).changeGraphic('\u0000');
-    t.moveCursor(babies.get(a).getX(), babies.get(a).getY());
-    t.putCharacter(babies.get(a).getGraphic());
-    babies.get(a).setX(50);
-    babies.get(a).setY(50);
+    babies.get(a).setX(100);
+    babies.get(a).setY(100);
   }
 }
 
@@ -728,6 +726,8 @@ public static void pickUpBaby(Player n, Terminal t){
 
     int x = 10;
     int y = 10;
+
+    fillWalls(terminal);
 
     while(running){
 
@@ -749,7 +749,7 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-      
+
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter('\u262d');
@@ -763,6 +763,7 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
+
       putString(1, 1, terminal, "Player health: " + one.getHealth());
       putString(1, 4, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
       putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
@@ -778,8 +779,9 @@ public static void pickUpBaby(Player n, Terminal t){
 
 					terminal.exitPrivateMode();
 					running = false;
-					System.out.println(one.getX());
-					System.out.println(one.getY());
+					System.out.println();
+          System.out.println("You coward! You chose your life over the life of infants forshame");
+          System.out.println();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
@@ -816,7 +818,7 @@ public static void pickUpBaby(Player n, Terminal t){
             y++;
           }
           if (checkAround(one)[2].equals("baby")){
-            one.moveDown();
+            one.moveUp();
             pickUpBaby(one, terminal);
           }
 				}
@@ -858,7 +860,7 @@ public static void pickUpBaby(Player n, Terminal t){
         terminal.exitPrivateMode();
         running = false;
         System.out.println();
-        System.out.println("A job well done");
+        System.out.println("A job well done. We now knight you as the pacifist");
         System.out.println("You won");
         System.out.println();
       }
