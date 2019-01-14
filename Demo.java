@@ -262,7 +262,7 @@ public class Demo{
   static Baby baby3 = new Baby(12, 21);
   static Baby baby4 = new Baby(47, 10);
 
-  public static void fillScreen(Terminal t){
+  public static void fillWalls(Terminal t){
     //top
     grid.add(side0);
     grid.add(side1);
@@ -488,15 +488,20 @@ public class Demo{
     grid.add(side229);
     grid.add(side230);
     grid.add(side231);
+    for (int i = 0; i < map.getMap().size(); i++){
+      grid.add(map.getMap().get(i));
+    }
+    for(int i = 0; i < grid.size(); i++){
+      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
+      t.putCharacter(grid.get(i).getBarrier());
+    }
+  }
 
-
+  public static void fillScreen(Terminal t){
     greeblers.add(greeb1);
     greeblers.add(greeb2);
     greeblers.add(greeb3);
     greeblers.add(greeb4);
-    for (int i = 0; i < map.getMap().size(); i++){
-      grid.add(map.getMap().get(i));
-    }
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
     }
@@ -504,10 +509,6 @@ public class Demo{
     babies.add(baby2);
     babies.add(baby3);
     babies.add(baby4);
-    for(int i = 0; i < grid.size(); i++){
-      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
-      t.putCharacter(grid.get(i).getBarrier());
-    }
     for(int j = 0; j < greeblers.size(); j++){
       t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
       t.putCharacter(greeblers.get(j).getGraphic());
@@ -729,6 +730,8 @@ public static void pickUpBaby(Player n, Terminal t){
     int x = 10;
     int y = 10;
 
+    fillWalls(terminal);
+
     while(running){
 
       terminal.moveCursor(70, 19);
@@ -749,7 +752,7 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-      
+
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter('\u262d');
@@ -763,6 +766,7 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
+      
       putString(1, 1, terminal, "Player health: " + one.getHealth());
       putString(1, 4, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
       putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
