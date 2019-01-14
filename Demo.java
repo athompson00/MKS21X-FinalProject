@@ -701,16 +701,42 @@ public class Demo{
 public static void pickUpBaby(Player n, Terminal t){
   int a = - 1;
   for (int i = 0; i < babies.size(); i++){
-    if (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY()){
-      a = i;
+    if (n.getDirection().equals("up") &&
+       (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1)){
+         babies.get(i).pickUp();
+         n.pickUpBaby();
+         babies.get(i).changeGraphic('\u0000');
+         n.moveUp();
+         babies.get(i).setX(100);
+         babies.get(i).setY(100);
     }
-  }
-  if (a != -1){
-    babies.get(a).pickUp();
-    n.pickUpBaby();
-    babies.get(a).changeGraphic('\u0000');
-    babies.get(a).setX(100);
-    babies.get(a).setY(100);
+    if (n.getDirection().equals("down") &&
+       (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1)){
+         babies.get(i).pickUp();
+         n.pickUpBaby();
+         babies.get(i).changeGraphic('\u0000');
+         n.moveDown();
+         babies.get(i).setX(100);
+         babies.get(i).setY(100);
+    }
+    if (n.getDirection().equals("left") &&
+       (babies.get(i).getX() == n.getX() - 1 && babies.get(i).getY() == n.getY())){
+         babies.get(i).pickUp();
+         n.pickUpBaby();
+         babies.get(i).changeGraphic('\u0000');
+         n.moveLeft();
+         babies.get(i).setX(100);
+         babies.get(i).setY(100);
+    }
+    if (n.getDirection().equals("right") &&
+       (babies.get(i).getX() == n.getX() + 1 && babies.get(i).getY() == n.getY())){
+         babies.get(i).pickUp();
+         n.pickUpBaby();
+         babies.get(i).changeGraphic('\u0000');
+         n.moveRight();
+         babies.get(i).setX(100);
+         babies.get(i).setY(100);
+    }
   }
 }
 
@@ -790,11 +816,8 @@ public static void pickUpBaby(Player n, Terminal t){
   					terminal.putCharacter(' ');
 				    one.moveLeft();
             x--;
-            }
-            if (checkAround(one)[3].equals("baby")){
-              one.moveLeft();
-              pickUpBaby(one, terminal);
-            }
+          }
+          pickUpBaby(one, terminal);
 				}
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
@@ -804,10 +827,7 @@ public static void pickUpBaby(Player n, Terminal t){
 					  one.moveRight();
             x++;
           }
-          if (checkAround(one)[1].equals("baby")){
-            one.moveRight();
-            pickUpBaby(one, terminal);
-          }
+          pickUpBaby(one, terminal);
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
@@ -817,10 +837,7 @@ public static void pickUpBaby(Player n, Terminal t){
 					  one.moveUp();
             y++;
           }
-          if (checkAround(one)[2].equals("baby")){
-            one.moveUp();
-            pickUpBaby(one, terminal);
-          }
+          pickUpBaby(one, terminal);
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
@@ -832,10 +849,7 @@ public static void pickUpBaby(Player n, Terminal t){
 					  one.moveDown();
             y++;
           }
-          if (checkAround(one)[0].equals("baby")){
-            one.moveDown();
-            pickUpBaby(one, terminal);
-          }
+          pickUpBaby(one, terminal);
 				}
 				//attacking
 				if (key.getCharacter() == ' ') {
