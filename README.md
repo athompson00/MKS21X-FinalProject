@@ -1,4 +1,10 @@
 # MKS21X-FinalProject
+How to play:
+Arrow Keys for movement
+Space to attack
+collect Babies(Marked with a B-like symbol) and get to exit marked by theta to win
+avoid or attack greeblers marked with @
+
 DevLog:
 -1/4/19 created creature class with basic methods
 -1/5/19 Added simple get and change-variable methods as well as a dodge method to Creature class.
@@ -8,3 +14,4 @@ DevLog:
 -1/10/19 Tried to instantiate a grid of walls on the screen - failed to do so. Checkinfront function created. Baby class written.
 -1/11/19 Instantiated grid, babies, and greeblers arraylists and finished player's interaction with these items in terms of movement, must write attack methods and show graphics of babies and greeblers. Created pickUpBaby() method and implemented necessary methods in baby and Player. Also makes babies disappear from the screen once they are collected.
 -11/12/19 Began creation of map. All classes interact with each other properly in attack, pick up, and in movement. perimeter has been drawn, but we still have to draw the maze and allow greeblers to attack players.
+-11/13/29 Map completed. Fixed pickUpBaby so that it works in all directions. Attack modified to work with greeblers. Map added to grid arraylist. More greeblers and babies placed around the map. Output messages like "you won" and others created. Game ready for demo.
