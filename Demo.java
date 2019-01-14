@@ -811,6 +811,7 @@ public static void pickUpBaby(Player n, Terminal t){
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
+          one.setDirection("left");
           if (checkAround(one)[3].equals(" ")){
             terminal.moveCursor(one.getX(),one.getY());
   					terminal.putCharacter(' ');
@@ -821,6 +822,7 @@ public static void pickUpBaby(Player n, Terminal t){
 				}
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
+          one.setDirection("right");
           if (checkAround(one)[1].equals(" ")){
             terminal.moveCursor(one.getX(),one.getY());
   					terminal.putCharacter(' ');
@@ -831,6 +833,7 @@ public static void pickUpBaby(Player n, Terminal t){
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
+          one.setDirection("up");
           if (checkAround(one)[2].equals(" ")){
             terminal.moveCursor(one.getX(),one.getY());
   					terminal.putCharacter(' ');
@@ -845,7 +848,6 @@ public static void pickUpBaby(Player n, Terminal t){
 					if (checkAround(one)[0].equals(" ")){
             terminal.moveCursor(one.getX(),one.getY());
             terminal.putCharacter(' ');
-            one.setDirection("down");
 					  one.moveDown();
             y++;
           }
