@@ -749,7 +749,7 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-      
+
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter('\u262d');
@@ -816,7 +816,7 @@ public static void pickUpBaby(Player n, Terminal t){
             y++;
           }
           if (checkAround(one)[2].equals("baby")){
-            one.moveDown();
+            one.moveUp();
             pickUpBaby(one, terminal);
           }
 				}
