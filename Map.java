@@ -241,11 +241,6 @@ public class Map{
   }
   public void fillInMap1(){
     //full wall
-    wall1 = new Wall(25, 1, "up");
-    wall2 = new Wall(25, 2, "up");
-    wall3 = new Wall(25, 3, "up");
-    wall4 = new Wall(25, 4, "up");
-    wall5 = new Wall(25, 5, "up");
     wall6 = new Wall(25, 6, "up");
     wall7 = new Wall(25, 7, "up");
     wall8 = new Wall(25, 8, "up");
@@ -358,11 +353,7 @@ public class Map{
     wall104 = new Wall(50, 8, "");
     //new wall
     wall106 = new Wall(51, 8, "up");
-    wall107 = new Wall(51, 7, "up");
     wall108 = new Wall(51, 6, "up");
-    wall109 = new Wall(51, 5, "up");
-    wall110 = new Wall(51, 4, "up");
-    wall111 = new Wall(51, 3, "up");
     //new wall
     wall112 = new Wall(42, 9, "up");
     wall113 = new Wall(42, 10, "up");
@@ -400,13 +391,7 @@ public class Map{
     wall142 = new Wall(53, 21, "up");
     wall143 = new Wall(53, 22, "up");
     //new walls
-    wall144 = new Wall(54, 1, "up");
-    wall145 = new Wall(54, 2, "up");
-    wall146 = new Wall(54, 3, "up");
-    wall147 = new Wall(54, 4, "up");
-    wall148 = new Wall(54, 5, "up");
     wall149 = new Wall(54, 6, "up");
-    wall150 = new Wall(54, 7, "up");
     wall151 = new Wall(54, 8, "up");
     //new wall
     wall152 = new Wall(55, 8, "");
@@ -490,11 +475,7 @@ public class Map{
 
 
 
-    map.add(wall1);
-    map.add(wall2);
-    map.add(wall3);
-    map.add(wall4);
-    map.add(wall5);
+
     map.add(wall6);
     map.add(wall7);
     map.add(wall8);
@@ -605,11 +586,7 @@ public class Map{
     map.add(wall104);
 //new walls
     map.add(wall106);
-    map.add(wall107);
     map.add(wall108);
-    map.add(wall109);
-    map.add(wall110);
-    map.add(wall111);
     //new wall
     map.add(wall112);
     map.add(wall113);
@@ -645,13 +622,7 @@ public class Map{
     map.add(wall142);
     map.add(wall143);
     //new wall
-    map.add(wall144);
-    map.add(wall145);
-    map.add(wall146);
-    map.add(wall147);
-    map.add(wall148);
     map.add(wall149);
-    map.add(wall150);
     map.add(wall151);
     //new wall
     map.add(wall152);
