@@ -260,13 +260,13 @@ public class Demo{
   static Greebler greeb6 = new Greebler(39,11);
   static Greebler greeb7 = new Greebler(49,9);
   static Greebler greeb8 = new Greebler(49,11);
-  static Greebler greeb9 = new Greebler(74,20);
+  static Greebler greeb9 = new Greebler(74,22);
 
   static Baby baby1 = new Baby(40, 10);
   static Baby baby2 = new Baby(8, 20);
   static Baby baby3 = new Baby(12, 21);
   static Baby baby4 = new Baby(47, 10);
-  static Baby baby5 = new Baby(76, 20);
+  static Baby baby5 = new Baby(76, 22);
 
   public static void fillWalls(Terminal t){
     //top
