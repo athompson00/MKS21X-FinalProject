@@ -783,8 +783,8 @@ public static void pickUpBaby(Player n, Terminal t){
 					terminal.exitPrivateMode();
 					running = false;
 					System.out.println();
-          System.out.println("You coward! You chose your life over the life of infants");
-
+          System.out.println("You coward! You chose your life over the life of infants forshame");
+          System.out.println();
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
