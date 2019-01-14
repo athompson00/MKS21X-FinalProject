@@ -260,7 +260,7 @@ public class Demo{
   static Baby baby1 = new Baby(40, 10);
   static Baby baby2 = new Baby(8, 20);
   static Baby baby3 = new Baby(12, 21);
-  static Baby baby4 = new Baby(47, 9);
+  static Baby baby4 = new Baby(47, 10);
 
   public static void fillScreen(Terminal t){
     //top
@@ -731,6 +731,8 @@ public static void pickUpBaby(Player n, Terminal t){
 
     while(running){
 
+      terminal.moveCursor(70, 19);
+      terminal.putCharacter('\u03B8');
 			terminal.moveCursor(one.getX(),one.getY());
 			terminal.applyBackgroundColor(Terminal.Color.WHITE);
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
@@ -743,11 +745,11 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applySGR(Terminal.SGR.RESET_ALL);
 
 
-			terminal.moveCursor(size.getColumns()-5,5);
+			/*terminal.moveCursor(size.getColumns()-5,5);
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-      /*
+      
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter('\u262d');
@@ -762,8 +764,6 @@ public static void pickUpBaby(Player n, Terminal t){
 
       fillScreen(terminal);
       putString(1, 1, terminal, "Player health: " + one.getHealth());
-      putString(1, 2, terminal, "greebler 1 health: " + greeb1.getHealth());
-      putString(1, 3, terminal, "greebler 2 health: " + greeb2.getHealth());
       putString(1, 4, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
       putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
   //    putString(50, 6, terminal, "around: " + checkAround(one)[0] + ", " + checkAround(one)[1] + ", " + checkAround(one)[2] + ", " + checkAround(one)[3]);
@@ -850,6 +850,16 @@ public static void pickUpBaby(Player n, Terminal t){
         running = false;
         System.out.println();
         System.out.println("As the Terminator once said \"hasta la vista\"");
+        System.out.println("You lost");
+        System.out.println();
+      }
+      if(one.getBabiesToCollect() == 0 && one.getX() == 70
+      && one.getY() == 19){
+        terminal.exitPrivateMode();
+        running = false;
+        System.out.println();
+        System.out.println("A job well done");
+        System.out.println("You won");
         System.out.println();
       }
     }
