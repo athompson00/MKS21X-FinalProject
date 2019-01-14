@@ -262,11 +262,7 @@ public class Demo{
   static Baby baby3 = new Baby(12, 21);
   static Baby baby4 = new Baby(47, 9);
 
-<<<<<<< HEAD
   public static void fillGrid(){
-=======
-  public static void fillWalls(Terminal t){
->>>>>>> a0ffa87b9aed4351d0a5245a1f21419dd4be4cd3
     //top
     grid.add(side0);
     grid.add(side1);
@@ -492,16 +488,7 @@ public class Demo{
     grid.add(side229);
     grid.add(side230);
     grid.add(side231);
-    for (int i = 0; i < map.getMap().size(); i++){
-      grid.add(map.getMap().get(i));
-    }
-    for(int i = 0; i < grid.size(); i++){
-      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
-      t.putCharacter(grid.get(i).getBarrier());
-    }
-  }
 
-<<<<<<< HEAD
     //puts map into wallgrid
     for (int i = 0; i < map.getMap().size(); i++){
       grid.add(map.getMap().get(i));
@@ -517,9 +504,6 @@ public class Demo{
   public static void fillScreen(Terminal t){
 
 
-=======
-  public static void fillScreen(Terminal t){
->>>>>>> a0ffa87b9aed4351d0a5245a1f21419dd4be4cd3
     greeblers.add(greeb1);
     greeblers.add(greeb2);
     greeblers.add(greeb3);
@@ -752,8 +736,6 @@ public static void pickUpBaby(Player n, Terminal t){
     //fillGrid draws Map
     fillGrid();
 
-    fillWalls(terminal);
-
     while(running){
 
 			terminal.moveCursor(one.getX(),one.getY());
@@ -772,11 +754,7 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyBackgroundColor(Terminal.Color.RED);
 			terminal.applyForegroundColor(Terminal.Color.YELLOW);
 			terminal.applySGR(Terminal.SGR.ENTER_BOLD);
-<<<<<<< HEAD
       /*
-=======
-
->>>>>>> a0ffa87b9aed4351d0a5245a1f21419dd4be4cd3
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter('\u262d');
@@ -790,7 +768,6 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
-
       putString(1, 1, terminal, "Player health: " + one.getHealth());
       putString(1, 2, terminal, "greebler 1 health: " + greeb1.getHealth());
       putString(1, 3, terminal, "greebler 2 health: " + greeb2.getHealth());
@@ -808,9 +785,8 @@ public static void pickUpBaby(Player n, Terminal t){
 
 					terminal.exitPrivateMode();
 					running = false;
-					System.out.println();
-          System.out.println("You coward! You chose your life over the life of infants forshame");
-          System.out.println();
+					System.out.println(one.getX());
+					System.out.println(one.getY());
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
@@ -881,19 +857,6 @@ public static void pickUpBaby(Player n, Terminal t){
         running = false;
         System.out.println();
         System.out.println("As the Terminator once said \"hasta la vista\"");
-<<<<<<< HEAD
-=======
-        System.out.println("You lost");
-        System.out.println();
-      }
-      if(one.getBabiesToCollect() == 0 && one.getX() == 70
-      && one.getY() == 19){
-        terminal.exitPrivateMode();
-        running = false;
-        System.out.println();
-        System.out.println("A job well done. We now knight you as the pacifist");
-        System.out.println("You won");
->>>>>>> a0ffa87b9aed4351d0a5245a1f21419dd4be4cd3
         System.out.println();
       }
     }
