@@ -13,7 +13,6 @@ import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 import java.util.ArrayList;
-import java.util.Math;
 
 public class Demo{
   static ArrayList<Wall> grid = new ArrayList<Wall>();
@@ -755,7 +754,7 @@ public static void pickUpBaby(Player n, Terminal t){
   }
 }
 
-public void followPlayer(){
+public static void followPlayer(){
   int playerX = one.getX();
   int playerY = one.getY();
   for (int i = 0; i < greeblers.size(); i++){
