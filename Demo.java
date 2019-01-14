@@ -19,7 +19,7 @@ public class Demo{
   static ArrayList<Greebler> greeblers = new ArrayList<Greebler>();
   static ArrayList<Integer> killed = new ArrayList<Integer>();
   static ArrayList<Baby> babies = new ArrayList<Baby>();
-  static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 4);
+  static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
   static Map map = new Map(1);
 
 
@@ -252,14 +252,21 @@ public class Demo{
   static Wall side231 = new Wall(79,23, "up");
 
 
-  static Greebler greeb1 = new Greebler(20, 15);
+  static Greebler greeb1 = new Greebler(8, 15);
   static Greebler greeb2 = new Greebler(30,20);
   static Greebler greeb3 = new Greebler(12, 20);
   static Greebler greeb4 = new Greebler(15,20);
+  static Greebler greeb5 = new Greebler(40,11);
+  static Greebler greeb6 = new Greebler(39,11);
+  static Greebler greeb7 = new Greebler(49,9);
+  static Greebler greeb8 = new Greebler(49,11);
+  static Greebler greeb9 = new Greebler(74,20);
+
   static Baby baby1 = new Baby(40, 10);
   static Baby baby2 = new Baby(8, 20);
   static Baby baby3 = new Baby(12, 21);
   static Baby baby4 = new Baby(47, 10);
+  static Baby baby5 = new Baby(76, 20);
 
   public static void fillWalls(Terminal t){
     //top
@@ -501,6 +508,11 @@ public class Demo{
     greeblers.add(greeb2);
     greeblers.add(greeb3);
     greeblers.add(greeb4);
+    greeblers.add(greeb5);
+    greeblers.add(greeb6);
+    greeblers.add(greeb7);
+    greeblers.add(greeb8);
+    reeblers.add(greeb9);
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
     }
@@ -508,6 +520,7 @@ public class Demo{
     babies.add(baby2);
     babies.add(baby3);
     babies.add(baby4);
+    babies.add(baby5);
     for(int j = 0; j < greeblers.size(); j++){
       t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
       t.putCharacter(greeblers.get(j).getGraphic());
