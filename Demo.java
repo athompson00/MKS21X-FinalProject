@@ -709,8 +709,6 @@ public static void pickUpBaby(Player n, Terminal t){
     babies.get(a).pickUp();
     n.pickUpBaby();
     babies.get(a).changeGraphic('\u0000');
-    t.moveCursor(babies.get(a).getX(), babies.get(a).getY());
-    t.putCharacter(babies.get(a).getGraphic());
     babies.get(a).setX(50);
     babies.get(a).setY(50);
   }
