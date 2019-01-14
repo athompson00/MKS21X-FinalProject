@@ -512,7 +512,7 @@ public class Demo{
     greeblers.add(greeb6);
     greeblers.add(greeb7);
     greeblers.add(greeb8);
-    reeblers.add(greeb9);
+    greeblers.add(greeb9);
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
     }
