@@ -26,93 +26,85 @@ public class Demo{
 
   //perimeter
   //top
-  static Wall side0 = new Wall(0,0, "up");
-  static Wall side1 = new Wall(1,0, "");
-  static Wall side2 = new Wall(2,0, "");
-  static Wall side3 = new Wall(3,0, "");
-  static Wall side4 = new Wall(4,0, "");
-  static Wall side5 = new Wall(5,0, "");
-  static Wall side6 = new Wall(6,0, "");
-  static Wall side7 = new Wall(7,0, "");
-  static Wall side8 = new Wall(8,0, "");
-  static Wall side9 = new Wall(9,0, "");
-  static Wall side10 = new Wall(10,0, "");
-  static Wall side11 = new Wall(11,0, "");
-  static Wall side12 = new Wall(12,0, "");
-  static Wall side13 = new Wall(13,0, "");
-  static Wall side14 = new Wall(14,0, "");
-  static Wall side15 = new Wall(15,0, "");
-  static Wall side16 = new Wall(16,0, "");
-  static Wall side17 = new Wall(17,0, "");
-  static Wall side18 = new Wall(18,0, "");
-  static Wall side19 = new Wall(19,0, "");
-  static Wall side20 = new Wall(20,0, "");
-  static Wall side21 = new Wall(21,0, "");
-  static Wall side22 = new Wall(22,0, "");
-  static Wall side23 = new Wall(23,0, "");
-  static Wall side24 = new Wall(24,0, "");
-  static Wall side25 = new Wall(25,0, "");
-  static Wall side26 = new Wall(26,0, "");
-  static Wall side27 = new Wall(27,0, "");
-  static Wall side28 = new Wall(28,0, "");
-  static Wall side29 = new Wall(29,0, "");
-  static Wall side30 = new Wall(30,0, "");
-  static Wall side31 = new Wall(31,0, "");
-  static Wall side32 = new Wall(32,0, "");
-  static Wall side33 = new Wall(33,0, "");
-  static Wall side34 = new Wall(34,0, "");
-  static Wall side35 = new Wall(35,0, "");
-  static Wall side36 = new Wall(36,0, "");
-  static Wall side37 = new Wall(37,0, "");
-  static Wall side38 = new Wall(38,0, "");
-  static Wall side39 = new Wall(39,0, "");
-  static Wall side40 = new Wall(40,0, "");
-  static Wall side41 = new Wall(41,0, "");
-  static Wall side42 = new Wall(42,0, "");
-  static Wall side43 = new Wall(43,0, "");
-  static Wall side44 = new Wall(44,0, "");
-  static Wall side45 = new Wall(45,0, "");
-  static Wall side46 = new Wall(46,0, "");
-  static Wall side47 = new Wall(47,0, "");
-  static Wall side48 = new Wall(48,0, "");
-  static Wall side49 = new Wall(49,0, "");
-  static Wall side50 = new Wall(50,0, "");
-  static Wall side51 = new Wall(51,0, "");
-  static Wall side52 = new Wall(52,0, "");
-  static Wall side53 = new Wall(53,0, "");
-  static Wall side54 = new Wall(54,0, "");
-  static Wall side55 = new Wall(55,0, "");
-  static Wall side56 = new Wall(56,0, "");
-  static Wall side57 = new Wall(57,0, "");
-  static Wall side58 = new Wall(58,0, "");
-  static Wall side59 = new Wall(59,0, "");
-  static Wall side60 = new Wall(60,0, "");
-  static Wall side61 = new Wall(61,0, "");
-  static Wall side62 = new Wall(62,0, "");
-  static Wall side63 = new Wall(63,0, "");
-  static Wall side64 = new Wall(64,0, "");
-  static Wall side65 = new Wall(65,0, "");
-  static Wall side66 = new Wall(66,0, "");
-  static Wall side67 = new Wall(67,0, "");
-  static Wall side68 = new Wall(68,0, "");
-  static Wall side69 = new Wall(69,0, "");
-  static Wall side70 = new Wall(70,0, "");
-  static Wall side71 = new Wall(71,0, "");
-  static Wall side72 = new Wall(72,0, "");
-  static Wall side73 = new Wall(73,0, "");
-  static Wall side74 = new Wall(74,0, "");
-  static Wall side75 = new Wall(75,0, "");
-  static Wall side76 = new Wall(76,0, "");
-  static Wall side77 = new Wall(77,0, "");
-  static Wall side78 = new Wall(78,0, "");
-  static Wall side79 = new Wall(79,0, "up");
+  static Wall side0 = new Wall(0,6, "up");
+  static Wall side1 = new Wall(1,6, "");
+  static Wall side2 = new Wall(2,6, "");
+  static Wall side3 = new Wall(3,6, "");
+  static Wall side4 = new Wall(4,6, "");
+  static Wall side5 = new Wall(5,6, "");
+  static Wall side6 = new Wall(6,6, "");
+  static Wall side7 = new Wall(7,6, "");
+  static Wall side8 = new Wall(8,6, "");
+  static Wall side9 = new Wall(9,6, "");
+  static Wall side10 = new Wall(10,6, "");
+  static Wall side11 = new Wall(11,6, "");
+  static Wall side12 = new Wall(12,6, "");
+  static Wall side13 = new Wall(13,6, "");
+  static Wall side14 = new Wall(14,6, "");
+  static Wall side15 = new Wall(15,6, "");
+  static Wall side16 = new Wall(16,6, "");
+  static Wall side17 = new Wall(17,6, "");
+  static Wall side18 = new Wall(18,6, "");
+  static Wall side19 = new Wall(19,6, "");
+  static Wall side20 = new Wall(20,6, "");
+  static Wall side21 = new Wall(21,6, "");
+  static Wall side22 = new Wall(22,6, "");
+  static Wall side23 = new Wall(23,6, "");
+  static Wall side24 = new Wall(24,6, "");
+  static Wall side26 = new Wall(26,6, "");
+  static Wall side27 = new Wall(27,6, "");
+  static Wall side28 = new Wall(28,6, "");
+  static Wall side29 = new Wall(29,6, "");
+  static Wall side30 = new Wall(30,6, "");
+  static Wall side31 = new Wall(31,6, "");
+  static Wall side32 = new Wall(32,6, "");
+  static Wall side33 = new Wall(33,6, "");
+  static Wall side34 = new Wall(34,6, "");
+  static Wall side35 = new Wall(35,6, "");
+  static Wall side36 = new Wall(36,6, "");
+  static Wall side37 = new Wall(37,6, "");
+  static Wall side38 = new Wall(38,6, "");
+  static Wall side39 = new Wall(39,6, "");
+  static Wall side40 = new Wall(40,6, "");
+  static Wall side41 = new Wall(41,6, "");
+  static Wall side42 = new Wall(42,6, "");
+  static Wall side43 = new Wall(43,6, "");
+  static Wall side44 = new Wall(44,6, "");
+  static Wall side45 = new Wall(45,6, "");
+  static Wall side46 = new Wall(46,6, "");
+  static Wall side47 = new Wall(47,6, "");
+  static Wall side48 = new Wall(48,6, "");
+  static Wall side49 = new Wall(49,6, "");
+  static Wall side50 = new Wall(50,6, "");
+  static Wall side52 = new Wall(52,6, "");
+  static Wall side53 = new Wall(53,6, "");
+  static Wall side55 = new Wall(55,6, "");
+  static Wall side56 = new Wall(56,6, "");
+  static Wall side57 = new Wall(57,6, "");
+  static Wall side58 = new Wall(58,6, "");
+  static Wall side59 = new Wall(59,6, "");
+  static Wall side60 = new Wall(60,6, "");
+  static Wall side61 = new Wall(61,6, "");
+  static Wall side62 = new Wall(62,6, "");
+  static Wall side63 = new Wall(63,6, "");
+  static Wall side64 = new Wall(64,6, "");
+  static Wall side65 = new Wall(65,6, "");
+  static Wall side66 = new Wall(66,6, "");
+  static Wall side67 = new Wall(67,6, "");
+  static Wall side68 = new Wall(68,6, "");
+  static Wall side69 = new Wall(69,6, "");
+  static Wall side70 = new Wall(70,6, "");
+  static Wall side71 = new Wall(71,6, "");
+  static Wall side72 = new Wall(72,6, "");
+  static Wall side73 = new Wall(73,6, "");
+  static Wall side74 = new Wall(74,6, "");
+  static Wall side75 = new Wall(75,6, "");
+  static Wall side76 = new Wall(76,6, "");
+  static Wall side77 = new Wall(77,6, "");
+  static Wall side78 = new Wall(78,6, "");
+  static Wall side79 = new Wall(79,6, "up");
 
 //  left side
-  static Wall side80 = new Wall(0,1, "up");
-  static Wall side81 = new Wall(0,2, "up");
-  static Wall side82 = new Wall(0,3, "up");
-  static Wall side83 = new Wall(0,4, "up");
-  static Wall side84 = new Wall(0,5, "up");
   static Wall side85 = new Wall(0,6, "up");
   static Wall side86 = new Wall(0,7, "up");
   static Wall side87 = new Wall(0,8, "up");
@@ -241,11 +233,6 @@ public class Demo{
   static Wall side208 = new Wall(79,23, "up");
 
   //right side
-  static Wall side209 = new Wall(79,1, "up");
-  static Wall side210 = new Wall(79,2, "up");
-  static Wall side211 = new Wall(79,3, "up");
-  static Wall side212 = new Wall(79,4, "up");
-  static Wall side213 = new Wall(79,5, "up");
   static Wall side214 = new Wall(79,6, "up");
   static Wall side215 = new Wall(79,7, "up");
   static Wall side216 = new Wall(79,8, "up");
@@ -272,6 +259,8 @@ public class Demo{
   static Greebler greeb4 = new Greebler(15,20);
   static Baby baby1 = new Baby(40, 10);
   static Baby baby2 = new Baby(8, 20);
+  static Baby baby3 = new Baby(12, 21);
+  static Baby baby4 = new Baby(47, 9);
 
   public static void fillScreen(Terminal t){
     //top
@@ -300,7 +289,6 @@ public class Demo{
     grid.add(side22);
     grid.add(side23);
     grid.add(side24);
-    grid.add(side25);
     grid.add(side26);
     grid.add(side27);
     grid.add(side28);
@@ -326,10 +314,8 @@ public class Demo{
     grid.add(side48);
     grid.add(side49);
     grid.add(side50);
-    grid.add(side51);
     grid.add(side52);
     grid.add(side53);
-    grid.add(side54);
     grid.add(side55);
     grid.add(side56);
     grid.add(side57);
@@ -356,11 +342,6 @@ public class Demo{
     grid.add(side78);
     grid.add(side79);
     //left side
-    grid.add(side80);
-    grid.add(side81);
-    grid.add(side82);
-    grid.add(side83);
-    grid.add(side84);
     grid.add(side85);
     grid.add(side86);
     grid.add(side87);
@@ -489,11 +470,6 @@ public class Demo{
     grid.add(side208);
 
     //right side
-    grid.add(side209);
-    grid.add(side210);
-    grid.add(side211);
-    grid.add(side212);
-    grid.add(side213);
     grid.add(side214);
     grid.add(side215);
     grid.add(side216);
@@ -526,6 +502,8 @@ public class Demo{
     }
     babies.add(baby1);
     babies.add(baby2);
+    babies.add(baby3);
+    babies.add(baby4);
     for(int i = 0; i < grid.size(); i++){
       t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
       t.putCharacter(grid.get(i).getBarrier());
@@ -630,12 +608,6 @@ public class Demo{
     }
     if(checkAround(c)[2].equals("player")){
       one.subHealth(c.getDamage());
-    }
-
-
-    //exits system if player is dead
-    if(one.getHealth() <= 0){
-      System.exit(1);
     }
   }
   //checks position in front of creature for a
@@ -789,11 +761,11 @@ public static void pickUpBaby(Player n, Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
-      putString(1, 2, terminal, "Player health: " + one.getHealth());
-      putString(1, 3, terminal, "greebler 1 health: " + greeb1.getHealth());
-      putString(1, 4, terminal, "greebler 2 health: " + greeb2.getHealth());
-      putString(1, 5, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
-      putString(1, 6, terminal, "Babies Picked Up: " + one.getBabiesCollected());
+      putString(1, 1, terminal, "Player health: " + one.getHealth());
+      putString(1, 2, terminal, "greebler 1 health: " + greeb1.getHealth());
+      putString(1, 3, terminal, "greebler 2 health: " + greeb2.getHealth());
+      putString(1, 4, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
+      putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
   //    putString(50, 6, terminal, "around: " + checkAround(one)[0] + ", " + checkAround(one)[1] + ", " + checkAround(one)[2] + ", " + checkAround(one)[3]);
 
 
@@ -867,6 +839,18 @@ public static void pickUpBaby(Player n, Terminal t){
 				if (key.getCharacter() == ' ') {
 					attack(one);
 				}
+      }
+      attack(greeb1);
+      attack(greeb2);
+      attack(greeb3);
+      attack(greeb4);
+      //exits system if player is dead
+      if(one.getHealth() <= 0){
+        terminal.exitPrivateMode();
+        running = false;
+        System.out.println();
+        System.out.println("As the Terminator once said \"hasta la vista\"");
+        System.out.println();
       }
     }
   }
