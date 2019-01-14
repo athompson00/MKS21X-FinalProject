@@ -5,11 +5,11 @@ public class Wall{
   public Wall(int xcor, int ycor, String orientation){
     x = xcor;
     y = ycor;
-    if(orientation.equals("up")){
+    if(orientation.equals("\u2629")){
       barrier = '|';
     }
     else{
-      barrier = '-';
+      barrier = '\u2629';
     }
   }
   public int getwallX(){
