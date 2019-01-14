@@ -13,6 +13,7 @@ import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 import java.util.ArrayList;
+import java.util.Math;
 
 public class Demo{
   static ArrayList<Wall> grid = new ArrayList<Wall>();
@@ -713,6 +714,7 @@ public class Demo{
 //PickUpBaby(player n, baby1) Allows player to pickup the babies
 public static void pickUpBaby(Player n, Terminal t){
   int a = - 1;
+  //checks each direction for a baby and picks it up
   for (int i = 0; i < babies.size(); i++){
     if (n.getDirection().equals("up") &&
        (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1)){
@@ -752,6 +754,41 @@ public static void pickUpBaby(Player n, Terminal t){
     }
   }
 }
+
+public void followPlayer(){
+  int playerX = one.getX();
+  int playerY = one.getY();
+  for (int i = 0; i < greeblers.size(); i++){
+    int x = greeblers.get(i).getX();
+    int y = greeblers.get(i).getY();
+    int xDiff = playerX - x;
+    int yDiff = playerY - y;
+    double d= Math.hypot(playerX - x, playerY - y);//distance from greebler to player
+    if(d < 10){
+      if ((Math.abs(xDiff) > Math.abs(yDiff)) &&
+         (xDiff > 0) &&
+         (checkAround(greeblers.get(i))[0].equals(""))){
+         greeblers.get(i).moveDown();
+      }
+      if ((Math.abs(xDiff) > Math.abs(yDiff)) &&
+         (xDiff < 0) &&
+         (checkAround(greeblers.get(i))[2].equals(""))){
+         greeblers.get(i).moveUp();
+      }
+      if ((Math.abs(yDiff) > Math.abs(xDiff)) &&
+         (yDiff > 0) &&
+         (checkAround(greeblers.get(i))[1].equals(""))){
+         greeblers.get(i).moveRight();
+      }
+      if ((Math.abs(yDiff) > Math.abs(xDiff)) &&
+         (yDiff < 0) &&
+         (checkAround(greeblers.get(i))[3].equals(""))){
+         greeblers.get(i).moveLeft();
+      }
+    }
+  }
+}
+
 
   public static void main(String[] args){
     Terminal terminal = TerminalFacade.createTextTerminal();
@@ -871,6 +908,7 @@ public static void pickUpBaby(Player n, Terminal t){
 					attack(one);
 				}
       }
+      followPlayer();
       attack(greeb1);
       attack(greeb2);
       attack(greeb3);
