@@ -800,10 +800,12 @@ public static void followPlayer(){
     int x = 10;
     int y = 10;
 
+    int z = 0;
+
     fillWalls(terminal);
 
     while(running){
-
+      z++;
       //terminal.moveCursor(70, 19);
       //terminal.putCharacter('\u03B8');
 			terminal.moveCursor(one.getX(),one.getY());
@@ -811,8 +813,8 @@ public static void followPlayer(){
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
 			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
-			terminal.putCharacter('\u00a4');
-			//terminal.putCharacter(' ');
+			terminal.putCharacter(one.getGraphic());
+			//terminal.putCharacter(' ');'\u00a4'
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 			terminal.applySGR(Terminal.SGR.RESET_ALL);
@@ -905,11 +907,14 @@ public static void followPlayer(){
 					attack(one);
 				}
       }
-      followPlayer();
-      attack(greeb1);
-      attack(greeb2);
-      attack(greeb3);
-      attack(greeb4);
+
+      if (z % 2 == 0){
+        followPlayer();
+        attack(greeb1);
+        attack(greeb2);
+        attack(greeb3);
+        attack(greeb4);
+      }
       //exits system if player is dead
       if(one.getHealth() <= 0){
         terminal.exitPrivateMode();
