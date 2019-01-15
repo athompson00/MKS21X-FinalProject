@@ -495,17 +495,6 @@ public class Demo{
     grid.add(side230);
     grid.add(side231);
 
-
-    for (int i = 0; i < map.getMap().size(); i++){
-      grid.add(map.getMap().get(i));
-    }
-    for(int i = 0; i < grid.size(); i++){
-      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
-      t.putCharacter(grid.get(i).getBarrier());
-    }
-  }
-
-  public static void fillScreen(Terminal t){
     //Adding greeblers and babies to their respective arraylists
     greeblers.add(greeb1);
     greeblers.add(greeb2);
@@ -522,6 +511,18 @@ public class Demo{
     babies.add(baby3);
     babies.add(baby4);
     babies.add(baby5);
+
+
+    for (int i = 0; i < map.getMap().size(); i++){
+      grid.add(map.getMap().get(i));
+    }
+    for(int i = 0; i < grid.size(); i++){
+      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
+      t.putCharacter(grid.get(i).getBarrier());
+    }
+  }
+
+  public static void fillScreen(Terminal t){
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
     }
@@ -734,8 +735,8 @@ public static void pickUpBaby(Player n, Terminal t){
          t.moveCursor(n.getX(), n.getY());
          t.putCharacter('\uFFFC');
          n.moveUp();
-         babies.get(i).setX(100);
-         babies.get(i).setY(100);
+         babies.get(i).setX(99);
+         babies.get(i).setY(99);
     }
     if (n.getDirection().equals("down") &&
        (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1)){
@@ -744,8 +745,8 @@ public static void pickUpBaby(Player n, Terminal t){
          t.moveCursor(n.getX(), n.getY());
          t.putCharacter('\uFFFC');
          n.moveDown();
-         babies.get(i).setX(100);
-         babies.get(i).setY(100);
+         babies.get(i).setX(99);
+         babies.get(i).setY(99);
     }
     if (n.getDirection().equals("left") &&
        (babies.get(i).getX() == n.getX() - 1 && babies.get(i).getY() == n.getY())){
@@ -754,8 +755,8 @@ public static void pickUpBaby(Player n, Terminal t){
          t.moveCursor(n.getX(), n.getY());
          t.putCharacter('\uFFFC');
          n.moveLeft();
-         babies.get(i).setX(100);
-         babies.get(i).setY(100);
+         babies.get(i).setX(99);
+         babies.get(i).setY(99);
     }
     if (n.getDirection().equals("right") &&
        (babies.get(i).getX() == n.getX() + 1 && babies.get(i).getY() == n.getY())){
@@ -764,8 +765,8 @@ public static void pickUpBaby(Player n, Terminal t){
          t.moveCursor(n.getX(), n.getY());
          t.putCharacter('\uFFFC');
          n.moveRight();
-         babies.get(i).setX(100);
-         babies.get(i).setY(100);
+         babies.get(i).setX(99);
+         babies.get(i).setY(99);
     }
   }
 }
