@@ -494,6 +494,25 @@ public class Demo{
     grid.add(side229);
     grid.add(side230);
     grid.add(side231);
+
+
+    //Adding greeblers and babies to their respective arraylists
+    greeblers.add(greeb1);
+    greeblers.add(greeb2);
+    greeblers.add(greeb3);
+    greeblers.add(greeb4);
+    greeblers.add(greeb5);
+    greeblers.add(greeb6);
+    greeblers.add(greeb7);
+    greeblers.add(greeb8);
+    greeblers.add(greeb9);
+
+    babies.add(baby1);
+    babies.add(baby2);
+    babies.add(baby3);
+    babies.add(baby4);
+    babies.add(baby5);
+
     for (int i = 0; i < map.getMap().size(); i++){
       grid.add(map.getMap().get(i));
     }
@@ -504,30 +523,20 @@ public class Demo{
   }
 
   public static void fillScreen(Terminal t){
-    greeblers.add(greeb1);
-    greeblers.add(greeb2);
-    greeblers.add(greeb3);
-    greeblers.add(greeb4);
-    greeblers.add(greeb5);
-    greeblers.add(greeb6);
-    greeblers.add(greeb7);
-    greeblers.add(greeb8);
-    greeblers.add(greeb9);
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
     }
-    babies.add(baby1);
-    babies.add(baby2);
-    babies.add(baby3);
-    babies.add(baby4);
-    babies.add(baby5);
     for(int j = 0; j < greeblers.size(); j++){
-      t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
-      t.putCharacter(greeblers.get(j).getGraphic());
+      if (greeblers.get(j).getX() != 99){
+        t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
+        t.putCharacter(greeblers.get(j).getGraphic());
+      }
     }
     for(int k = 0; k < babies.size(); k++){
-      t.moveCursor(babies.get(k).getX(), babies.get(k).getY());
-      t.putCharacter(babies.get(k).getGraphic());
+      if (babies.get(k).getX() != 99){
+        t.moveCursor(babies.get(k).getX(), babies.get(k).getY());
+        t.putCharacter(babies.get(k).getGraphic());
+      }
     }
   }
 
