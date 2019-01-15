@@ -754,33 +754,37 @@ public static void pickUpBaby(Player n, Terminal t){
   }
 }
 
-public static void followPlayer(){
-  int playerX = one.getX();
-  int playerY = one.getY();
+public static void followPlayer(Terminal t){
   for (int i = 0; i < greeblers.size(); i++){
-    int x = greeblers.get(i).getX();
-    int y = greeblers.get(i).getY();
-    double d= Math.hypot(playerX - x, playerY - y);//distance from greebler to player
-    if(d < 10){
-      if ((Math.abs(playerX - x) >= Math.abs(playerY - y)) &&
-         (playerX - x > 0) &&
+    double d = Math.hypot(one.getX() - greeblers.get(i).getX(), one.getY() - greeblers.get(i).getY());//distance from greebler to player
+    if(d < 5){
+      if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
+         (one.getX() - greeblers.get(i).getX() > 0) &&
          (checkAround(greeblers.get(i))[1].equals(" "))){
-         greeblers.get(i).moveRight();
+           t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
+           t.putCharacter("\uFFFC");
+           greeblers.get(i).moveRight();
       }
-      if ((Math.abs(playerX - x) >= Math.abs(playerY - y)) &&
-         (playerX - x < 0) &&
+      if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
+         (one.getX() - greeblers.get(i).getX() < 0) &&
          (checkAround(greeblers.get(i))[3].equals(" "))){
-         greeblers.get(i).moveLeft();
+           t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
+           t.putCharacter("\uFFFC");
+           greeblers.get(i).moveLeft();
          }
-      if ((Math.abs(playerY - y) > Math.abs(playerX - x)) &&
-         (playerY - y > 0) &&
+      if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
+         (one.getY() - greeblers.get(i).getY() > 0) &&
          (checkAround(greeblers.get(i))[0].equals(" "))){
-         greeblers.get(i).moveDown();
+           t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
+           t.putCharacter("\uFFFC");
+           greeblers.get(i).moveDown();
       }
-      if ((Math.abs(playerY - y) > Math.abs(playerX - x)) &&
-         (playerY - y < 0) &&
+      if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
+         (one.getY() - greeblers.get(i).getY() < 0) &&
          (checkAround(greeblers.get(i))[2].equals(" "))){
-         greeblers.get(i).moveUp();
+           t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
+           t.putCharacter("\uFFFC");
+           greeblers.get(i).moveUp();
       }
     }
   }
@@ -813,7 +817,7 @@ public static void followPlayer(){
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
 			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
-			terminal.putCharacter(one.getGraphic());
+			terminal.putCharacter('\u00a4');
 			//terminal.putCharacter(' ');'\u00a4'
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
@@ -909,7 +913,7 @@ public static void followPlayer(){
       }
 
       if (z % 2 == 0){
-        followPlayer();
+        followPlayer(terminal);
         attack(greeb1);
         attack(greeb2);
         attack(greeb3);
