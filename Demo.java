@@ -496,6 +496,16 @@ public class Demo{
     grid.add(side231);
 
 
+    for (int i = 0; i < map.getMap().size(); i++){
+      grid.add(map.getMap().get(i));
+    }
+    for(int i = 0; i < grid.size(); i++){
+      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
+      t.putCharacter(grid.get(i).getBarrier());
+    }
+  }
+
+  public static void fillScreen(Terminal t){
     //Adding greeblers and babies to their respective arraylists
     greeblers.add(greeb1);
     greeblers.add(greeb2);
@@ -512,17 +522,6 @@ public class Demo{
     babies.add(baby3);
     babies.add(baby4);
     babies.add(baby5);
-
-    for (int i = 0; i < map.getMap().size(); i++){
-      grid.add(map.getMap().get(i));
-    }
-    for(int i = 0; i < grid.size(); i++){
-      t.moveCursor(grid.get(i).getwallX(), grid.get(i).getwallY());
-      t.putCharacter(grid.get(i).getBarrier());
-    }
-  }
-
-  public static void fillScreen(Terminal t){
     for(int l = 0; l < killed.size(); l++){
       greeblers.remove(killed.get(l));
     }
@@ -816,6 +815,9 @@ public static void followPlayer(Terminal t){
   //  size.setColumns(200);
     terminal.setCursorVisible(false);
     boolean running = true;
+    //for switching
+    long tStart = System.currentTimeMillis();
+    long lastSecond = 0;
 
 
     int x = 10;
@@ -929,7 +931,11 @@ public static void followPlayer(Terminal t){
 				}
       }
 
-      if (z % 2 == 0){
+      long tEnd = System.currentTimeMillis();
+			long millis = tEnd - tStart;
+			if(millis/1000 > lastSecond){
+				lastSecond = millis / 1000;
+				//one second has passed.
         followPlayer(terminal);
         attack(greeb1, terminal);
         attack(greeb2, terminal);
@@ -940,7 +946,7 @@ public static void followPlayer(Terminal t){
         attack(greeb7, terminal);
         attack(greeb8, terminal);
         attack(greeb9, terminal);
-      }
+			}
       //exits system if player is dead
       if(one.getHealth() <= 0){
         terminal.exitPrivateMode();
