@@ -760,28 +760,26 @@ public static void followPlayer(){
   for (int i = 0; i < greeblers.size(); i++){
     int x = greeblers.get(i).getX();
     int y = greeblers.get(i).getY();
-    int xDiff = playerX - x;
-    int yDiff = playerY - y;
     double d= Math.hypot(playerX - x, playerY - y);//distance from greebler to player
     if(d < 10){
-      if ((Math.abs(xDiff) > Math.abs(yDiff)) &&
-         (xDiff > 0) &&
-         (checkAround(greeblers.get(i))[0].equals(""))){
+      if ((Math.abs(playerX - x) >= Math.abs(playerY - y)) &&
+         (playerX - x > 0) &&
+         (checkAround(greeblers.get(i))[0].equals(" "))){
          greeblers.get(i).moveDown();
       }
-      if ((Math.abs(xDiff) > Math.abs(yDiff)) &&
-         (xDiff < 0) &&
-         (checkAround(greeblers.get(i))[2].equals(""))){
+      if ((Math.abs(playerX - x) >= Math.abs(playerY - y)) &&
+         (playerX - x < 0) &&
+         (checkAround(greeblers.get(i))[2].equals(" "))){
          greeblers.get(i).moveUp();
       }
-      if ((Math.abs(yDiff) > Math.abs(xDiff)) &&
-         (yDiff > 0) &&
-         (checkAround(greeblers.get(i))[1].equals(""))){
+      if ((Math.abs(playerY - y) > Math.abs(playerX - x)) &&
+         (playerY - y > 0) &&
+         (checkAround(greeblers.get(i))[1].equals(" "))){
          greeblers.get(i).moveRight();
       }
-      if ((Math.abs(yDiff) > Math.abs(xDiff)) &&
-         (yDiff < 0) &&
-         (checkAround(greeblers.get(i))[3].equals(""))){
+      if ((Math.abs(playerY - y) > Math.abs(playerX - x)) &&
+         (playerY - y < 0) &&
+         (checkAround(greeblers.get(i))[3].equals(" "))){
          greeblers.get(i).moveLeft();
       }
     }
