@@ -774,7 +774,7 @@ public static void pickUpBaby(Player n, Terminal t){
 public static void followPlayer(Terminal t){
   for (int i = 0; i < greeblers.size(); i++){
     double d = Math.hypot(one.getX() - greeblers.get(i).getX(), one.getY() - greeblers.get(i).getY());//distance from greebler to player
-    if(d < 5){
+    if(d < 10){//10 is the tracking radius
       if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
          (one.getX() - greeblers.get(i).getX() > 0) &&
          (checkAround(greeblers.get(i))[1].equals(" "))){
