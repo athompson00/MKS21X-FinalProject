@@ -581,7 +581,7 @@ public class Demo{
         }
       }
       greeblers.get(d).subHealth(c.getDamage());
-      if(greeblers.get(d).getHealth() == 0){
+      if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter('\uFFFC');
@@ -603,7 +603,7 @@ public class Demo{
         }
       }
       greeblers.get(d).subHealth(c.getDamage());
-      if(greeblers.get(d).getHealth() == 0){
+      if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter('\uFFFC');
@@ -624,7 +624,7 @@ public class Demo{
         }
       }
       greeblers.get(d).subHealth(c.getDamage());
-      if(greeblers.get(d).getHealth() == 0){
+      if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter('\uFFFC');
