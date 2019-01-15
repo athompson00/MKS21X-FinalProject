@@ -3,7 +3,7 @@ public class Greebler extends Creature{
   private Random randgen = new Random();
   private double dodgeChance;
   public Greebler(int x, int y){
-    super(200, 10, x, y, "Greebler", '\u0E08');
+    super(200, 20, x, y, "Greebler", '\u0E08');
     dodgeChance = 20;
   }
   //used to modify damage variable
