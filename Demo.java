@@ -819,6 +819,7 @@ public static void followPlayer(Terminal t){
     //for switching
     long tStart = System.currentTimeMillis();
     long lastSecond = 0;
+    long lastSecond2 = 0;
 
 
     int x = 10;
@@ -934,10 +935,13 @@ public static void followPlayer(Terminal t){
 
       long tEnd = System.currentTimeMillis();
 			long millis = tEnd - tStart;
-			if(millis/1000 > lastSecond){
-				lastSecond = millis / 1000;
+			if(millis/100 > lastSecond){
+				lastSecond = millis / 100;
 				//one second has passed.
         followPlayer(terminal);
+			}
+      if (millis/500 > lastSecond2){
+        lastSecond2 = millis / 500;
         attack(greeb1, terminal);
         attack(greeb2, terminal);
         attack(greeb3, terminal);
@@ -947,7 +951,7 @@ public static void followPlayer(Terminal t){
         attack(greeb7, terminal);
         attack(greeb8, terminal);
         attack(greeb9, terminal);
-			}
+      }
       //exits system if player is dead
       if(one.getHealth() <= 0){
         terminal.exitPrivateMode();
