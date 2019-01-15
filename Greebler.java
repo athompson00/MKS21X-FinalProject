@@ -1,9 +1,10 @@
-//import Java.util.Random;
+import java.util.Random;
 public class Greebler extends Creature{
+  private Random randgen = new Random();
   private double dodgeChance;
   public Greebler(int x, int y){
     super(200, 10, x, y, "Greebler", '\u0E08');
-    dodgeChance = 0.15;
+    dodgeChance = 20;
   }
   //used to modify damage variable
   public void changeDamage(int newDamage){
@@ -11,7 +12,7 @@ public class Greebler extends Creature{
   }
   //returns true if dodge is successful and false if not
   public boolean Dodge(){
-    int n = 0;// = java.util.Random.nextInt(100);
+    int n = randgen.nextInt(100);
     if (dodgeChance > n){
       return true;
     } else {

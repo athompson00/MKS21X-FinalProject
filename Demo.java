@@ -559,7 +559,9 @@ public class Demo{
           d = i;
         }
       }
-      greeblers.get(d).subHealth(c.getDamage());
+      if (!greeblers.get(d).Dodge()){
+        greeblers.get(d).subHealth(c.getDamage());
+      }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
@@ -580,7 +582,9 @@ public class Demo{
           d = j;
         }
       }
-      greeblers.get(d).subHealth(c.getDamage());
+      if (!greeblers.get(d).Dodge()){
+        greeblers.get(d).subHealth(c.getDamage());
+      }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
@@ -602,7 +606,9 @@ public class Demo{
           d = k;
         }
       }
-      greeblers.get(d).subHealth(c.getDamage());
+      if (!greeblers.get(d).Dodge()){
+        greeblers.get(d).subHealth(c.getDamage());
+      }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
@@ -623,7 +629,9 @@ public class Demo{
           d = l;
         }
       }
-      greeblers.get(d).subHealth(c.getDamage());
+      if (!greeblers.get(d).Dodge()){
+        greeblers.get(d).subHealth(c.getDamage());
+      }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
