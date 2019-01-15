@@ -916,16 +916,21 @@ public static void followPlayer(Terminal t){
 				}
 				//attacking
 				if (key.getCharacter() == ' ') {
-					attack(one);
+					attack(one, terminal);
 				}
       }
 
       if (z % 2 == 0){
         followPlayer(terminal);
-        attack(greeb1);
-        attack(greeb2);
-        attack(greeb3);
-        attack(greeb4);
+        attack(greeb1, terminal);
+        attack(greeb2, terminal);
+        attack(greeb3, terminal);
+        attack(greeb4, terminal);
+        attack(greeb5, terminal);
+        attack(greeb6, terminal);
+        attack(greeb7, terminal);
+        attack(greeb8, terminal);
+        attack(greeb9, terminal);
       }
       //exits system if player is dead
       if(one.getHealth() <= 0){
