@@ -553,7 +553,7 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
-        greeblers.get(d).changeGraphic('\u0000');
+        greeblers.get(d).changeGraphic('\uFFFC');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -573,7 +573,7 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
-        greeblers.get(d).changeGraphic('\u0000');
+        greeblers.get(d).changeGraphic('\uFFFC');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -594,7 +594,7 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
-        greeblers.get(d).changeGraphic('\u0000');
+        greeblers.get(d).changeGraphic('\uFFFC');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -614,7 +614,7 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
-        greeblers.get(d).changeGraphic('\u0000');
+        greeblers.get(d).changeGraphic('\uFFFC');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -719,7 +719,7 @@ public static void pickUpBaby(Player n, Terminal t){
        (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1)){
          babies.get(i).pickUp();
          n.pickUpBaby();
-         babies.get(i).changeGraphic('\u0000');
+         babies.get(i).changeGraphic('\uFFFC');
          n.moveUp();
          babies.get(i).setX(100);
          babies.get(i).setY(100);
@@ -728,7 +728,7 @@ public static void pickUpBaby(Player n, Terminal t){
        (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1)){
          babies.get(i).pickUp();
          n.pickUpBaby();
-         babies.get(i).changeGraphic('\u0000');
+         babies.get(i).changeGraphic('\uFFFC');
          n.moveDown();
          babies.get(i).setX(100);
          babies.get(i).setY(100);
@@ -737,7 +737,7 @@ public static void pickUpBaby(Player n, Terminal t){
        (babies.get(i).getX() == n.getX() - 1 && babies.get(i).getY() == n.getY())){
          babies.get(i).pickUp();
          n.pickUpBaby();
-         babies.get(i).changeGraphic('\u0000');
+         babies.get(i).changeGraphic('\uFFFC');
          n.moveLeft();
          babies.get(i).setX(100);
          babies.get(i).setY(100);
@@ -746,7 +746,7 @@ public static void pickUpBaby(Player n, Terminal t){
        (babies.get(i).getX() == n.getX() + 1 && babies.get(i).getY() == n.getY())){
          babies.get(i).pickUp();
          n.pickUpBaby();
-         babies.get(i).changeGraphic('\u0000');
+         babies.get(i).changeGraphic('\uFFFC');
          n.moveRight();
          babies.get(i).setX(100);
          babies.get(i).setY(100);
@@ -765,22 +765,22 @@ public static void followPlayer(){
       if ((Math.abs(playerX - x) >= Math.abs(playerY - y)) &&
          (playerX - x > 0) &&
          (checkAround(greeblers.get(i))[0].equals(" "))){
-         greeblers.get(i).moveDown();
+         greeblers.get(i).moveRight();
       }
       if ((Math.abs(playerX - x) >= Math.abs(playerY - y)) &&
          (playerX - x < 0) &&
          (checkAround(greeblers.get(i))[2].equals(" "))){
-         greeblers.get(i).moveUp();
-      }
+         greeblers.get(i).moveLeft();
+         }
       if ((Math.abs(playerY - y) > Math.abs(playerX - x)) &&
          (playerY - y > 0) &&
          (checkAround(greeblers.get(i))[1].equals(" "))){
-         greeblers.get(i).moveRight();
+         greeblers.get(i).moveDown();
       }
       if ((Math.abs(playerY - y) > Math.abs(playerX - x)) &&
          (playerY - y < 0) &&
          (checkAround(greeblers.get(i))[3].equals(" "))){
-         greeblers.get(i).moveLeft();
+         greeblers.get(i).moveUp();
       }
     }
   }
@@ -804,8 +804,8 @@ public static void followPlayer(){
 
     while(running){
 
-      terminal.moveCursor(70, 19);
-      terminal.putCharacter('\u03B8');
+      //terminal.moveCursor(70, 19);
+      //terminal.putCharacter('\u03B8');
 			terminal.moveCursor(one.getX(),one.getY());
 			terminal.applyBackgroundColor(Terminal.Color.WHITE);
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
