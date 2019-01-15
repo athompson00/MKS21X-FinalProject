@@ -899,8 +899,9 @@ public static void followPlayer(Terminal t){
   					terminal.putCharacter(' ');
 				    one.moveLeft();
             x--;
+          } else {
+            pickUpBaby(one, terminal);
           }
-          pickUpBaby(one, terminal);
 				}
 
 				if (key.getKind() == Key.Kind.ArrowRight) {
@@ -910,8 +911,9 @@ public static void followPlayer(Terminal t){
   					terminal.putCharacter(' ');
 					  one.moveRight();
             x++;
+          } else {
+            pickUpBaby(one, terminal);
           }
-          pickUpBaby(one, terminal);
 				}
 
 				if (key.getKind() == Key.Kind.ArrowUp) {
@@ -921,8 +923,9 @@ public static void followPlayer(Terminal t){
   					terminal.putCharacter(' ');
 					  one.moveUp();
             y++;
+          } else {
+            pickUpBaby(one, terminal);
           }
-          pickUpBaby(one, terminal);
 				}
 
 				if (key.getKind() == Key.Kind.ArrowDown) {
@@ -932,9 +935,10 @@ public static void followPlayer(Terminal t){
             terminal.putCharacter(' ');
 					  one.moveDown();
             y++;
+          } else {
+            pickUpBaby(one, terminal);
           }
-          pickUpBaby(one, terminal);
-				}
+        }
 				//attacking
 				if (key.getCharacter() == ' ') {
 					attack(one, terminal);
