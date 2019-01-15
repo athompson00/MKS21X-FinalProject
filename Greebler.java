@@ -2,8 +2,8 @@
 public class Greebler extends Creature{
   private double dodgeChance;
   public Greebler(int x, int y){
-    super(100, 10, x, y, "Greebler", '\u20AA');
-    dodgeChance = 0.05;
+    super(200, 10, x, y, "Greebler", '\u0E08');
+    dodgeChance = 0.15;
   }
   //used to modify damage variable
   public void changeDamage(int newDamage){
