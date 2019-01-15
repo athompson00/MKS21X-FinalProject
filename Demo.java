@@ -561,8 +561,6 @@ public class Demo{
       }
       if (!greeblers.get(d).Dodge()){
         greeblers.get(d).subHealth(c.getDamage());
-      } else {
-        putString(65, 3, t, "Dodged!");
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
@@ -586,8 +584,6 @@ public class Demo{
       }
       if (!greeblers.get(d).Dodge()){
         greeblers.get(d).subHealth(c.getDamage());
-      } else {
-        putString(65, 3, t, "Dodged!");
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
@@ -612,8 +608,6 @@ public class Demo{
       }
       if (!greeblers.get(d).Dodge()){
         greeblers.get(d).subHealth(c.getDamage());
-      } else {
-        putString(65, 3, t, "Dodged!");
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
@@ -637,8 +631,6 @@ public class Demo{
       }
       if (!greeblers.get(d).Dodge()){
         greeblers.get(d).subHealth(c.getDamage());
-      } else {
-        putString(65, 3, t, "Dodged!");
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
