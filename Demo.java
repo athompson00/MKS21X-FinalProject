@@ -563,7 +563,7 @@ public class Demo{
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
-        t.putCharacter('\uFFFC');
+        t.putCharacter(' ');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -584,7 +584,7 @@ public class Demo{
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
-        t.putCharacter('\uFFFC');
+        t.putCharacter(' ');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -606,7 +606,7 @@ public class Demo{
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
-        t.putCharacter('\uFFFC');
+        t.putCharacter(' ');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -627,7 +627,7 @@ public class Demo{
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
-        t.putCharacter('\uFFFC');
+        t.putCharacter(' ');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -733,7 +733,7 @@ public static void pickUpBaby(Player n, Terminal t){
          babies.get(i).pickUp();
          n.pickUpBaby();
          t.moveCursor(n.getX(), n.getY());
-         t.putCharacter('\uFFFC');
+         t.putCharacter(' ');
          n.moveUp();
          babies.get(i).setX(99);
          babies.get(i).setY(99);
@@ -743,7 +743,7 @@ public static void pickUpBaby(Player n, Terminal t){
          babies.get(i).pickUp();
          n.pickUpBaby();
          t.moveCursor(n.getX(), n.getY());
-         t.putCharacter('\uFFFC');
+         t.putCharacter(' ');
          n.moveDown();
          babies.get(i).setX(99);
          babies.get(i).setY(99);
@@ -753,7 +753,7 @@ public static void pickUpBaby(Player n, Terminal t){
          babies.get(i).pickUp();
          n.pickUpBaby();
          t.moveCursor(n.getX(), n.getY());
-         t.putCharacter('\uFFFC');
+         t.putCharacter(' ');
          n.moveLeft();
          babies.get(i).setX(99);
          babies.get(i).setY(99);
@@ -763,7 +763,7 @@ public static void pickUpBaby(Player n, Terminal t){
          babies.get(i).pickUp();
          n.pickUpBaby();
          t.moveCursor(n.getX(), n.getY());
-         t.putCharacter('\uFFFC');
+         t.putCharacter(' ');
          n.moveRight();
          babies.get(i).setX(99);
          babies.get(i).setY(99);
@@ -779,28 +779,28 @@ public static void followPlayer(Terminal t){
          (one.getX() - greeblers.get(i).getX() > 0) &&
          (checkAround(greeblers.get(i))[1].equals(" "))){
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
-           t.putCharacter('\uFFFC');
+           t.putCharacter(' ');
            greeblers.get(i).moveRight();
       }
       if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
          (one.getX() - greeblers.get(i).getX() < 0) &&
          (checkAround(greeblers.get(i))[3].equals(" "))){
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
-           t.putCharacter('\uFFFC');
+           t.putCharacter(' ');
            greeblers.get(i).moveLeft();
          }
       if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
          (one.getY() - greeblers.get(i).getY() > 0) &&
          (checkAround(greeblers.get(i))[0].equals(" "))){
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
-           t.putCharacter('\uFFFC');
+           t.putCharacter(' ');
            greeblers.get(i).moveDown();
       }
       if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
          (one.getY() - greeblers.get(i).getY() < 0) &&
          (checkAround(greeblers.get(i))[2].equals(" "))){
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
-           t.putCharacter('\uFFFC');
+           t.putCharacter(' ');
            greeblers.get(i).moveUp();
       }
     }
