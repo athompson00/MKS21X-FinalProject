@@ -538,7 +538,7 @@ public class Demo{
 		}
 	}
 
-  public static void attack(Creature c){
+  public static void attack(Creature c, Terminal t){
     //saves index of greebler that is getting attacked
     int d =0;
     //checks from perspective of player for greeblers surrounding it and attacks
@@ -553,7 +553,8 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
-        greeblers.get(d).changeGraphic('\uFFFC');
+        t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
+        t.putCharacter('\uFFFC');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -573,7 +574,8 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
-        greeblers.get(d).changeGraphic('\uFFFC');
+        t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
+        t.putCharacter('\uFFFC');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -594,7 +596,8 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
-        greeblers.get(d).changeGraphic('\uFFFC');
+        t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
+        t.putCharacter('\uFFFC');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -614,7 +617,8 @@ public class Demo{
       greeblers.get(d).subHealth(c.getDamage());
       if(greeblers.get(d).getHealth() == 0){
         killed.add(d);
-        greeblers.get(d).changeGraphic('\uFFFC');
+        t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
+        t.putCharacter('\uFFFC');
         greeblers.get(d).setX(99);
         greeblers.get(d).setY(99);
       }
@@ -719,7 +723,8 @@ public static void pickUpBaby(Player n, Terminal t){
        (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() - 1)){
          babies.get(i).pickUp();
          n.pickUpBaby();
-         babies.get(i).changeGraphic('\uFFFC');
+         t.moveCursor(n.getX(), n.getY());
+         t.putCharacter('\uFFFC');
          n.moveUp();
          babies.get(i).setX(100);
          babies.get(i).setY(100);
@@ -728,7 +733,8 @@ public static void pickUpBaby(Player n, Terminal t){
        (babies.get(i).getX() == n.getX() && babies.get(i).getY() == n.getY() + 1)){
          babies.get(i).pickUp();
          n.pickUpBaby();
-         babies.get(i).changeGraphic('\uFFFC');
+         t.moveCursor(n.getX(), n.getY());
+         t.putCharacter('\uFFFC');
          n.moveDown();
          babies.get(i).setX(100);
          babies.get(i).setY(100);
@@ -737,7 +743,8 @@ public static void pickUpBaby(Player n, Terminal t){
        (babies.get(i).getX() == n.getX() - 1 && babies.get(i).getY() == n.getY())){
          babies.get(i).pickUp();
          n.pickUpBaby();
-         babies.get(i).changeGraphic('\uFFFC');
+         t.moveCursor(n.getX(), n.getY());
+         t.putCharacter('\uFFFC');
          n.moveLeft();
          babies.get(i).setX(100);
          babies.get(i).setY(100);
@@ -746,7 +753,8 @@ public static void pickUpBaby(Player n, Terminal t){
        (babies.get(i).getX() == n.getX() + 1 && babies.get(i).getY() == n.getY())){
          babies.get(i).pickUp();
          n.pickUpBaby();
-         babies.get(i).changeGraphic('\uFFFC');
+         t.moveCursor(n.getX(), n.getY());
+         t.putCharacter('\uFFFC');
          n.moveRight();
          babies.get(i).setX(100);
          babies.get(i).setY(100);
@@ -810,8 +818,8 @@ public static void followPlayer(Terminal t){
 
     while(running){
       z++;
-      //terminal.moveCursor(70, 19);
-      //terminal.putCharacter('\u03B8');
+      terminal.moveCursor(70, 19);
+      terminal.putCharacter('\u03B8');
 			terminal.moveCursor(one.getX(),one.getY());
 			terminal.applyBackgroundColor(Terminal.Color.WHITE);
 			terminal.applyForegroundColor(Terminal.Color.BLACK);
