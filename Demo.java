@@ -762,28 +762,28 @@ public static void followPlayer(Terminal t){
          (one.getX() - greeblers.get(i).getX() > 0) &&
          (checkAround(greeblers.get(i))[1].equals(" "))){
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
-           t.putCharacter("\uFFFC");
+           t.putCharacter('\uFFFC');
            greeblers.get(i).moveRight();
       }
       if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
          (one.getX() - greeblers.get(i).getX() < 0) &&
          (checkAround(greeblers.get(i))[3].equals(" "))){
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
-           t.putCharacter("\uFFFC");
+           t.putCharacter('\uFFFC');
            greeblers.get(i).moveLeft();
          }
       if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
          (one.getY() - greeblers.get(i).getY() > 0) &&
          (checkAround(greeblers.get(i))[0].equals(" "))){
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
-           t.putCharacter("\uFFFC");
+           t.putCharacter('\uFFFC');
            greeblers.get(i).moveDown();
       }
       if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
          (one.getY() - greeblers.get(i).getY() < 0) &&
          (checkAround(greeblers.get(i))[2].equals(" "))){
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
-           t.putCharacter("\uFFFC");
+           t.putCharacter('\uFFFC');
            greeblers.get(i).moveUp();
       }
     }
