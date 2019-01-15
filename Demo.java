@@ -764,22 +764,22 @@ public static void followPlayer(){
     if(d < 10){
       if ((Math.abs(playerX - x) >= Math.abs(playerY - y)) &&
          (playerX - x > 0) &&
-         (checkAround(greeblers.get(i))[0].equals(" "))){
+         (checkAround(greeblers.get(i))[1].equals(" "))){
          greeblers.get(i).moveRight();
       }
       if ((Math.abs(playerX - x) >= Math.abs(playerY - y)) &&
          (playerX - x < 0) &&
-         (checkAround(greeblers.get(i))[2].equals(" "))){
+         (checkAround(greeblers.get(i))[3].equals(" "))){
          greeblers.get(i).moveLeft();
          }
       if ((Math.abs(playerY - y) > Math.abs(playerX - x)) &&
          (playerY - y > 0) &&
-         (checkAround(greeblers.get(i))[1].equals(" "))){
+         (checkAround(greeblers.get(i))[0].equals(" "))){
          greeblers.get(i).moveDown();
       }
       if ((Math.abs(playerY - y) > Math.abs(playerX - x)) &&
          (playerY - y < 0) &&
-         (checkAround(greeblers.get(i))[3].equals(" "))){
+         (checkAround(greeblers.get(i))[2].equals(" "))){
          greeblers.get(i).moveUp();
       }
     }
