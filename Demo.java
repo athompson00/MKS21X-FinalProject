@@ -539,6 +539,8 @@ public class Demo{
         t.putCharacter(babies.get(k).getGraphic());
       }
     }
+
+    ArrayList<Projectile> tracking = new ArrayList<Projectile>();
     for (int i = 0; i < projectiles.size(); i++){
       if (projectiles.get(i).getDirection().equals("down") && checkAround(projectiles.get(i))[0].equals(" ")){
         projectiles.get(i).moveDown();
@@ -547,28 +549,47 @@ public class Demo{
         t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
         t.putCharacter(projectiles.get(i).getGraphic());
         attack(projectiles.get(i), t);
+      } else if (projectiles.get(i).getDirection().equals("down") && checkAround(projectiles.get(i))[0].equals("wall")){
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
+        t.putCharacter(' ');
+        tracking.add(projectiles.get(i));
       }
-      if (projectiles.get(i).getDirection().equals("up") && checkAround(projectiles.get(i))[0].equals(" ")){
+      if (projectiles.get(i).getDirection().equals("up") && checkAround(projectiles.get(i))[2].equals(" ")){
         projectiles.get(i).moveUp();
         t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY() + 1);
         t.putCharacter(' ');
         t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
         t.putCharacter(projectiles.get(i).getGraphic());
+      } else if (projectiles.get(i).getDirection().equals("up") && checkAround(projectiles.get(i))[2].equals("wall")){
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
+        t.putCharacter(' ');
+        tracking.add(projectiles.get(i));
       }
-      if (projectiles.get(i).getDirection().equals("right") && checkAround(projectiles.get(i))[0].equals(" ")){
+      if (projectiles.get(i).getDirection().equals("right") && checkAround(projectiles.get(i))[1].equals(" ")){
         projectiles.get(i).moveRight();
         t.moveCursor(projectiles.get(i).getX() - 1, projectiles.get(i).getY());
         t.putCharacter(' ');
         t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
         t.putCharacter(projectiles.get(i).getGraphic());
+      } else if (projectiles.get(i).getDirection().equals("right") && checkAround(projectiles.get(i))[1].equals("wall")){
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
+        t.putCharacter(' ');
+        tracking.add(projectiles.get(i));
       }
-      if (projectiles.get(i).getDirection().equals("left") && checkAround(projectiles.get(i))[0].equals(" ")){
+      if (projectiles.get(i).getDirection().equals("left") && checkAround(projectiles.get(i))[3].equals(" ")){
         projectiles.get(i).moveLeft();
         t.moveCursor(projectiles.get(i).getX() + 1, projectiles.get(i).getY());
         t.putCharacter(' ');
         t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
         t.putCharacter(projectiles.get(i).getGraphic());
+      } else if (projectiles.get(i).getDirection().equals("left") && checkAround(projectiles.get(i))[3].equals("wall")){
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
+        t.putCharacter(' ');
+        tracking.add(projectiles.get(i));
       }
+    }
+    for (int i = 0; i < tracking.size(); i++){
+      projectiles.remove(tracking.get(i));
     }
   }
 
