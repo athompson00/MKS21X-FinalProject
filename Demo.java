@@ -979,6 +979,7 @@ public static void PlayerLaunchProjectile(){
 				if (key.getCharacter() == ' ') {
 					attack(one, terminal);
           PlayerLaunchProjectile();
+          
 				}
       }
 
