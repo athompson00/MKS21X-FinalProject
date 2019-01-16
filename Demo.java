@@ -19,6 +19,7 @@ public class Demo{
   static ArrayList<Greebler> greeblers = new ArrayList<Greebler>();
   static ArrayList<Integer> killed = new ArrayList<Integer>();
   static ArrayList<Baby> babies = new ArrayList<Baby>();
+  static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
   static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
   static Map map = new Map(1);
 
@@ -268,6 +269,8 @@ public class Demo{
   static Baby baby4 = new Baby(47, 10);
   static Baby baby5 = new Baby(76, 22);
 
+  //static Bandage bandage1 = new Bandage(70, 18);
+
   public static void fillWalls(Terminal t){
     //top
     grid.add(side0);
@@ -512,6 +515,8 @@ public class Demo{
     babies.add(baby4);
     babies.add(baby5);
 
+    //bandages.add(bandage1);
+
 
     for (int i = 0; i < map.getMap().size(); i++){
       grid.add(map.getMap().get(i));
@@ -699,6 +704,22 @@ public class Demo{
       }
 
     }
+    for (int i = 0; i < bandages.size(); i++){
+      if (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() + 1){
+        surroundings[0] = "bandage";
+      }
+      if (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() - 1){
+        surroundings[2] = "bandage";
+      }
+      if (bandages.get(i).getX() == n.getX() + 1 && bandages.get(i).getY() == n.getY()){
+        surroundings[1] = "bandage";
+      }
+
+      if (bandages.get(i).getX() == n.getX() - 1 && bandages.get(i).getY() == n.getY()){
+        surroundings[3] = "bandage";
+      }
+
+    }
 
 
     //checks for player in front of any greeblers
@@ -728,7 +749,52 @@ public class Demo{
 
   }
 
-
+public static void pickUpBandage(Player n, Terminal t){
+  int a = - 1;
+  //checks each direction for a baby and picks it up
+  for (int i = 0; i < babies.size(); i++){
+    if (n.getDirection().equals("up") &&
+       (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() - 1)){
+         bandages.get(i).pickUp();
+         t.moveCursor(n.getX(), n.getY());
+         t.putCharacter(' ');
+         n.moveUp();
+         bandages.get(i).setX(99);
+         bandages.get(i).setY(99);
+         n.addHealth(100);
+    }
+    if (n.getDirection().equals("down") &&
+       (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() + 1)){
+         bandages.get(i).pickUp();
+         t.moveCursor(n.getX(), n.getY());
+         t.putCharacter(' ');
+         n.moveDown();
+         bandages.get(i).setX(99);
+         bandages.get(i).setY(99);
+         n.addHealth(100);
+    }
+    if (n.getDirection().equals("left") &&
+       (bandages.get(i).getX() == n.getX() - 1 && bandages.get(i).getY() == n.getY())){
+         bandages.get(i).pickUp();
+         t.moveCursor(n.getX(), n.getY());
+         t.putCharacter(' ');
+         n.moveLeft();
+         bandages.get(i).setX(99);
+         bandages.get(i).setY(99);
+         n.addHealth(100);
+    }
+    if (n.getDirection().equals("right") &&
+       (bandages.get(i).getX() == n.getX() + 1 && bandages.get(i).getY() == n.getY())){
+         bandages.get(i).pickUp();
+         t.moveCursor(n.getX(), n.getY());
+         t.putCharacter(' ');
+         n.moveRight();
+         bandages.get(i).setX(99);
+         bandages.get(i).setY(99);
+         n.addHealth(100);
+    }
+  }
+}
 
 
 //PickUpBaby(player n, baby1) Allows player to pickup the babies
