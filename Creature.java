@@ -47,6 +47,9 @@ public class Creature{
   public void subHealth(int newhel){
     health = health - newhel;
   }
+  public void addHealth(int band){
+    health = health + band;
+  }
 
   public int getDamage(){
     return damage;
