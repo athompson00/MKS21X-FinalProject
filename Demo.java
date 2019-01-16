@@ -19,6 +19,7 @@ public class Demo{
   static ArrayList<Greebler> greeblers = new ArrayList<Greebler>();
   static ArrayList<Integer> killed = new ArrayList<Integer>();
   static ArrayList<Baby> babies = new ArrayList<Baby>();
+  static ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
   static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
   static Map map = new Map(1);
 
@@ -538,6 +539,37 @@ public class Demo{
         t.putCharacter(babies.get(k).getGraphic());
       }
     }
+    for (int i = 0; i < projectiles.size(); i++){
+      if (projectiles.get(i).getDirection().equals("down") && checkAround(projectiles.get(i))[0].equals(" ")){
+        projectiles.get(i).moveDown();
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY() - 1);
+        t.putCharacter(' ');
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
+        t.putCharacter(projectiles.get(i).getGraphic());
+        attack(projectiles.get(i), t);
+      }
+      if (projectiles.get(i).getDirection().equals("up") && checkAround(projectiles.get(i))[0].equals(" ")){
+        projectiles.get(i).moveUp();
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY() + 1);
+        t.putCharacter(' ');
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
+        t.putCharacter(projectiles.get(i).getGraphic());
+      }
+      if (projectiles.get(i).getDirection().equals("right") && checkAround(projectiles.get(i))[0].equals(" ")){
+        projectiles.get(i).moveRight();
+        t.moveCursor(projectiles.get(i).getX() - 1, projectiles.get(i).getY());
+        t.putCharacter(' ');
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
+        t.putCharacter(projectiles.get(i).getGraphic());
+      }
+      if (projectiles.get(i).getDirection().equals("left") && checkAround(projectiles.get(i))[0].equals(" ")){
+        projectiles.get(i).moveLeft();
+        t.moveCursor(projectiles.get(i).getX() + 1, projectiles.get(i).getY());
+        t.putCharacter(' ');
+        t.moveCursor(projectiles.get(i).getX(), projectiles.get(i).getY());
+        t.putCharacter(projectiles.get(i).getGraphic());
+      }
+    }
   }
 
   public static void putString(int r, int c,Terminal t, String s){
@@ -815,6 +847,10 @@ public static void followPlayer(Terminal t){
   }
 }
 
+public static void PlayerLaunchProjectile(){
+    Projectile n = new Projectile(one.getX(), one.getY(), one.getDirection(), "Player");
+    projectiles.add(n);
+}
 
   public static void main(String[] args){
     Terminal terminal = TerminalFacade.createTextTerminal();
@@ -942,8 +978,11 @@ public static void followPlayer(Terminal t){
 				//attacking
 				if (key.getCharacter() == ' ') {
 					attack(one, terminal);
+          PlayerLaunchProjectile();
 				}
       }
+
+
 
       long tEnd = System.currentTimeMillis();
 			long millis = tEnd - tStart;
