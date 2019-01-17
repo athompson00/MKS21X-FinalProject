@@ -1008,8 +1008,7 @@ public static void followPlayer(Terminal t){
         }
 				//attacking
 				if (key.getCharacter() == ' ') {
-        //  attack(one, terminal);
-          PlayerLaunchProjectile();
+          attack(one, terminal);
 				}
       }
 
@@ -1033,9 +1032,6 @@ public static void followPlayer(Terminal t){
         attack(greeb7, terminal);
         attack(greeb8, terminal);
         attack(greeb9, terminal);
-      }
-      for (int i = 0; i < projectiles.size(); i++){
-        attack(one, terminal);
       }
       //exits system if player is dead
       if(one.getHealth() <= 0){
