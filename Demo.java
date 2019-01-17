@@ -754,26 +754,51 @@ public class Demo{
 
   }
 
-public static void pickUpBandage(Player n, Terminal t){
-  //checks for a bandage on the current location of the player
-  // and picks it up
-  for (int i = 0; i < bandages.size(); i++){
-    if(bandages.get(i).getX() == n.getX() && bandages .get(i).getY() == n.getY()){
-      bandages.get(i).pickUp();
-      if(n.getHealth() < 9000){
-        n.addHealth(100);
+  public static void pickUpBandage(Player n, Terminal t){
+    //checks each direction for a baby and picks it up
+    for (int i = 0; i < bandages.size(); i++){
+      if (n.getDirection().equals("up") &&
+         (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() - 1)){
+           bandages.get(i).pickUp();
+           bandages.get(i).pickUp();
+           t.moveCursor(n.getX(), n.getY());
+           t.putCharacter(' ');
+           n.moveUp();
+           bandages.get(i).setX(99);
+           bandages.get(i).setY(99);
       }
-      else{
-        n.setHealth(10000);
+      if (n.getDirection().equals("down") &&
+         (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() + 1)){
+           bandages.get(i).pickUp();
+           bandages.get(i).pickUp();
+           t.moveCursor(n.getX(), n.getY());
+           t.putCharacter(' ');
+           n.moveUp();
+           bandages.get(i).setX(99);
+           bandages.get(i).setY(99);
       }
-      t.moveCursor(n.getX(), n.getY());
-      t.putCharacter(' ');
-      bandages.get(i).setX(99);
-      bandages.get(i).setY(99);
+      if (n.getDirection().equals("left") &&
+         (bandages.get(i).getX() == n.getX() - 1 && bandages.get(i).getY() == n.getY())){
+           bandages.get(i).pickUp();
+           bandages.get(i).pickUp();
+           t.moveCursor(n.getX(), n.getY());
+           t.putCharacter(' ');
+           n.moveUp();
+           bandages.get(i).setX(99);
+           bandages.get(i).setY(99);
+      }
+      if (n.getDirection().equals("right") &&
+         (bandages.get(i).getX() == n.getX() + 1 && bandages.get(i).getY() == n.getY())){
+           bandages.get(i).pickUp();
+           bandages.get(i).pickUp();
+           t.moveCursor(n.getX(), n.getY());
+           t.putCharacter(' ');
+           n.moveUp();
+           bandages.get(i).setX(99);
+           bandages.get(i).setY(99);
+      }
     }
   }
-}
-
 
 //PickUpBaby(player n, baby1) Allows player to pickup the babies
 public static void pickUpBaby(Player n, Terminal t){
@@ -945,7 +970,7 @@ public static void followPlayer(Terminal t){
             x--;
           } else {
             pickUpBaby(one, terminal);
-            pickUpBandage(one,terminal);
+            pickUpBandage(one, terminal);
           }
 				}
 
