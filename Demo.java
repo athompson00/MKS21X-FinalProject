@@ -934,6 +934,7 @@ public static void followPlayer(Terminal t){
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
+      
       */
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
