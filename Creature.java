@@ -50,6 +50,9 @@ public class Creature{
   public void addHealth(int band){
     health = health + band;
   }
+  public void setHealth(int ne){
+    health = ne;
+  }
 
   public int getDamage(){
     return damage;
