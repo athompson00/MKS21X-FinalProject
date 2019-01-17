@@ -7,7 +7,7 @@ public class Bandage{
     x = xcor;
     y = ycor;
     isPickedUp = false;
-    graphic = '\u1196';
+    graphic = '\u1175';
   }
   public int getX(){
     return x;
