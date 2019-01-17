@@ -753,7 +753,7 @@ public class Demo{
 public static void pickUpBandage(Player n, Terminal t){
   int a = - 1;
   //checks each direction for a baby and picks it up
-  for (int i = 0; i < babies.size(); i++){
+  for (int i = 0; i < bandages.size(); i++){
     if (n.getDirection().equals("up") &&
        (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() - 1)){
          bandages.get(i).pickUp();
@@ -934,7 +934,7 @@ public static void followPlayer(Terminal t){
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
 			terminal.putCharacter(' ');
-      
+
       */
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
