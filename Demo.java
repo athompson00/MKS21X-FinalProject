@@ -766,6 +766,7 @@ public class Demo{
            n.moveUp();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
+           n.addHealth(100);
       }
       if (n.getDirection().equals("down") &&
          (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() + 1)){
@@ -776,6 +777,7 @@ public class Demo{
            n.moveUp();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
+           n.addHealth(100);
       }
       if (n.getDirection().equals("left") &&
          (bandages.get(i).getX() == n.getX() - 1 && bandages.get(i).getY() == n.getY())){
@@ -786,6 +788,7 @@ public class Demo{
            n.moveUp();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
+           n.addHealth(100);
       }
       if (n.getDirection().equals("right") &&
          (bandages.get(i).getX() == n.getX() + 1 && bandages.get(i).getY() == n.getY())){
@@ -796,6 +799,7 @@ public class Demo{
            n.moveUp();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
+           n.addHealth(100);
       }
     }
   }
