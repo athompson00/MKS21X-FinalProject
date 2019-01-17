@@ -269,7 +269,7 @@ public class Demo{
   static Baby baby4 = new Baby(47, 10);
   static Baby baby5 = new Baby(76, 22);
 
-  //static Bandage bandage1 = new Bandage(70, 18);
+  static Bandage bandage1 = new Bandage(70, 18);
 
   public static void fillWalls(Terminal t){
     //top
@@ -515,7 +515,7 @@ public class Demo{
     babies.add(baby4);
     babies.add(baby5);
 
-    //bandages.add(bandage1);
+    bandages.add(bandage1);
 
 
     for (int i = 0; i < map.getMap().size(); i++){
@@ -542,6 +542,10 @@ public class Demo{
         t.moveCursor(babies.get(k).getX(), babies.get(k).getY());
         t.putCharacter(babies.get(k).getGraphic());
       }
+    }
+    for (int i = 0; i < bandages.size(); i++){
+      t.moveCursor(bandages.get(k).getX(), bandages.get(k).getY());
+      t.putCharacter(bandages.get(k).getGraphic());
     }
 
   }
@@ -751,7 +755,6 @@ public class Demo{
   }
 
 public static void pickUpBandage(Player n, Terminal t){
-  int a = - 1;
   //checks each direction for a baby and picks it up
   for (int i = 0; i < bandages.size(); i++){
     if (n.getDirection().equals("up") &&
@@ -800,7 +803,6 @@ public static void pickUpBandage(Player n, Terminal t){
 
 //PickUpBaby(player n, baby1) Allows player to pickup the babies
 public static void pickUpBaby(Player n, Terminal t){
-  int a = - 1;
   //checks each direction for a baby and picks it up
   for (int i = 0; i < babies.size(); i++){
     if (n.getDirection().equals("up") &&
@@ -969,6 +971,7 @@ public static void followPlayer(Terminal t){
             x--;
           } else {
             pickUpBaby(one, terminal);
+            pickUpBandage(one,terminal);
           }
 				}
 
@@ -981,6 +984,7 @@ public static void followPlayer(Terminal t){
             x++;
           } else {
             pickUpBaby(one, terminal);
+            pickUpBandage(one,terminal);
           }
 				}
 
@@ -993,6 +997,7 @@ public static void followPlayer(Terminal t){
             y++;
           } else {
             pickUpBaby(one, terminal);
+            pickUpBandage(one,terminal);
           }
 				}
 
@@ -1005,6 +1010,7 @@ public static void followPlayer(Terminal t){
             y++;
           } else {
             pickUpBaby(one, terminal);
+            pickUpBandage(one,terminal);
           }
         }
 				//attacking
