@@ -544,8 +544,8 @@ public class Demo{
       }
     }
     for (int i = 0; i < bandages.size(); i++){
-      t.moveCursor(bandages.get(k).getX(), bandages.get(k).getY());
-      t.putCharacter(bandages.get(k).getGraphic());
+      t.moveCursor(bandages.get(i).getX(), bandages.get(i).getY());
+      t.putCharacter(bandages.get(i).getGraphic());
     }
 
   }
