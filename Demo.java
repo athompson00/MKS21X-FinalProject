@@ -269,7 +269,7 @@ public class Demo{
   static Baby baby4 = new Baby(47, 10);
   static Baby baby5 = new Baby(76, 22);
 
-  static Bandage bandage1 = new Bandage(70, 18);
+  static Bandage bandage1 = new Bandage(70, 15);
 
   public static void fillWalls(Terminal t){
     //top
@@ -760,7 +760,6 @@ public class Demo{
       if (n.getDirection().equals("up") &&
          (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() - 1)){
            bandages.get(i).pickUp();
-           bandages.get(i).pickUp();
            t.moveCursor(n.getX(), n.getY());
            t.putCharacter(' ');
            n.moveUp();
@@ -771,10 +770,9 @@ public class Demo{
       if (n.getDirection().equals("down") &&
          (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() + 1)){
            bandages.get(i).pickUp();
-           bandages.get(i).pickUp();
            t.moveCursor(n.getX(), n.getY());
            t.putCharacter(' ');
-           n.moveUp();
+           n.moveDown();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
            n.addHealth(100);
@@ -782,10 +780,9 @@ public class Demo{
       if (n.getDirection().equals("left") &&
          (bandages.get(i).getX() == n.getX() - 1 && bandages.get(i).getY() == n.getY())){
            bandages.get(i).pickUp();
-           bandages.get(i).pickUp();
            t.moveCursor(n.getX(), n.getY());
            t.putCharacter(' ');
-           n.moveUp();
+           n.moveLeft();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
            n.addHealth(100);
@@ -793,10 +790,9 @@ public class Demo{
       if (n.getDirection().equals("right") &&
          (bandages.get(i).getX() == n.getX() + 1 && bandages.get(i).getY() == n.getY())){
            bandages.get(i).pickUp();
-           bandages.get(i).pickUp();
            t.moveCursor(n.getX(), n.getY());
            t.putCharacter(' ');
-           n.moveUp();
+           n.moveRight();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
            n.addHealth(100);
