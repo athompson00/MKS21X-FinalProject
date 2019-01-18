@@ -13,6 +13,10 @@ public class Player extends Creature{
   public int getBabiesToCollect(){
     return babiesToCollect;
   }
+  public void resetBabiesToCollect(int n){
+    babiesToCollect = n;
+    babiesCollected = 0;
+  }
   //Changes variables when baby is picked up
   public void pickUpBaby(){
     babiesToCollect--;
