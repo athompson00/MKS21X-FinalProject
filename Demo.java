@@ -20,7 +20,7 @@ public class Demo{
   static ArrayList<Integer> killed = new ArrayList<Integer>();
   static ArrayList<Baby> babies = new ArrayList<Baby>();
   static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
-  static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
+  static Player one = new Player(1000, 40, 10, 10, "wallie", '\u00a6', 5);
   static Map map = new Map(1);
 
 
@@ -574,6 +574,7 @@ public class Demo{
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        one.levelUp();
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter(' ');
         greeblers.get(d).setX(99);
@@ -597,6 +598,7 @@ public class Demo{
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        one.levelUp();
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter(' ');
         greeblers.get(d).setX(99);
@@ -621,6 +623,7 @@ public class Demo{
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        one.levelUp();
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter(' ');
         greeblers.get(d).setX(99);
@@ -644,6 +647,7 @@ public class Demo{
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        one.levelUp();
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter(' ');
         greeblers.get(d).setX(99);
@@ -942,8 +946,11 @@ public static void followPlayer(Terminal t){
       fillScreen(terminal);
 
       putString(1, 1, terminal, "Player health: " + one.getHealth());
-      putString(1, 4, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
-      putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
+      putString(50, 1, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
+      putString(50, 2, terminal, "Babies Picked Up: " + one.getBabiesCollected());
+      putString(1, 2, terminal, "Player Level: " + one.getLevel());
+      putString(1, 3, terminal, "Player Damage: " + one.getDamage());
+
   //    putString(50, 6, terminal, "around: " + checkAround(one)[0] + ", " + checkAround(one)[1] + ", " + checkAround(one)[2] + ", " + checkAround(one)[3]);
 
 
