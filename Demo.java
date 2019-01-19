@@ -517,7 +517,7 @@ public class Demo{
 
     bandages.add(bandage1);
 
-
+    t.applyForegroundColor(Terminal.Color.CYAN);
     for (int i = 0; i < map.getMap().size(); i++){
       grid.add(map.getMap().get(i));
     }
@@ -533,17 +533,20 @@ public class Demo{
     }
     for(int j = 0; j < greeblers.size(); j++){
       if (greeblers.get(j).getX() != 99){
+        t.applyForegroundColor(Terminal.Color.RED);
         t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
         t.putCharacter(greeblers.get(j).getGraphic());
       }
     }
     for(int k = 0; k < babies.size(); k++){
       if (babies.get(k).getX() != 99){
+        t.applyForegroundColor(Terminal.Color.YELLOW);
         t.moveCursor(babies.get(k).getX(), babies.get(k).getY());
         t.putCharacter(babies.get(k).getGraphic());
       }
     }
     for (int i = 0; i < bandages.size(); i++){
+      t.applyForegroundColor(Terminal.Color.GREEN);
       t.moveCursor(bandages.get(i).getX(), bandages.get(i).getY());
       t.putCharacter(bandages.get(i).getGraphic());
     }
@@ -911,6 +914,7 @@ public static void followPlayer(Terminal t){
 
     while(running){
       z++;
+      terminal.applyForegroundColor(Terminal.Color.MAGENTA);
       terminal.moveCursor(70, 19);
       terminal.putCharacter('\u03B8');
 			terminal.moveCursor(one.getX(),one.getY());
