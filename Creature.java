@@ -90,11 +90,6 @@ public class Creature{
     return name;
   }
 
-
-  public void changeDamage(int d){
-    damage = d;
-  }
-
   public char getGraphic(){
     return graphic;
   }
