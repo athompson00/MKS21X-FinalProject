@@ -25,7 +25,7 @@ public class Player extends Creature{
   }
   public void levelUp(){
     level++;
-    this.addHealth(50);
-    this.setDamage(this.getDamage() + 10);
+    this.addHealth(this.getLevel());
+    this.setDamage(this.getDamage() + this.getLevel());
   }
 }
