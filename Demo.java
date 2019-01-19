@@ -258,7 +258,7 @@ public class Demo{
   static Greebler greeb3 = new Greebler(12, 20);
   static Greebler greeb4 = new Greebler(15,20);
   static Greebler greeb5 = new Greebler(40,11);
-  static Greebler greeb6 = new Greebler(39,11);
+  static Greebler greeb6 = new Greebler(39,20);
   static Greebler greeb7 = new Greebler(49,9);
   static Greebler greeb8 = new Greebler(49,11);
   static Greebler greeb9 = new Greebler(74,22);
@@ -916,13 +916,13 @@ public static void followPlayer(Terminal t){
       z++;
       terminal.applyForegroundColor(Terminal.Color.MAGENTA);
       terminal.moveCursor(70, 19);
-      terminal.putCharacter('\u03B8');
+      terminal.putCharacter('\u21EA');
 			terminal.moveCursor(one.getX(),one.getY());
-			terminal.applyBackgroundColor(Terminal.Color.WHITE);
-			terminal.applyForegroundColor(Terminal.Color.BLACK);
+			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			terminal.applyForegroundColor(Terminal.Color.MAGENTA);
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
-			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
-			terminal.putCharacter('\u00a4');
+			//terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
+			terminal.putCharacter('\u0F13');
 			//terminal.putCharacter(' ');'\u00a4'
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
@@ -948,7 +948,7 @@ public static void followPlayer(Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
-
+      putString(1, 1, terminal, "Player health:     ");
       putString(1, 1, terminal, "Player health: " + one.getHealth());
       putString(50, 1, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
       putString(50, 2, terminal, "Babies Picked Up: " + one.getBabiesCollected());
@@ -1055,8 +1055,8 @@ public static void followPlayer(Terminal t){
         terminal.exitPrivateMode();
         running = false;
         System.out.println();
-        System.out.println("As the Terminator once said \"hasta la vista\"");
         System.out.println("You lost");
+        System.out.println("As the Terminator once said \"hasta la vista\"");
         System.out.println();
       }
       if(one.getBabiesToCollect() == 0 && one.getX() == 70
@@ -1064,8 +1064,8 @@ public static void followPlayer(Terminal t){
         terminal.exitPrivateMode();
         running = false;
         System.out.println();
-        System.out.println("A job well done. We now knight you as the pacifist");
         System.out.println("You won");
+        System.out.println("A job well done. We now knight you as the pacifist");
         System.out.println();
       }
     }
