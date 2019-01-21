@@ -458,9 +458,10 @@ public class Map{
     wall203 = new Wall(74, 17, "up");
     wall204 = new Wall(75, 17, "up");
     wall205 = new Wall(76, 17, "up");
+
+    wall206 = new Wall(53, 6, "up");
+    wall207 = new Wall(56, 6, "up");
     /*
-    wall206 = new Wall(62, 11, "up");
-    wall207 = new Wall(62, 10, "up");
     wall208 = new Wall(62, 9, "up");
     wall209 = new Wall(62, 8, "up");
     //new wall
