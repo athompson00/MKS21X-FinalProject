@@ -291,9 +291,9 @@ public class Map{
     wall51 = new Wall(14, 13, "up");
     //new wall
     wall52 = new Wall(14, 12, "up");
-    wall53 = new Wall(10, 11, "up");
-    wall54 = new Wall(10, 10, "up");
-    wall55 = new Wall(10, 9, "up");
+    wall53 = new Wall(14, 11, "up");
+    wall54 = new Wall(14, 10, "up");
+    wall55 = new Wall(14, 9, "up");
     //new wall
     wall56 = new Wall(15, 9, "up");
     wall57 = new Wall(16, 9, "up");
@@ -324,12 +324,13 @@ public class Map{
     wall78 = new Wall(31,13,"up");
     wall79 = new Wall(32,13,"up");
     wall80 = new Wall(33,13,"up");
-    wall81 = new Wall(34,13,"up");
+    //change
+    wall81 = new Wall(25,6,"up");
     //new wall
-    wall82 = new Wall(34,14,"up");
-    wall83 = new Wall(34,15,"up");
-    wall84 = new Wall(34,16,"up");
-    wall85 = new Wall(34,17,"up");
+    wall82 = new Wall(33,14,"up");
+    wall83 = new Wall(33,15,"up");
+    wall84 = new Wall(33,16,"up");
+    wall85 = new Wall(33,17,"up");
     //new wall
     wall86 = new Wall(38,9,"up");
     wall87 = new Wall(39,9,"up");
@@ -400,7 +401,8 @@ public class Map{
     wall155 = new Wall(52, 22, "");
     wall156 = new Wall(52, 23, "up");
     //new walls
-    wall157 = new Wall(54, 17, "up");
+    wall157 = new Wall(62, 11, "up");
+    //change
     wall158 = new Wall(55, 17, "up");
     wall159 = new Wall(56, 17, "up");
     wall160 = new Wall(57, 17, "up");
