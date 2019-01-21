@@ -15,18 +15,16 @@ import com.googlecode.lanterna.input.KeyMappingProfile;
 import java.util.*;
 
 public class Demo{
-//  static ArrayList<Wall> grid = new ArrayList<Wall>();
-//  static ArrayList<Greebler> greeblers = new ArrayList<Greebler>();
-//  static ArrayList<Integer> killed = new ArrayList<Integer>();
-//  static ArrayList<Baby> babies = new ArrayList<Baby>();
-//  static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
-  static Player one; //= new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
-  //static Map map;
+  static ArrayList<Wall> grid = new ArrayList<Wall>();
+  static ArrayList<Greebler> greeblers = new ArrayList<Greebler>();
+  static ArrayList<Integer> killed = new ArrayList<Integer>();
+  static ArrayList<Baby> babies = new ArrayList<Baby>();
+  static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
+  static Player one; = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
+  static Map map;
   static int floor = 1;
-  static char[][] map = new char[80][24];
-  static Scanner file;
 
-  /*
+
   //perimeter
   //top
   static Wall side0 = new Wall(0,6, "up");
@@ -273,10 +271,10 @@ public class Demo{
   static Baby baby5 = new Baby(76, 22);
 
   static Bandage bandage1 = new Bandage(70, 18);
-  */
+
 
   public static void fillWalls(Terminal t){
-    /*
+
     //top
     grid.add(side0);
     grid.add(side1);
@@ -521,9 +519,9 @@ public class Demo{
     babies.add(baby5);
 
     bandages.add(bandage1);
-*/
+
     //deciding which map is drawn
-    /*
+
     map = new Map(floor);
 
     for (int i = 0; i < map.getMap().size(); i++){
@@ -537,27 +535,7 @@ public class Demo{
       t.moveCursor(bandages.get(i).getX(), bandages.get(i).getY());
       t.putCharacter(bandages.get(i).getGraphic());
     }
-    */
-    if (floor == 1){
-      file = new Scanner("map1.txt");
-    } else {
-      file = new Scanner("map2.txt");
-    }
 
-    for (int i = 0; i < map.length; i++){
-      for (int j = 0; j < map[i].length; j++){
-        if (file.toString.charAt(i * 80 + j).equals(' ')){
-          map[i][j] = ' ';
-        }
-        if (file.toString.charAt(i * 80 + j).equals('_')){
-          map[i][j] = '\u2629';
-        }
-        if (file.toString.charAt(i * 80 + j).equals('P')){
-          one = new Player(1000, 100, i, j, "wallie", '\u00a6', 5);
-        }
-
-      }
-    }
   }
 
   public static void fillScreen(Terminal t){
