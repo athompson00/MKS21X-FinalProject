@@ -20,7 +20,7 @@ public class Demo{
   static ArrayList<Integer> killed = new ArrayList<Integer>();
   static ArrayList<Baby> babies = new ArrayList<Baby>();
   static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
-  static Player one; = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
+  static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
   static Map map;
   static int floor = 1;
 
