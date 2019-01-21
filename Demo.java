@@ -288,7 +288,7 @@ public class Demo{
   static Baby baby4 = new Baby(47, 10);
   static Baby baby5 = new Baby(76, 22);
 
-  static Bandage bandage1 = new Bandage(70, 15);
+  static Bandage bandage1 = new Bandage(39, 9);
 
 
   public static void fillWalls(Terminal t){
@@ -1087,6 +1087,7 @@ public static void followPlayer(Terminal t){
         attack(greeb8, terminal);
         attack(greeb9, terminal);
 
+
       }
       //exits system if player is dead
       if(one.getHealth() <= 0){
@@ -1099,12 +1100,12 @@ public static void followPlayer(Terminal t){
       }
       if(one.getBabiesToCollect() == 0 && one.getX() == 70
       && one.getY() == 19){
-        terminal.exitPrivateMode();
+        /*terminal.exitPrivateMode();
         running = false;
         System.out.println();
         System.out.println("You won");
         System.out.println("A job well done. We now knight you as the pacifist");
-        System.out.println();
+        System.out.println();*/
         if (floor == 2){
           terminal.exitPrivateMode();
           running = false;
