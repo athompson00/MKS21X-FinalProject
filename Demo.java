@@ -12,7 +12,12 @@ import com.googlecode.lanterna.input.InputDecoder;
 import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
+<<<<<<< HEAD
+import java.util.ArrayList;
+import java.util.Random;
+=======
 import java.util.*;
+>>>>>>> newMap
 
 public class Demo{
   static ArrayList<Wall> grid = new ArrayList<Wall>();
@@ -20,10 +25,14 @@ public class Demo{
   static ArrayList<Integer> killed = new ArrayList<Integer>();
   static ArrayList<Baby> babies = new ArrayList<Baby>();
   static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
+<<<<<<< HEAD
+  static Player one = new Player(300, 40, 10, 10, "wallie", '\u00a6', 5);
+  static Map map = new Map(1);
+=======
   static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
   static Map map;
-  //for testing purposes
   static int floor = 2;
+>>>>>>> newMap
 
 
   //perimeter
@@ -257,13 +266,28 @@ public class Demo{
 
   static Greebler greeb1 = new Greebler(8, 15);
   static Greebler greeb2 = new Greebler(30,20);
-  static Greebler greeb3 = new Greebler(12, 20);
+  static Greebler greeb3 = new Greebler(12, 17);
   static Greebler greeb4 = new Greebler(15,20);
   static Greebler greeb5 = new Greebler(40,11);
-  static Greebler greeb6 = new Greebler(39,11);
+  static Greebler greeb6 = new Greebler(39,20);
   static Greebler greeb7 = new Greebler(49,9);
   static Greebler greeb8 = new Greebler(49,11);
   static Greebler greeb9 = new Greebler(74,22);
+  static Greebler greeb10 = new Greebler(4, 21);
+  static Greebler greeb11 = new Greebler(39, 10);
+  static Greebler greeb12 = new Greebler(75, 15);
+  static Greebler greeb13 = new Greebler(68, 7);
+  static Greebler greeb14 = new Greebler(47, 22);
+  static Greebler greeb15 = new Greebler(37, 7);
+  static Greebler greeb16 = new Greebler(66, 18);
+  static Greebler greeb17 = new Greebler(63, 22);
+  static Greebler greeb18 = new Greebler(56, 17);
+  //static Greebler greeb19 = new Greebler(66, 18);
+
+
+
+
+
 
   static Baby baby1 = new Baby(40, 10);
   static Baby baby2 = new Baby(8, 20);
@@ -271,7 +295,7 @@ public class Demo{
   static Baby baby4 = new Baby(47, 10);
   static Baby baby5 = new Baby(76, 22);
 
-  static Bandage bandage1 = new Bandage(70, 18);
+  static Bandage bandage1 = new Bandage(70, 15);
 
 
   public static void fillWalls(Terminal t){
@@ -512,6 +536,17 @@ public class Demo{
     greeblers.add(greeb7);
     greeblers.add(greeb8);
     greeblers.add(greeb9);
+    greeblers.add(greeb10);
+    greeblers.add(greeb11);
+    greeblers.add(greeb12);
+    greeblers.add(greeb13);
+    greeblers.add(greeb14);
+    greeblers.add(greeb15);
+    greeblers.add(greeb16);
+    greeblers.add(greeb17);
+    greeblers.add(greeb18);
+    //greeblers.add(greeb19);
+
 
     babies.add(baby1);
     babies.add(baby2);
@@ -521,10 +556,14 @@ public class Demo{
 
     bandages.add(bandage1);
 
+<<<<<<< HEAD
+    t.applyForegroundColor(Terminal.Color.CYAN);
+=======
     //deciding which map is drawn
 
     map = new Map(floor);
 
+>>>>>>> newMap
     for (int i = 0; i < map.getMap().size(); i++){
       grid.add(map.getMap().get(i));
     }
@@ -545,16 +584,26 @@ public class Demo{
     }
     for(int j = 0; j < greeblers.size(); j++){
       if (greeblers.get(j).getX() != 99){
+        t.applyForegroundColor(Terminal.Color.RED);
         t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
         t.putCharacter(greeblers.get(j).getGraphic());
       }
     }
     for(int k = 0; k < babies.size(); k++){
       if (babies.get(k).getX() != 99){
+        t.applyForegroundColor(Terminal.Color.YELLOW);
         t.moveCursor(babies.get(k).getX(), babies.get(k).getY());
         t.putCharacter(babies.get(k).getGraphic());
       }
     }
+<<<<<<< HEAD
+    for (int i = 0; i < bandages.size(); i++){
+      t.applyForegroundColor(Terminal.Color.GREEN);
+      t.moveCursor(bandages.get(i).getX(), bandages.get(i).getY());
+      t.putCharacter(bandages.get(i).getGraphic());
+    }
+=======
+>>>>>>> newMap
 
   }
 
@@ -582,6 +631,7 @@ public class Demo{
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        one.levelUp();
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter(' ');
         greeblers.get(d).setX(99);
@@ -605,6 +655,7 @@ public class Demo{
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        one.levelUp();
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter(' ');
         greeblers.get(d).setX(99);
@@ -629,6 +680,7 @@ public class Demo{
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        one.levelUp();
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter(' ');
         greeblers.get(d).setX(99);
@@ -652,6 +704,7 @@ public class Demo{
       }
       if(greeblers.get(d).getHealth() <= 0){
         killed.add(d);
+        one.levelUp();
         t.moveCursor(greeblers.get(d).getX(),greeblers.get(d).getY());
         t.putCharacter(' ');
         greeblers.get(d).setX(99);
@@ -768,42 +821,42 @@ public class Demo{
       if (n.getDirection().equals("up") &&
          (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() - 1)){
            bandages.get(i).pickUp();
-           bandages.get(i).pickUp();
            t.moveCursor(n.getX(), n.getY());
            t.putCharacter(' ');
            n.moveUp();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
+           n.addHealth(100);
       }
       if (n.getDirection().equals("down") &&
          (bandages.get(i).getX() == n.getX() && bandages.get(i).getY() == n.getY() + 1)){
            bandages.get(i).pickUp();
-           bandages.get(i).pickUp();
            t.moveCursor(n.getX(), n.getY());
            t.putCharacter(' ');
-           n.moveUp();
+           n.moveDown();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
+           n.addHealth(100);
       }
       if (n.getDirection().equals("left") &&
          (bandages.get(i).getX() == n.getX() - 1 && bandages.get(i).getY() == n.getY())){
            bandages.get(i).pickUp();
-           bandages.get(i).pickUp();
            t.moveCursor(n.getX(), n.getY());
            t.putCharacter(' ');
-           n.moveUp();
+           n.moveLeft();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
+           n.addHealth(100);
       }
       if (n.getDirection().equals("right") &&
          (bandages.get(i).getX() == n.getX() + 1 && bandages.get(i).getY() == n.getY())){
            bandages.get(i).pickUp();
-           bandages.get(i).pickUp();
            t.moveCursor(n.getX(), n.getY());
            t.putCharacter(' ');
-           n.moveUp();
+           n.moveRight();
            bandages.get(i).setX(99);
            bandages.get(i).setY(99);
+           n.addHealth(100);
       }
     }
   }
@@ -915,14 +968,15 @@ public static void followPlayer(Terminal t){
 
     while(running){
       z++;
+      terminal.applyForegroundColor(Terminal.Color.MAGENTA);
       terminal.moveCursor(70, 19);
-      terminal.putCharacter('\u03B8');
+      terminal.putCharacter('\u21EA');
 			terminal.moveCursor(one.getX(),one.getY());
-			terminal.applyBackgroundColor(Terminal.Color.WHITE);
-			terminal.applyForegroundColor(Terminal.Color.BLACK);
+			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
+			terminal.applyForegroundColor(Terminal.Color.MAGENTA);
 			//applySGR(a,b) for multiple modifiers (bold,blink) etc.
-			terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
-			terminal.putCharacter('\u00a4');
+			//terminal.applySGR(Terminal.SGR.ENTER_UNDERLINE);
+			terminal.putCharacter('\u0F13');
 			//terminal.putCharacter(' ');'\u00a4'
 			terminal.applyBackgroundColor(Terminal.Color.DEFAULT);
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
@@ -948,10 +1002,13 @@ public static void followPlayer(Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
-
+      putString(1, 1, terminal, "Player health:     ");
       putString(1, 1, terminal, "Player health: " + one.getHealth());
-      putString(1, 4, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
-      putString(1, 5, terminal, "Babies Picked Up: " + one.getBabiesCollected());
+      putString(50, 1, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
+      putString(50, 2, terminal, "Babies Picked Up: " + one.getBabiesCollected());
+      putString(1, 2, terminal, "Player Level: " + one.getLevel());
+      putString(1, 3, terminal, "Player Damage: " + one.getDamage());
+
   //    putString(50, 6, terminal, "around: " + checkAround(one)[0] + ", " + checkAround(one)[1] + ", " + checkAround(one)[2] + ", " + checkAround(one)[3]);
 
 
@@ -1046,18 +1103,27 @@ public static void followPlayer(Terminal t){
         attack(greeb7, terminal);
         attack(greeb8, terminal);
         attack(greeb9, terminal);
+
       }
       //exits system if player is dead
       if(one.getHealth() <= 0){
         terminal.exitPrivateMode();
         running = false;
         System.out.println();
-        System.out.println("As the Terminator once said \"hasta la vista\"");
         System.out.println("You lost");
+        System.out.println("As the Terminator once said \"hasta la vista\"");
         System.out.println();
       }
       if(one.getBabiesToCollect() == 0 && one.getX() == 70
       && one.getY() == 19){
+<<<<<<< HEAD
+        terminal.exitPrivateMode();
+        running = false;
+        System.out.println();
+        System.out.println("You won");
+        System.out.println("A job well done. We now knight you as the pacifist");
+        System.out.println();
+=======
         if (floor == 2){
           terminal.exitPrivateMode();
           running = false;
@@ -1073,6 +1139,7 @@ public static void followPlayer(Terminal t){
           one.setY(10);
           one.resetBabiesToCollect(5);
         }
+>>>>>>> newMap
       }
     }
   }
