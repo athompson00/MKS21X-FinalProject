@@ -1,5 +1,6 @@
 # MKS21X-FinalProject
 How to play:
+How to launch Greeblers in the terminal: bash Game.sh
 Use Arrow Keys for movement
 Press Space to attack (can only attack when right next to a greebler)
 Collect All Babies(Marked with a B-like symbol) by moving over them and get to exit (purple) to win

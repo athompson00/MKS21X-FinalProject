@@ -1,11 +1,11 @@
 public class Creature{
-  private int health;
-  private int damage;
-  private int xcor;
-  private int ycor;
-  private String name;
-  private char graphic;
-  private String direction;
+  private int health; //health points of the creature
+  private int damage; //damage ability of the creature
+  private int xcor; //x-coordinate of the creature
+  private int ycor; //y-coordinate of the creature
+  private String name; //either "greebler" or "wallie" for greebler or player. Helps to identify each in attack method
+  private char graphic; //Unicode character of the creature
+  private String direction; //direction which the creature is looking in
   //Basic Creature constructor intakes health and damage and creates the creature on the terminal
   public Creature(int h, int d, int x, int y, String n, char graph){
     health = h;

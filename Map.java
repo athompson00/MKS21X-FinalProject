@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 public class Map{
-  private ArrayList<Wall> map = new ArrayList<Wall>();
+  private ArrayList<Wall> map = new ArrayList<Wall>();//ArrayList of walls for the maps
+  //Stating and allocating memory for the walls
   static Wall wall1;
   static Wall wall2;
   static Wall wall3;
@@ -227,6 +228,7 @@ public class Map{
   static Wall wall224;
   static Wall wall225;
 
+//Decides which map to draw
   public Map(int number){
     if (number == 1){
       fillInMap1();
@@ -236,9 +238,13 @@ public class Map{
     }
   }
 
+//returns the arraylist with the map in it
   public ArrayList<Wall> getMap(){
     return map;
   }
+
+
+  //initializes each wall and adds it to the map arraylist for map2
   public void fillInMap2(){
     //full wall
     wall6 = new Wall(24, 6, "up");
@@ -679,6 +685,9 @@ public class Map{
     map.add(wall207);
   }
 
+
+
+//initializes each wall and adds it to the map arraylist for map1
   public void fillInMap1(){
     //full wall
     wall6 = new Wall(25, 6, "up");
