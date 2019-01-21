@@ -7,7 +7,11 @@ public class Bandage{
     x = xcor;
     y = ycor;
     isPickedUp = false;
+<<<<<<< HEAD
     graphic = '\u00F7';
+=======
+    graphic = '\u0D3B';
+>>>>>>> newMap
   }
   public int getX(){
     return x;
