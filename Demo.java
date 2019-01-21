@@ -1113,7 +1113,14 @@ public static void followPlayer(Terminal t){
           System.out.println("You won");
           System.out.println();
         } else {
-          terminal.clearScreen();
+          //terminal.clearScreen();
+          for (int i = 1; i < 78; i++){
+            for (int j = 7; j < 23; j++){
+              terminal.moveCursor(i, j);
+              terminal.putCharacter(' ');
+            }
+          }
+
           floor++;
           grid.clear();
           greeblers.clear();
