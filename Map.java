@@ -351,7 +351,7 @@ public class Map{
     wall102 = new Wall(55, 9, "");
     wall103 = new Wall(56, 9, "");
     wall104 = new Wall(57, 9, "");
-    wall106 = new Wall(58 9, "up");
+    wall106 = new Wall(58, 9, "up");
     //new wall
     wall108 = new Wall(38, 10, "up");
     wall112 = new Wall(38, 11, "up");
