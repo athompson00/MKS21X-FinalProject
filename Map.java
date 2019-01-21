@@ -239,224 +239,224 @@ public class Map{
   public ArrayList<Wall> getMap(){
     return map;
   }
-  public void fillInMap1(){
+  public void fillInMap2(){
     //full wall
-    wall6 = new Wall(25, 6, "up");
-    wall7 = new Wall(25, 7, "up");
-    wall8 = new Wall(25, 8, "up");
-    wall9 = new Wall(25, 9, "up");
-    wall10 = new Wall(25, 10, "up");
-    wall11 = new Wall(25, 11, "up");
-    wall12 = new Wall(25, 12, "up");
-  //full wall
-    wall13 = new Wall(19, 12, "");
-    wall14 = new Wall(18, 12, "");
-    wall15 = new Wall(17, 12, "");
-    wall16 = new Wall(16, 12, "");
-    wall17 = new Wall(15, 12, "");
-    wall18 = new Wall(14, 12, "");
-    wall19 = new Wall(24, 12, "");
-    wall20 = new Wall(23, 12, "");
-    wall21 = new Wall(22, 12, "");
-    wall22 = new Wall(21, 12, "");
-    wall23 = new Wall(20, 12, "");
-    wall24 = new Wall(19, 12, "");
-    wall25 = new Wall(18, 12, "");
-    wall26 = new Wall(17, 12, "");
-    wall27 = new Wall(16, 12, "");
-    wall28 = new Wall(15, 12, "");
-    wall29 = new Wall(14, 12, "");
-    wall30 = new Wall(13, 12, "");
-    wall31 = new Wall(12, 12, "");
-    wall32 = new Wall(11, 12, "");
-    wall33 = new Wall(10, 12, "");
-    wall34 = new Wall(9, 12, "");
-    wall35 = new Wall(8, 12, "");
-    wall36 = new Wall(7, 12, "");
-    wall37 = new Wall(6, 12, "up");
+    wall6 = new Wall(24, 6, "up");
+    wall7 = new Wall(24, 7, "up");
+    wall8 = new Wall(24, 8, "up");
+    wall9 = new Wall(24, 9, "up");
+    wall10 = new Wall(24, 10, "up");
+    wall11 = new Wall(24, 11, "up");
+    wall12 = new Wall(24, 12, "up");
+    wall13 = new Wall(24, 13, "");
+    wall14 = new Wall(24, 14, "");
+    wall15 = new Wall(24, 15, "");
+    wall16 = new Wall(24, 16, "");
+    wall17 = new Wall(24, 17, "");
+    //full wall
+    wall18 = new Wall(23, 17, "");
+    wall19 = new Wall(22, 17, "");
+    wall20 = new Wall(21, 17, "");
+    wall21 = new Wall(20, 17, "");
+    wall22 = new Wall(19, 17, "");
+    wall23 = new Wall(18, 17, "");
+    wall24 = new Wall(17, 17, "");
+    wall25 = new Wall(16, 17, "");
+    wall26 = new Wall(15, 17, "");
+    wall27 = new Wall(14, 17, "");
+    wall28 = new Wall(13, 17, "");
+    wall29 = new Wall(12, 17, "");
+    wall30 = new Wall(11, 17, "");
+    wall31 = new Wall(10, 17, "");
+    wall32 = new Wall(9, 17, "");
+    wall33 = new Wall(8, 17, "");
+    wall34 = new Wall(7, 17, "");
+    wall35 = new Wall(6, 17, "");
+    wall36 = new Wall(5, 17, "");
+    wall37 = new Wall(4, 17, "up");
     //new wall
-    wall38 = new Wall(6, 13, "up");
-    wall39 = new Wall(6, 14, "up");
-    wall40 = new Wall(6, 15, "up");
-    wall41 = new Wall(6, 16, "up");
-    wall42 = new Wall(6, 17, "up");
-    wall43 = new Wall(6, 18, "up");
-    wall44 = new Wall(6, 19, "up");
-    wall45 = new Wall(6, 20, "up");
-    wall46 = new Wall(6, 21, "up");
+    wall38 = new Wall(1, 13, "up");
+    wall39 = new Wall(2, 13, "up");
+    wall40 = new Wall(3, 13, "up");
+    wall41 = new Wall(4, 13, "up");
+    wall42 = new Wall(5, 13, "up");
+    wall43 = new Wall(6, 13, "up");
+    wall44 = new Wall(7, 13, "up");
+    wall45 = new Wall(8, 13, "up");
+    wall46 = new Wall(9, 13, "up");
+    wall47 = new Wall(10, 13, "");
+    wall48 = new Wall(11, 13, "");
+    wall49 = new Wall(12, 13, "");
+    wall50 = new Wall(13, 13, "");
+    wall51 = new Wall(14, 13, "up");
     //new wall
-    wall47 = new Wall(7, 21, "");
-    wall48 = new Wall(8, 21, "");
-    wall49 = new Wall(9, 21, "");
-    wall50 = new Wall(10, 21, "up");
+    wall52 = new Wall(14, 12, "up");
+    wall53 = new Wall(10, 11, "up");
+    wall54 = new Wall(10, 10, "up");
+    wall55 = new Wall(10, 9, "up");
     //new wall
-    wall51 = new Wall(10, 15, "up");
-    wall52 = new Wall(10, 16, "up");
-    wall53 = new Wall(10, 17, "up");
-    wall54 = new Wall(10, 18, "up");
-    wall55 = new Wall(10, 19, "up");
-    wall56 = new Wall(10, 20, "up");
-    wall57 = new Wall(10, 14, "up");
+    wall56 = new Wall(15, 9, "up");
+    wall57 = new Wall(16, 9, "up");
   //  wall58 = new Wall(10, 13, "up");
+    wall73 = new Wall(17, 9, "up");
+    wall74 = new Wall(18, 9, "up");
+    wall58 = new Wall(19, 9, "up");
+    wall60 = new Wall(20, 9, "up");
     //new wall
-    wall73 = new Wall(25, 12, "up");
-    wall74 = new Wall(25, 13, "up");
-    wall58 = new Wall(25, 21, "up");
-    wall60 = new Wall(25, 14, "up");
-    wall61 = new Wall(25, 15, "up");
-    wall62 = new Wall(25, 16, "up");
-    wall63 = new Wall(25, 17, "up");
-    wall64 = new Wall(25, 18, "up");
-    wall65 = new Wall(25, 19, "up");
-    wall66 = new Wall(25, 20, "up");
+    wall61 = new Wall(20, 10, "up");
+    wall62 = new Wall(20, 11, "up");
+    wall63 = new Wall(20, 12, "up");
+    wall64 = new Wall(20, 13, "up");
     //new wall
-    wall67 = new Wall(24, 21, "");
-    wall68 = new Wall(23, 21, "");
-    wall69 = new Wall(22, 21, "");
-    wall70 = new Wall(21, 21, "");
-    wall71 = new Wall(20, 21, "");
-    wall72 = new Wall(19, 21, "");
-    wall59 = new Wall(18, 21, "");
+    wall65 = new Wall(28, 22, "up");
+    wall66 = new Wall(28, 21, "up");
+    wall67 = new Wall(28, 20, "");
+    wall68 = new Wall(28, 19, "");
+    wall69 = new Wall(28, 18, "");
+    wall70 = new Wall(28, 17, "");
+    wall71 = new Wall(28, 16, "");
+    wall72 = new Wall(28, 15, "");
+    wall59 = new Wall(28, 14, "");
+    wall75 = new Wall(28,13,"");
     //new wall
-    wall75 = new Wall(31,22,"up");
-    wall76 = new Wall(31,21,"up");
-    wall77 = new Wall(31,20,"up");
-    wall78 = new Wall(31,19,"up");
-    wall79 = new Wall(31,18,"up");
-    wall80 = new Wall(31,17,"up");
-    wall81 = new Wall(31,16,"up");
-    wall82 = new Wall(31,15,"up");
-    wall83 = new Wall(31,14,"up");
-    wall84 = new Wall(31,13,"up");
-    wall85 = new Wall(31,12,"up");
-    wall86 = new Wall(31,11,"up");
-    wall87 = new Wall(31,10,"up");
-    wall88 = new Wall(31,9,"up");
-    wall105 = new Wall(31,8,"up");
-//new wall
-    wall89 = new Wall(32, 8, "");
-    wall90 = new Wall(33, 8, "");
-    wall91 = new Wall(34, 8, "");
-    wall92 = new Wall(35, 8, "");
-    wall93 = new Wall(36, 8, "");
-    wall94 = new Wall(37, 8, "");
-    wall95 = new Wall(38, 8, "");
-    wall96 = new Wall(39, 8, "");
-    wall97 = new Wall(40, 8, "");
-    wall98 = new Wall(41, 8, "");
-    wall99 = new Wall(42, 8, "up");
-    //passage in between
-    wall100 = new Wall(46, 8, "up");
-    wall101 = new Wall(47, 8, "");
-    wall102 = new Wall(48, 8, "");
-    wall103 = new Wall(49, 8, "");
-    wall104 = new Wall(50, 8, "");
+    wall76 = new Wall(29,13,"up");
+    wall77 = new Wall(30,13,"up");
+    wall78 = new Wall(31,13,"up");
+    wall79 = new Wall(32,13,"up");
+    wall80 = new Wall(33,13,"up");
+    wall81 = new Wall(34,13,"up");
     //new wall
-    wall106 = new Wall(51, 8, "up");
-    wall108 = new Wall(51, 6, "up");
+    wall82 = new Wall(34,14,"up");
+    wall83 = new Wall(34,15,"up");
+    wall84 = new Wall(34,16,"up");
+    wall85 = new Wall(34,17,"up");
     //new wall
-    wall112 = new Wall(42, 9, "up");
-    wall113 = new Wall(42, 10, "up");
-    wall114 = new Wall(42, 11, "up");
-    wall115 = new Wall(42, 12, "up");
-    wall116 = new Wall(42, 13, "up");
-    wall117 = new Wall(42, 14, "up");
-    wall118 = new Wall(42, 15, "up");
-    wall119 = new Wall(42, 16, "up");
-    wall120 = new Wall(42, 17, "up");
-    wall121 = new Wall(42, 18, "up");
-    wall122 = new Wall(42, 19, "up");
-    //new Wall
-    wall123 = new Wall(46, 9, "up");
-    wall124 = new Wall(46, 10, "up");
-    wall125 = new Wall(46, 11, "up");
-    wall126 = new Wall(46, 12, "up");
-    wall127 = new Wall(46, 13, "up");
-    wall128 = new Wall(46, 14, "up");
-    wall129 = new Wall(46, 15, "up");
+    wall86 = new Wall(38,9,"up");
+    wall87 = new Wall(39,9,"up");
+    wall88 = new Wall(40,9,"up");
+    wall105 = new Wall(41,9,"up");
+    wall89 = new Wall(42, 9, "");
+    wall90 = new Wall(43, 9, "");
+    wall91 = new Wall(44, 9, "");
+    wall92 = new Wall(45, 9, "");
+    wall93 = new Wall(46, 9, "");
+    wall94 = new Wall(47, 9, "");
+    wall95 = new Wall(48, 9, "");
+    wall96 = new Wall(49, 9, "");
+    wall97 = new Wall(50, 9, "");
+    wall98 = new Wall(51, 9, "");
+    wall99 = new Wall(52, 9, "up");
+    wall100 = new Wall(53, 9, "up");
+    wall101 = new Wall(54, 9, "");
+    wall102 = new Wall(55, 9, "");
+    wall103 = new Wall(56, 9, "");
+    wall104 = new Wall(57, 9, "");
+    wall106 = new Wall(58 9, "up");
     //new wall
-    wall130 = new Wall(47, 15, "");
-    wall131 = new Wall(48, 15, "");
-    wall132 = new Wall(49, 15, "");
-    wall133 = new Wall(50, 15, "");
-    wall134 = new Wall(51, 15, "");
-    wall135 = new Wall(52, 15, "");
+    wall108 = new Wall(38, 10, "up");
+    wall112 = new Wall(38, 11, "up");
+    wall113 = new Wall(38, 12, "up");
+    wall114 = new Wall(38, 13, "up");
     //new wall
-    wall136 = new Wall(53, 15, "up");
-    wall137 = new Wall(53, 16, "up");
-    wall138 = new Wall(53, 17, "up");
-    wall139 = new Wall(53, 18, "up");
-    wall140 = new Wall(53, 19, "up");
-    wall141 = new Wall(53, 20, "up");
-    wall142 = new Wall(53, 21, "up");
-    wall143 = new Wall(53, 22, "up");
+    wall115 = new Wall(37, 13, "up");
+    wall116 = new Wall(36, 13, "up");
+    //new wall
+    wall117 = new Wall(36, 14, "up");
+    wall118 = new Wall(36, 15, "up");
+    wall119 = new Wall(36, 16, "up");
+    wall120 = new Wall(36, 17, "up");
+    //new wall
+    wall121 = new Wall(37, 17, "up");
+    wall122 = new Wall(38, 17, "up");
+    wall123 = new Wall(39, 17, "up");
+    wall124 = new Wall(40, 17, "up");
+    wall125 = new Wall(41, 17, "up");
+    wall126 = new Wall(42, 17, "up");
+    wall127 = new Wall(43, 17, "up");
+    wall128 = new Wall(44, 17, "up");
+    wall129 = new Wall(45, 17, "up");
+    wall130 = new Wall(46, 17, "");
+    //new wall
+    wall131 = new Wall(46, 16, "");
+    wall132 = new Wall(46, 15, "");
+    wall133 = new Wall(46, 14, "");
+    wall134 = new Wall(46, 13, "");
+    //new wall
+    wall135 = new Wall(47, 13, "");
+    wall136 = new Wall(48, 13, "up");
+    wall137 = new Wall(49, 13, "up");
+    wall138 = new Wall(50, 13, "up");
+    wall139 = new Wall(51, 13, "up");
+    wall140 = new Wall(52, 13, "up");
+    //mew wall
+    wall141 = new Wall(52, 14, "up");
+    wall142 = new Wall(52, 15, "up");
+    wall143 = new Wall(52, 16, "up");
+    wall149 = new Wall(52, 17, "up");
+    wall151 = new Wall(52, 18, "up");
+    wall152 = new Wall(52, 19, "");
+    wall153 = new Wall(52, 20, "");
+    wall154 = new Wall(52, 21, "");
+    wall155 = new Wall(52, 22, "");
+    wall156 = new Wall(52, 23, "up");
     //new walls
-    wall149 = new Wall(54, 6, "up");
-    wall151 = new Wall(54, 8, "up");
+    wall157 = new Wall(54, 17, "up");
+    wall158 = new Wall(55, 17, "up");
+    wall159 = new Wall(56, 17, "up");
+    wall160 = new Wall(57, 17, "up");
+    wall161 = new Wall(58, 17, "up");
+    wall162 = new Wall(59, 17, "up");
+    wall163 = new Wall(60, 17, "up");
+    wall164 = new Wall(61, 17, "");
+    wall165 = new Wall(62, 17, "up");
     //new wall
-    wall152 = new Wall(55, 8, "");
-    wall153 = new Wall(56, 8, "");
-    wall154 = new Wall(57, 8, "");
-    wall155 = new Wall(58, 8, "");
-    wall156 = new Wall(59, 8, "up");
-    //new walls
-    wall157 = new Wall(59, 9, "up");
-    wall158 = new Wall(59, 10, "up");
-    wall159 = new Wall(59, 11, "up");
-    wall160 = new Wall(59, 12, "up");
-    wall161 = new Wall(59, 13, "up");
-    wall162 = new Wall(59, 14, "up");
-    wall163 = new Wall(59, 15, "up");
+    wall166 = new Wall(62, 16, "up");
+    wall167 = new Wall(62, 15, "up");
+    wall168 = new Wall(62, 14, "up");
+    wall169 = new Wall(62, 13, "up");
+    wall170 = new Wall(62, 12, "up");
+    wall171 = new Wall(62, 10, "");
+    wall172 = new Wall(62, 9, "");
+    wall173 = new Wall(62, 8, "");
+    wall174 = new Wall(62, 7, "");
+    wall175 = new Wall(62, 6, "up");
     //new wall
-    wall164 = new Wall(58, 15, "");
-    wall165 = new Wall(57, 15, "up");
+    wall210 = new Wall(66, 22, "");
+    wall176 = new Wall(66, 21, "");
+    wall177 = new Wall(66, 20, "");
+    wall178 = new Wall(66, 19, "");
+    wall179 = new Wall(66, 18, "");
+    wall180 = new Wall(66, 17, "");
+    wall181 = new Wall(66, 16, "");
+    wall182 = new Wall(66, 15, "");
+    wall183 = new Wall(66, 14, "");
+    wall184 = new Wall(66, 13, "");
+    wall185 = new Wall(66, 12, "");
+    wall211 = new Wall(66, 11, "up");
+    wall186 = new Wall(66, 10, "up");
+    wall187 = new Wall(66, 9, "up");
     //new wall
-    wall166 = new Wall(57, 16, "up");
-    wall167 = new Wall(57, 17, "up");
-    wall168 = new Wall(57, 18, "up");
-    wall169 = new Wall(57, 19, "up");
-    wall170 = new Wall(57, 20, "up");
+    wall188 = new Wall(67, 9, "up");
+    wall189 = new Wall(68, 9, "up");
+    wall190 = new Wall(69, 9, "up");
+    wall191 = new Wall(70, 9, "up");
     //new wall
-    wall171 = new Wall(58, 20, "");
-    wall172 = new Wall(59, 20, "");
-    wall173 = new Wall(60, 20, "");
-    wall174 = new Wall(61, 20, "");
-    wall175 = new Wall(62, 20, "up");
+    wall192 = new Wall(70, 10, "up");
+    wall193 = new Wall(70, 11, "up");
+    wall194 = new Wall(70, 12, "up");
+    wall195 = new Wall(70, 13, "up");
+    wall196 = new Wall(70, 14, "up");
+    wall197 = new Wall(70, 15, "up");
+    wall198 = new Wall(70, 16, "up");
+    wall199 = new Wall(70, 17, "up");
     //new wall
-    wall210 = new Wall(78, 20, "");
-    wall176 = new Wall(77, 20, "");
-    wall177 = new Wall(76, 20, "");
-    wall178 = new Wall(75, 20, "");
-    wall179 = new Wall(74, 20, "");
-    wall180 = new Wall(73, 20, "");
-    wall181 = new Wall(72, 20, "");
-    wall182 = new Wall(71, 20, "");
-    wall183 = new Wall(70, 20, "");
-    wall184 = new Wall(69, 20, "");
-    wall185 = new Wall(68, 20, "");
-    wall211 = new Wall(67, 20, "up");
-    //new wall
-    wall186 = new Wall(67, 19, "up");
-    wall187 = new Wall(67, 18, "up");
-    wall188 = new Wall(67, 17, "up");
-    wall189 = new Wall(67, 16, "up");
-    wall190 = new Wall(67, 15, "up");
-    wall191 = new Wall(67, 14, "up");
-    wall192 = new Wall(67, 13, "up");
-    wall193 = new Wall(67, 12, "up");
-    wall194 = new Wall(67, 11, "up");
-    wall195 = new Wall(67, 10, "up");
-    wall196 = new Wall(67, 9, "up");
-    wall197 = new Wall(67, 8, "up");
-    //new wall
-    wall198 = new Wall(62, 19, "up");
-    wall199 = new Wall(62, 18, "up");
-    wall200 = new Wall(62, 17, "up");
-    wall201 = new Wall(62, 16, "up");
-    wall202 = new Wall(62, 15, "up");
-    wall203 = new Wall(62, 14, "up");
-    wall204 = new Wall(62, 13, "up");
-    wall205 = new Wall(62, 12, "up");
+    wall200 = new Wall(71, 17, "up");
+    wall201 = new Wall(72, 17, "up");
+    wall202 = new Wall(73, 17, "up");
+    wall203 = new Wall(74, 17, "up");
+    wall204 = new Wall(75, 17, "up");
+    wall205 = new Wall(76, 17, "up");
+    /*
     wall206 = new Wall(62, 11, "up");
     wall207 = new Wall(62, 10, "up");
     wall208 = new Wall(62, 9, "up");
@@ -472,6 +472,7 @@ public class Map{
     wall219 = new Wall(74, 8, "");
     wall220 = new Wall(75, 8, "");
     wall221 = new Wall(76, 8, "up");
+    */
 
 
 
@@ -703,7 +704,7 @@ public class Map{
     map.add(wall221);
   }
 
-  public void fillInMap2(){
+  public void fillInMap1(){
     //full wall
     wall6 = new Wall(25, 6, "up");
     wall7 = new Wall(25, 7, "up");

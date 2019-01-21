@@ -22,7 +22,7 @@ public class Demo{
   static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
   static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
   static Map map;
-  static int floor = 1;
+  static int floor = 2;
 
 
   //perimeter
