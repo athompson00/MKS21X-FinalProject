@@ -13,6 +13,7 @@ import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Demo{
   static ArrayList<Wall> grid = new ArrayList<Wall>();
