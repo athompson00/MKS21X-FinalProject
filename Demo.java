@@ -562,8 +562,16 @@ public class Demo{
       t.putCharacter(grid.get(i).getBarrier());
     }
     for (int i = 0; i < bandages.size(); i++){
+      t.applyForegroundColor(Terminal.Color.GREEN);
       t.moveCursor(bandages.get(i).getX(), bandages.get(i).getY());
       t.putCharacter(bandages.get(i).getGraphic());
+    }
+    for(int k = 0; k < babies.size(); k++){
+      if (babies.get(k).getX() != 99){
+        t.applyForegroundColor(Terminal.Color.YELLOW);
+        t.moveCursor(babies.get(k).getX(), babies.get(k).getY());
+        t.putCharacter(babies.get(k).getGraphic());
+      }
     }
 
   }
@@ -578,18 +586,6 @@ public class Demo{
         t.moveCursor(greeblers.get(j).getX(), greeblers.get(j).getY());
         t.putCharacter(greeblers.get(j).getGraphic());
       }
-    }
-    for(int k = 0; k < babies.size(); k++){
-      if (babies.get(k).getX() != 99){
-        t.applyForegroundColor(Terminal.Color.YELLOW);
-        t.moveCursor(babies.get(k).getX(), babies.get(k).getY());
-        t.putCharacter(babies.get(k).getGraphic());
-      }
-    }
-    for (int i = 0; i < bandages.size(); i++){
-      t.applyForegroundColor(Terminal.Color.GREEN);
-      t.moveCursor(bandages.get(i).getX(), bandages.get(i).getY());
-      t.putCharacter(bandages.get(i).getGraphic());
     }
 
   }
