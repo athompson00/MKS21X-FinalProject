@@ -20,7 +20,7 @@ public class Demo{
   static ArrayList<Integer> killed = new ArrayList<Integer>();
   static ArrayList<Baby> babies = new ArrayList<Baby>();
   static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
-  static Player one = new Player(1000, 40, 10, 10, "wallie", '\u00a6', 5);
+  static Player one = new Player(300, 40, 10, 10, "wallie", '\u00a6', 5);
   static Map map = new Map(1);
 
 
@@ -255,13 +255,28 @@ public class Demo{
 
   static Greebler greeb1 = new Greebler(8, 15);
   static Greebler greeb2 = new Greebler(30,20);
-  static Greebler greeb3 = new Greebler(12, 20);
+  static Greebler greeb3 = new Greebler(12, 17);
   static Greebler greeb4 = new Greebler(15,20);
   static Greebler greeb5 = new Greebler(40,11);
   static Greebler greeb6 = new Greebler(39,20);
   static Greebler greeb7 = new Greebler(49,9);
   static Greebler greeb8 = new Greebler(49,11);
   static Greebler greeb9 = new Greebler(74,22);
+  static Greebler greeb10 = new Greebler(4, 21);
+  static Greebler greeb11 = new Greebler(39, 10);
+  static Greebler greeb12 = new Greebler(75, 15);
+  static Greebler greeb13 = new Greebler(68, 7);
+  static Greebler greeb14 = new Greebler(47, 22);
+  static Greebler greeb15 = new Greebler(37, 7);
+  static Greebler greeb16 = new Greebler(66, 18);
+  static Greebler greeb17 = new Greebler(63, 22);
+  static Greebler greeb18 = new Greebler(56, 17);
+  //static Greebler greeb19 = new Greebler(66, 18);
+
+
+
+
+
 
   static Baby baby1 = new Baby(40, 10);
   static Baby baby2 = new Baby(8, 20);
@@ -508,6 +523,17 @@ public class Demo{
     greeblers.add(greeb7);
     greeblers.add(greeb8);
     greeblers.add(greeb9);
+    greeblers.add(greeb10);
+    greeblers.add(greeb11);
+    greeblers.add(greeb12);
+    greeblers.add(greeb13);
+    greeblers.add(greeb14);
+    greeblers.add(greeb15);
+    greeblers.add(greeb16);
+    greeblers.add(greeb17);
+    greeblers.add(greeb18);
+    //greeblers.add(greeb19);
+
 
     babies.add(baby1);
     babies.add(baby2);
@@ -1049,6 +1075,7 @@ public static void followPlayer(Terminal t){
         attack(greeb7, terminal);
         attack(greeb8, terminal);
         attack(greeb9, terminal);
+
       }
       //exits system if player is dead
       if(one.getHealth() <= 0){
