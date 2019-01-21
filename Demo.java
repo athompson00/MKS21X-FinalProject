@@ -256,7 +256,7 @@ public class Demo{
   static Wall side230 = new Wall(79,22, "up");
   static Wall side231 = new Wall(79,23, "up");
 
-
+  //for map1
   static Greebler greeb1 = new Greebler(8, 15);
   static Greebler greeb2 = new Greebler(30,20);
   static Greebler greeb3 = new Greebler(12, 17);
@@ -275,18 +275,42 @@ public class Demo{
   static Greebler greeb16 = new Greebler(66, 18);
   static Greebler greeb17 = new Greebler(63, 22);
   static Greebler greeb18 = new Greebler(56, 17);
-  //static Greebler greeb19 = new Greebler(66, 18);
 
+  //for map2
+  static Greebler greeb19 = new Greebler(8, 15);
+  static Greebler greeb20 = new Greebler(67,12);
+  static Greebler greeb21 = new Greebler(30, 14);
+  static Greebler greeb22 = new Greebler(30, 18);
+  static Greebler greeb23 = new Greebler(35, 14);
+  static Greebler greeb24 = new Greebler(26, 10);
+  static Greebler greeb25 = new Greebler(23, 7);
+  static Greebler greeb26 = new Greebler(37, 8);
+  static Greebler greeb27 = new Greebler(27, 7);
+  static Greebler greeb28 = new Greebler(68, 20);
+  static Greebler greeb29 = new Greebler(17, 20);
+  static Greebler greeb30 = new Greebler(23, 20);
+  static Greebler greeb31 = new Greebler(10, 15);
+  static Greebler greeb32 = new Greebler(67, 9);
+  static Greebler greeb33 = new Greebler(29, 18);
+  //static Greebler greeb34 = new Greebler();
+  //static Greebler greeb35 = new Greebler();
+  //static Greebler greeb36 = new Greebler();
 
-
-
-
-
+  //for map1
   static Baby baby1 = new Baby(40, 10);
   static Baby baby2 = new Baby(8, 20);
   static Baby baby3 = new Baby(12, 21);
   static Baby baby4 = new Baby(47, 10);
   static Baby baby5 = new Baby(76, 22);
+
+  //for map2
+  static Baby baby6 = new Baby(67, 10);
+  static Baby baby7 = new Baby(17, 10);
+  static Baby baby8 = new Baby(37, 10);
+  static Baby baby9 = new Baby(27, 22);
+  static Baby baby10 = new Baby(29, 14);
+
+
 
   static Bandage bandage1 = new Bandage(39, 9);
 
@@ -985,6 +1009,8 @@ public static void followPlayer(Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
+
+
       putString(1, 1, terminal, "Player health:     ");
       putString(1, 1, terminal, "Player health: " + one.getHealth());
       putString(50, 1, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
@@ -1007,6 +1033,8 @@ public static void followPlayer(Terminal t){
 					System.out.println();
           System.out.println("You coward! You chose your life over the life of infants forshame");
           System.out.println();
+          System.out.println(one.getX());
+          System.out.println(one.getY());
 				}
 
 				if (key.getKind() == Key.Kind.ArrowLeft) {
@@ -1086,6 +1114,30 @@ public static void followPlayer(Terminal t){
         attack(greeb7, terminal);
         attack(greeb8, terminal);
         attack(greeb9, terminal);
+        attack(greeb11, terminal);
+        attack(greeb12, terminal);
+        attack(greeb13, terminal);
+        attack(greeb14, terminal);
+        attack(greeb15, terminal);
+        attack(greeb16, terminal);
+        attack(greeb17, terminal);
+        attack(greeb18, terminal);
+        attack(greeb19, terminal);
+        attack(greeb20, terminal);
+        attack(greeb21, terminal);
+        attack(greeb22, terminal);
+        attack(greeb23, terminal);
+        attack(greeb24, terminal);
+        attack(greeb25, terminal);
+        attack(greeb26, terminal);
+        attack(greeb27, terminal);
+        attack(greeb28, terminal);
+        attack(greeb29, terminal);
+        attack(greeb30, terminal);
+        attack(greeb31, terminal);
+        attack(greeb32, terminal);
+        attack(greeb33, terminal);
+        
 
 
       }
@@ -1118,13 +1170,38 @@ public static void followPlayer(Terminal t){
           floor++;
           grid.clear();
           greeblers.clear();
+          greeblers.add(greeb19);
+          greeblers.add(greeb20);
+          greeblers.add(greeb21);
+          greeblers.add(greeb22);
+          greeblers.add(greeb23);
+          greeblers.add(greeb24);
+          greeblers.add(greeb25);
+          greeblers.add(greeb26);
+          greeblers.add(greeb27);
+          greeblers.add(greeb28);
+          greeblers.add(greeb29);
+          greeblers.add(greeb30);
+          greeblers.add(greeb31);
+          greeblers.add(greeb32);
+          greeblers.add(greeb33);
+
           killed.clear();
+
           babies.clear();
+          babies.add(baby6);
+          babies.add(baby7);
+          babies.add(baby8);
+          babies.add(baby9);
+          babies.add(baby10);
+
           bandages.clear();
+
           fillWalls(terminal);
           one.setX(10);
           one.setY(10);
           one.resetBabiesToCollect(5);
+
         }
       }
     }
