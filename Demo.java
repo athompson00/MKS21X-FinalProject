@@ -985,6 +985,7 @@ public static void followPlayer(Terminal t){
 			terminal.applyForegroundColor(Terminal.Color.DEFAULT);
 
       fillScreen(terminal);
+      terminal.applyForegroundColor(Terminal.Color.GREEN);
       putString(1, 1, terminal, "Player health:     ");
       putString(1, 1, terminal, "Player health: " + one.getHealth());
       putString(50, 1, terminal, "Babies To Pick Up: " + one.getBabiesToCollect());
