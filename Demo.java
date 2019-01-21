@@ -12,12 +12,9 @@ import com.googlecode.lanterna.input.InputDecoder;
 import com.googlecode.lanterna.input.InputProvider;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.input.KeyMappingProfile;
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Random;
-=======
 import java.util.*;
->>>>>>> newMap
 
 public class Demo{
   static ArrayList<Wall> grid = new ArrayList<Wall>();
@@ -25,14 +22,10 @@ public class Demo{
   static ArrayList<Integer> killed = new ArrayList<Integer>();
   static ArrayList<Baby> babies = new ArrayList<Baby>();
   static ArrayList<Bandage> bandages = new ArrayList<Bandage>();
-<<<<<<< HEAD
+
   static Player one = new Player(300, 40, 10, 10, "wallie", '\u00a6', 5);
-  static Map map = new Map(1);
-=======
-  static Player one = new Player(1000, 100, 10, 10, "wallie", '\u00a6', 5);
   static Map map;
-  static int floor = 2;
->>>>>>> newMap
+  static int floor = 1;
 
 
   //perimeter
@@ -556,14 +549,11 @@ public class Demo{
 
     bandages.add(bandage1);
 
-<<<<<<< HEAD
     t.applyForegroundColor(Terminal.Color.CYAN);
-=======
     //deciding which map is drawn
 
     map = new Map(floor);
 
->>>>>>> newMap
     for (int i = 0; i < map.getMap().size(); i++){
       grid.add(map.getMap().get(i));
     }
@@ -596,14 +586,11 @@ public class Demo{
         t.putCharacter(babies.get(k).getGraphic());
       }
     }
-<<<<<<< HEAD
     for (int i = 0; i < bandages.size(); i++){
       t.applyForegroundColor(Terminal.Color.GREEN);
       t.moveCursor(bandages.get(i).getX(), bandages.get(i).getY());
       t.putCharacter(bandages.get(i).getGraphic());
     }
-=======
->>>>>>> newMap
 
   }
 
@@ -1116,14 +1103,12 @@ public static void followPlayer(Terminal t){
       }
       if(one.getBabiesToCollect() == 0 && one.getX() == 70
       && one.getY() == 19){
-<<<<<<< HEAD
         terminal.exitPrivateMode();
         running = false;
         System.out.println();
         System.out.println("You won");
         System.out.println("A job well done. We now knight you as the pacifist");
         System.out.println();
-=======
         if (floor == 2){
           terminal.exitPrivateMode();
           running = false;
@@ -1139,7 +1124,6 @@ public static void followPlayer(Terminal t){
           one.setY(10);
           one.resetBabiesToCollect(5);
         }
->>>>>>> newMap
       }
     }
   }
