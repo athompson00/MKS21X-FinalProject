@@ -461,21 +461,6 @@ public class Map{
 
     wall206 = new Wall(53, 6, "up");
     wall207 = new Wall(56, 6, "up");
-    /*
-    wall208 = new Wall(62, 9, "up");
-    wall209 = new Wall(62, 8, "up");
-    //new wall
-  //  wall212 = new Wall(67, 8, "");
-    wall213 = new Wall(68, 8, "");
-    wall214 = new Wall(69, 8, "");
-    wall215 = new Wall(70, 8, "");
-    wall216 = new Wall(71, 8, "");
-    wall217 = new Wall(72, 8, "");
-    wall218 = new Wall(73, 8, "");
-    wall219 = new Wall(74, 8, "");
-    wall220 = new Wall(75, 8, "");
-    wall221 = new Wall(76, 8, "up");
-    */
 
 
 
@@ -690,23 +675,8 @@ public class Map{
     map.add(wall203);
     map.add(wall204);
     map.add(wall205);
-    /*
     map.add(wall206);
     map.add(wall207);
-    map.add(wall208);
-    map.add(wall209);
-    //new wall
-  //  map.add(wall212);
-    map.add(wall213);
-    map.add(wall214);
-    map.add(wall215);
-    map.add(wall216);
-    map.add(wall217);
-    map.add(wall218);
-    map.add(wall219);
-    map.add(wall220);
-    map.add(wall221);
-    */
   }
 
   public void fillInMap1(){
