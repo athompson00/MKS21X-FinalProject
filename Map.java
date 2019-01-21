@@ -687,6 +687,7 @@ public class Map{
     map.add(wall203);
     map.add(wall204);
     map.add(wall205);
+    /*
     map.add(wall206);
     map.add(wall207);
     map.add(wall208);
@@ -702,6 +703,7 @@ public class Map{
     map.add(wall219);
     map.add(wall220);
     map.add(wall221);
+    */
   }
 
   public void fillInMap1(){
