@@ -603,7 +603,7 @@ public class Demo{
     //checks from perspective of player for greeblers surrounding it and attacks
     //any that are in his/her proximity
     c.setDirection("right");
-    if(checkAround(c)[1].equals("greebler")){
+    if(checkAround(c)[1].equals("greebler") && c.getName().equals("wallie")){
       for(int i = 0; i < greeblers.size(); i++){
         if(greeblers.get(i).getX() - 1 == c.getX() && c.getY() == greeblers.get(i).getY()){
           d = i;
@@ -627,7 +627,7 @@ public class Demo{
 
 
     c.setDirection("left");
-    if(checkAround(c)[3].equals("greebler")){
+    if(checkAround(c)[3].equals("greebler") && c.getName().equals("wallie")){
       for(int j = 0; j < greeblers.size(); j++){
         if(greeblers.get(j).getX() + 1 == c.getX() && c.getY() == greeblers.get(j).getY()){
           d = j;
@@ -652,7 +652,7 @@ public class Demo{
 
 
     c.setDirection("down");
-    if(checkAround(c)[0].equals("greebler")){
+    if(checkAround(c)[0].equals("greebler") && c.getName().equals("wallie")){
       for(int k = 0; k < greeblers.size(); k++){
         if(greeblers.get(k).getX() == c.getX() && c.getY() == greeblers.get(k).getY() - 1){
           d = k;
@@ -676,7 +676,7 @@ public class Demo{
 
 
     c.setDirection("up");
-    if(checkAround(c)[2].equals("greebler")){
+    if(checkAround(c)[2].equals("greebler") && c.getName().equals("wallie")){
       for(int l = 0; l < greeblers.size(); l++){
         if(greeblers.get(l).getX() == c.getX() && c.getY() == greeblers.get(l).getY() + 1){
           d = l;
@@ -1114,7 +1114,6 @@ public static void followPlayer(Terminal t){
           System.out.println("You won");
           System.out.println();
         } else {
-          //terminal.clearScreen();
           for (int i = 1; i < 78; i++){
             for (int j = 7; j < 23; j++){
               terminal.moveCursor(i, j);
