@@ -1086,7 +1086,15 @@ public static void followPlayer(Terminal t){
         attack(greeb7, terminal);
         attack(greeb8, terminal);
         attack(greeb9, terminal);
-
+        attack(greeb10, terminal);
+        attack(greeb11, terminal);
+        attack(greeb12, terminal);
+        attack(greeb13, terminal);
+        attack(greeb14, terminal);
+        attack(greeb15, terminal);
+        attack(greeb16, terminal);
+        attack(greeb17, terminal);
+        attack(greeb18, terminal);
 
       }
       //exits system if player is dead
