@@ -1115,6 +1115,11 @@ public static void followPlayer(Terminal t){
         } else {
           terminal.clearScreen();
           floor++;
+          grid.clear();
+          greeblers.clear();
+          killed.clear();
+          babies.clear();
+          bandages.clear();
           fillWalls(terminal);
           one.setX(10);
           one.setY(10);
