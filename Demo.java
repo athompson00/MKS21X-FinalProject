@@ -275,9 +275,23 @@ public class Demo{
   static Greebler greeb16 = new Greebler(66, 18);
   static Greebler greeb17 = new Greebler(63, 22);
   static Greebler greeb18 = new Greebler(56, 17);
-  //static Greebler greeb19 = new Greebler(66, 18);
 
-
+  //for map2
+  static Greebler greeb19 = new Greebler(8, 15);
+  static Greebler greeb20 = new Greebler(67,12);
+  static Greebler greeb21 = new Greebler(30, 14);
+  static Greebler greeb22 = new Greebler(30, 18);
+  static Greebler greeb23 = new Greebler(35, 14);
+  static Greebler greeb24 = new Greebler(26, 10);
+  static Greebler greeb25 = new Greebler(23, 7);
+  static Greebler greeb26 = new Greebler(37, 8);
+  static Greebler greeb27 = new Greebler(27, 7);
+  static Greebler greeb28 = new Greebler(68, 20);
+  static Greebler greeb29 = new Greebler(17, 20);
+  static Greebler greeb30 = new Greebler(23, 20);
+  static Greebler greeb31 = new Greebler(10, 15);
+  static Greebler greeb32 = new Greebler(67, 8);
+  static Greebler greeb33 = new Greebler(29, 18);
 
 
 
@@ -287,8 +301,15 @@ public class Demo{
   static Baby baby3 = new Baby(12, 21);
   static Baby baby4 = new Baby(47, 10);
   static Baby baby5 = new Baby(76, 22);
+  //for map2
+  static Baby baby6 = new Baby(67, 10);
+  static Baby baby7 = new Baby(17, 10);
+  static Baby baby8 = new Baby(37, 10);
+  static Baby baby9 = new Baby(27, 22);
+  static Baby baby10 = new Baby(29, 14);
 
   static Bandage bandage1 = new Bandage(39, 9);
+  static Bandage bandage2 = new Bandage(17, 11);
 
 
   public static void fillWalls(Terminal t){
@@ -891,7 +912,6 @@ public static void pickUpBaby(Player n, Terminal t){
   }
 }
 
-//Makes all greeblers within 10 units of the player move towards the player to attack
 public static void followPlayer(Terminal t){
   for (int i = 0; i < greeblers.size(); i++){
     double d = Math.hypot(one.getX() - greeblers.get(i).getX(), one.getY() - greeblers.get(i).getY());//distance from greebler to player
@@ -899,7 +919,6 @@ public static void followPlayer(Terminal t){
       if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
          (one.getX() - greeblers.get(i).getX() > 0) &&
          (checkAround(greeblers.get(i))[1].equals(" "))){
-           //checks if the player is to the right of the greebler
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
            t.putCharacter(' ');
            greeblers.get(i).moveRight();
@@ -907,7 +926,6 @@ public static void followPlayer(Terminal t){
       if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
          (one.getX() - greeblers.get(i).getX() < 0) &&
          (checkAround(greeblers.get(i))[3].equals(" "))){
-           //checks if the player is to the left of the greebler
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
            t.putCharacter(' ');
            greeblers.get(i).moveLeft();
@@ -915,7 +933,6 @@ public static void followPlayer(Terminal t){
       if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
          (one.getY() - greeblers.get(i).getY() > 0) &&
          (checkAround(greeblers.get(i))[0].equals(" "))){
-           //checks if the player is below the greebler
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
            t.putCharacter(' ');
            greeblers.get(i).moveDown();
@@ -923,7 +940,6 @@ public static void followPlayer(Terminal t){
       if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
          (one.getY() - greeblers.get(i).getY() < 0) &&
          (checkAround(greeblers.get(i))[2].equals(" "))){
-           //checks if the player is above the greebler
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
            t.putCharacter(' ');
            greeblers.get(i).moveUp();
@@ -942,8 +958,6 @@ public static void followPlayer(Terminal t){
     terminal.setCursorVisible(false);
     boolean running = true;
     //for switching
-
-    //for controlling the pace at which greeblers attack/move
     long tStart = System.currentTimeMillis();
     long lastSecond = 0;
     long lastSecond2 = 0;
@@ -952,9 +966,12 @@ public static void followPlayer(Terminal t){
     int x = 10;
     int y = 10;
 
+    int z = 0;
+
     fillWalls(terminal);
 
     while(running){
+      z++;
       terminal.applyForegroundColor(Terminal.Color.MAGENTA);
       terminal.moveCursor(70, 19);
       terminal.putCharacter('\u21EA');
@@ -1100,6 +1117,21 @@ public static void followPlayer(Terminal t){
         attack(greeb16, terminal);
         attack(greeb17, terminal);
         attack(greeb18, terminal);
+        attack(greeb19, terminal);
+        attack(greeb20, terminal);
+        attack(greeb21, terminal);
+        attack(greeb22, terminal);
+        attack(greeb23, terminal);
+        attack(greeb24, terminal);
+        attack(greeb25, terminal);
+        attack(greeb26, terminal);
+        attack(greeb27, terminal);
+        attack(greeb28, terminal);
+        attack(greeb29, terminal);
+        attack(greeb30, terminal);
+        attack(greeb31, terminal);
+        attack(greeb32, terminal);
+        attack(greeb33, terminal);
 
       }
       //exits system if player is dead
@@ -1136,10 +1168,34 @@ public static void followPlayer(Terminal t){
 
           floor++;
           grid.clear();
+
           greeblers.clear();
+          greeblers.add(greeb19);
+          greeblers.add(greeb20);
+          greeblers.add(greeb21);
+          greeblers.add(greeb22);
+          greeblers.add(greeb23);
+          greeblers.add(greeb24);
+          greeblers.add(greeb25);
+          greeblers.add(greeb26);
+          greeblers.add(greeb27);
+          greeblers.add(greeb28);
+          greeblers.add(greeb29);
+          greeblers.add(greeb30);
+          greeblers.add(greeb31);
+          greeblers.add(greeb32);
+          greeblers.add(greeb33);
           killed.clear();
+
           babies.clear();
+          babies.add(baby6);
+          babies.add(baby7);
+          babies.add(baby8);
+          babies.add(baby9);
+          babies.add(baby10);
+
           bandages.clear();
+          bandages.add(bandage2);
           fillWalls(terminal);
           one.setX(10);
           one.setY(10);
