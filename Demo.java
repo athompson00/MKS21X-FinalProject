@@ -891,6 +891,7 @@ public static void pickUpBaby(Player n, Terminal t){
   }
 }
 
+//Makes all greeblers within 10 units of the player move towards the player to attack
 public static void followPlayer(Terminal t){
   for (int i = 0; i < greeblers.size(); i++){
     double d = Math.hypot(one.getX() - greeblers.get(i).getX(), one.getY() - greeblers.get(i).getY());//distance from greebler to player
@@ -898,6 +899,7 @@ public static void followPlayer(Terminal t){
       if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
          (one.getX() - greeblers.get(i).getX() > 0) &&
          (checkAround(greeblers.get(i))[1].equals(" "))){
+           //checks if the player is to the right of the greebler
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
            t.putCharacter(' ');
            greeblers.get(i).moveRight();
@@ -905,6 +907,7 @@ public static void followPlayer(Terminal t){
       if ((Math.abs(one.getX() - greeblers.get(i).getX()) >= Math.abs(one.getY() - greeblers.get(i).getY())) &&
          (one.getX() - greeblers.get(i).getX() < 0) &&
          (checkAround(greeblers.get(i))[3].equals(" "))){
+           //checks if the player is to the left of the greebler
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
            t.putCharacter(' ');
            greeblers.get(i).moveLeft();
@@ -912,6 +915,7 @@ public static void followPlayer(Terminal t){
       if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
          (one.getY() - greeblers.get(i).getY() > 0) &&
          (checkAround(greeblers.get(i))[0].equals(" "))){
+           //checks if the player is below the greebler
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
            t.putCharacter(' ');
            greeblers.get(i).moveDown();
@@ -919,6 +923,7 @@ public static void followPlayer(Terminal t){
       if ((Math.abs(one.getY() - greeblers.get(i).getY()) > Math.abs(one.getX() - greeblers.get(i).getX())) &&
          (one.getY() - greeblers.get(i).getY() < 0) &&
          (checkAround(greeblers.get(i))[2].equals(" "))){
+           //checks if the player is above the greebler
            t.moveCursor(greeblers.get(i).getX(), greeblers.get(i).getY());
            t.putCharacter(' ');
            greeblers.get(i).moveUp();
@@ -937,6 +942,8 @@ public static void followPlayer(Terminal t){
     terminal.setCursorVisible(false);
     boolean running = true;
     //for switching
+
+    //for controlling the pace at which greeblers attack/move
     long tStart = System.currentTimeMillis();
     long lastSecond = 0;
     long lastSecond2 = 0;
@@ -945,12 +952,9 @@ public static void followPlayer(Terminal t){
     int x = 10;
     int y = 10;
 
-    int z = 0;
-
     fillWalls(terminal);
 
     while(running){
-      z++;
       terminal.applyForegroundColor(Terminal.Color.MAGENTA);
       terminal.moveCursor(70, 19);
       terminal.putCharacter('\u21EA');
