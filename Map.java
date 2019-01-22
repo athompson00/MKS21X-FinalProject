@@ -227,6 +227,8 @@ public class Map{
   static Wall wall223;
   static Wall wall224;
   static Wall wall225;
+  static Wall wall226;
+  static Wall wall227;
 
 //Decides which map to draw
   public Map(int number){
@@ -468,6 +470,12 @@ public class Map{
     wall206 = new Wall(53, 6, "up");
     wall207 = new Wall(56, 6, "up");
 
+    //hole in perimeter
+    wall226 = new Wall(51, 6, "");
+    wall227 = new Wall(54, 6, "");
+
+
+
 
 
 
@@ -683,6 +691,11 @@ public class Map{
     map.add(wall205);
     map.add(wall206);
     map.add(wall207);
+
+
+    //holes in perimeter
+    map.add(wall226);
+    map.add(wall227);
   }
 
 
